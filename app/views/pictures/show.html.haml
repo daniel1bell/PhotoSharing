@@ -1,0 +1,7 @@
+%h1 
+  = @picture.name
+%ul
+  %li
+    = link_to('Edit Picture', edit_picture_path)
+    = link_to('Delete Picture', @picture, :method => :delete, :confirm => 'Are you sure?')
+    = link_to('Back', pictures_path)

@@ -1,10 +1,12 @@
+%h1 
   = @album.name
+%p
   = @album.description
-
-  = link_to('Edit Album', edit_album_path)
-  = link_to('Delete Album', @album, :method => :delete, :confirm => 'Are you sure?')
-  = button_to('Delete Album', album_delete_path(@album))
-  = link_to('Back', albums_path)
+%ul
+  %li
+    = link_to('Edit Album', edit_album_path)
+    = link_to('Delete Album', @album, :method => :delete, :confirm => 'Are you sure?')
+    = link_to('Back', albums_path)
 
 
 

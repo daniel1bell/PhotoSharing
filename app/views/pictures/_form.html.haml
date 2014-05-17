@@ -1,0 +1,7 @@
+= form_for @picture do |f|
+  .field
+    = f.label :name
+    %br/
+    = f.text_field :name, :autofocus => true, placeholder: 'Name'
+  .actions
+    = f.submit
