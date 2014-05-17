@@ -1,0 +1,7 @@
+= link_to('New Album', new_album_path)
+%ul
+  - @albums.each do |album|
+    %li
+      .album
+        = link_to(album.name, album_path(album), class: "album-name")
+        

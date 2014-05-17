@@ -1,0 +1,11 @@
+= form_for @album do |f|
+  .field
+    = f.label :name
+    %br/
+    = f.text_field :name, :autofocus => true, placeholder: 'Name'
+  .field
+    = f.label :description
+    %br/
+    = f.text_field :description, placeholder: 'Description'
+  .actions
+    = f.submit
