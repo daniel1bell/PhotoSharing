@@ -7,6 +7,27 @@ gem 'rails', '3.2.18'
 
 gem 'pg'
 
+#  Gems for data visualisation and front-end management.
+
+gem 'date-input-rails', '~> 0.0.3'
+gem 'ransack'
+gem 'carrierwave', '~> 0.9.0'
+gem 'rmagick'
+
+#  Gems for authorisation and authentication
+
+gem 'devise'
+gem 'cancan', '~> 1.6.10'
+gem 'omniauth' # still need to add facebook and twitter auth gems
+
+gem 'haml-rails'
+
+group :development, :test do
+  gem 'pry-rails'
+  gem 'pry-stack_explorer'
+  gem 'binding_of_caller'
+  gem 'better_errors'
+end
 
 # Gems used only for assets and not required
 # in production environments by default.
