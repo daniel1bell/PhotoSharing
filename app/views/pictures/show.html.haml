@@ -1,5 +1,6 @@
 %h1 
   = @picture.name
+  = image_tag @picture.picture_image.url
 %ul
   %li
     = link_to('Edit Picture', edit_picture_path)

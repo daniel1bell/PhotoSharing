@@ -5386,3 +5386,218 @@ Served asset /jquery.js - 304 Not Modified (0ms)
 
 Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-17 15:46:05 +0100
 Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (0.6ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateUsers (20140517091218)
+Migrating to CreateAlbums (20140517091327)
+Migrating to CreatePictures (20140517091956)
+Migrating to AddImageToPictures (20140517192207)
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36m (3.7ms)[0m  [1mALTER TABLE "pictures" ADD COLUMN "image" character varying(255)[0m
+PG::DuplicateColumn: ERROR:  column "image" of relation "pictures" already exists
+: ALTER TABLE "pictures" ADD COLUMN "image" character varying(255)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (0.4ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateUsers (20140517091218)
+Migrating to CreateAlbums (20140517091327)
+Migrating to CreatePictures (20140517091956)
+Migrating to AddPictureImageToPictures (20140517192522)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (762.9ms)[0m  [1mALTER TABLE "pictures" ADD COLUMN "picture_image" character varying(255)[0m
+  [1m[35m (1.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20140517192522')
+  [1m[36m (87.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+
+
+Started GET "/albums" for 127.0.0.1 at 2014-05-17 20:29:10 +0100
+Processing by AlbumsController#index as HTML
+  [1m[35mAlbum Load (0.7ms)[0m  SELECT "albums".* FROM "albums" 
+  Rendered albums/index.html.haml within layouts/application (1.1ms)
+Completed 200 OK in 22.0ms (Views: 8.4ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-17 20:29:10 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-17 20:29:10 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-17 20:29:10 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-17 20:29:10 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/pictures" for 127.0.0.1 at 2014-05-17 20:29:11 +0100
+
+ActionController::RoutingError - uninitialized constant Picture::PictureImageUploader:
+  actionpack (3.2.18) lib/action_dispatch/routing/route_set.rb:57:in `rescue in controller'
+  actionpack (3.2.18) lib/action_dispatch/routing/route_set.rb:52:in `controller'
+  actionpack (3.2.18) lib/action_dispatch/routing/route_set.rb:32:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.18) lib/action_dispatch/routing/route_set.rb:608:in `call'
+  warden (1.2.3) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.3) lib/warden/manager.rb:34:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.5) lib/rack/etag.rb:23:in `call'
+  rack (1.4.5) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:210:in `context'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:205:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/cookies.rb:341:in `call'
+  activerecord (3.2.18) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.18) lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:405:in `_run__2125108178907181247__call__4049462843568921800__callbacks'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.18) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:56:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.18) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.18) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.18) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.18) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.18) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.18) lib/rails/engine.rb:484:in `call'
+  railties (3.2.18) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.18) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/Paul/.rbenv/versions/2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/Paul/.rbenv/versions/2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/Paul/.rbenv/versions/2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+
+Started POST "/__better_errors/70266354676920/variables" for 127.0.0.1 at 2014-05-17 20:29:11 +0100
+
+
+Started GET "/pictures" for 127.0.0.1 at 2014-05-17 20:29:35 +0100
+Processing by PicturesController#index as HTML
+  [1m[36mPicture Load (0.4ms)[0m  [1mSELECT "pictures".* FROM "pictures" [0m
+  Rendered pictures/index.html.haml within layouts/application (0.5ms)
+Completed 200 OK in 14.0ms (Views: 8.4ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-17 20:29:35 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-17 20:29:35 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-17 20:29:35 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-17 20:29:35 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/pictures/new" for 127.0.0.1 at 2014-05-17 20:29:37 +0100
+Processing by PicturesController#new as HTML
+  Rendered pictures/_form.html.haml (6.8ms)
+  Rendered pictures/new.html.haml within layouts/application (8.3ms)
+Completed 200 OK in 34.2ms (Views: 14.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-17 20:29:37 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-17 20:29:37 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-17 20:29:37 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-17 20:29:37 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/pictures/new" for 127.0.0.1 at 2014-05-17 20:32:26 +0100
+Processing by PicturesController#new as HTML
+  Rendered pictures/_form.html.haml (2.7ms)
+  Rendered pictures/new.html.haml within layouts/application (3.7ms)
+Completed 200 OK in 47.4ms (Views: 46.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-17 20:32:26 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-17 20:32:26 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-17 20:32:26 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-17 20:32:26 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started POST "/pictures" for 127.0.0.1 at 2014-05-17 20:32:41 +0100
+Processing by PicturesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"f47J4x5YqVyEimjVdeTzdmIzA8VFEKYHnQ0hwXurZ1s=", "picture"=>{"name"=>"Paul Test", "picture_image"=>#<ActionDispatch::Http::UploadedFile:0x007fd0553a0d68 @original_filename="Profile.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"picture[picture_image]\"; filename=\"Profile.jpg\"\r\nContent-Type: image/jpeg\r\n", @tempfile=#<Tempfile:/var/folders/4_/mydgpy6574qbnmwlmjr8sqy40000gn/T/RackMultipart20140517-19313-1h28rpz>>}, "commit"=>"Create Picture"}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (2.7ms)[0m  [1mINSERT INTO "pictures" ("altitude", "camera_make", "camera_model", "created_at", "datetime", "exposure", "flash", "focal_length", "image", "image_height", "image_length", "latitude", "longitude", "name", "orientation", "picture_image", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18) RETURNING "id"[0m  [["altitude", nil], ["camera_make", nil], ["camera_model", nil], ["created_at", Sat, 17 May 2014 19:32:41 UTC +00:00], ["datetime", nil], ["exposure", nil], ["flash", nil], ["focal_length", nil], ["image", nil], ["image_height", nil], ["image_length", nil], ["latitude", nil], ["longitude", nil], ["name", "Paul Test"], ["orientation", nil], ["picture_image", "Profile.jpg"], ["updated_at", Sat, 17 May 2014 19:32:41 UTC +00:00], ["user_id", nil]]
+  [1m[35m (0.6ms)[0m  COMMIT
+Redirected to http://localhost:3000/pictures/3
+Completed 302 Found in 21.1ms (ActiveRecord: 3.5ms)
+
+
+Started GET "/pictures/3" for 127.0.0.1 at 2014-05-17 20:32:41 +0100
+Processing by PicturesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPicture Load (1.9ms)[0m  [1mSELECT "pictures".* FROM "pictures" WHERE "pictures"."id" = $1 LIMIT 1[0m  [["id", "3"]]
+  Rendered pictures/show.html.haml within layouts/application (3.6ms)
+Completed 200 OK in 12.8ms (Views: 9.3ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-17 20:32:41 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-17 20:32:41 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-17 20:32:41 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-17 20:32:41 +0100
+Served asset /application.js - 304 Not Modified (0ms)
