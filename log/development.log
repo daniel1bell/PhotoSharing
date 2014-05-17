@@ -5601,3 +5601,26 @@ Served asset /jquery_ujs.js - 304 Not Modified (0ms)
 
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-17 20:32:41 +0100
 Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/pictures" for 127.0.0.1 at 2014-05-17 20:39:09 +0100
+Processing by PicturesController#index as HTML
+  [1m[35mPicture Load (0.5ms)[0m  SELECT "pictures".* FROM "pictures" 
+  Rendered pictures/index.html.haml within layouts/application (0.8ms)
+Completed 200 OK in 106.8ms (Views: 105.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-17 20:39:09 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-17 20:39:09 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-17 20:39:09 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-17 20:39:09 +0100
+Served asset /application.js - 304 Not Modified (0ms)
