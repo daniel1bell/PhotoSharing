@@ -1,5 +1,7 @@
 class AlbumsController < ApplicationController
 
+# basic album controller - still needs to be connected with User, Photo & Comment Controller
+
   def index
     @albums = Album.all
   end

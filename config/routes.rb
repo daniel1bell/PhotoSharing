@@ -1,6 +1,8 @@
 PhotoSharingApp::Application.routes.draw do
   resources :albums
 
+  # intial home root to album#index until User Model & Homepage is created
+
   root to: "albums#index"
   post '/albums/:id/delete' => "albums#destroy", :as => 'album_delete'
 
