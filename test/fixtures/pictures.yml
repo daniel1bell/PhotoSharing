@@ -1,0 +1,35 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  album: 
+  name: MyString
+  image: MyText
+  datetime: 2014-05-17 10:19:56
+  latitude: MyString
+  longitude: MyString
+  altitude: 9.99
+  image_length: 1
+  image_height: 1
+  orientation: 1
+  camera_make: MyString
+  camera_model: MyString
+  exposure: 1
+  flash: false
+  focal_length: 9.99
+
+two:
+  album: 
+  name: MyString
+  image: MyText
+  datetime: 2014-05-17 10:19:56
+  latitude: MyString
+  longitude: MyString
+  altitude: 9.99
+  image_length: 1
+  image_height: 1
+  orientation: 1
+  camera_make: MyString
+  camera_model: MyString
+  exposure: 1
+  flash: false
+  focal_length: 9.99
