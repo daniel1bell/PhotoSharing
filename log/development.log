@@ -8067,3 +8067,2026 @@ Served asset /application.js - 304 Not Modified (0ms)
 
 Started GET "/assets/pictures.css?body=1" for 127.0.0.1 at 2014-05-17 21:21:44 +0100
 Served asset /pictures.css - 304 Not Modified (0ms)
+
+
+Started GET "/tags/Cover" for 127.0.0.1 at 2014-05-17 21:25:47 +0100
+Processing by PicturesController#index as HTML
+  Parameters: {"tag"=>"Cover"}
+  [1m[35mActsAsTaggableOn::Tag Load (0.5ms)[0m  SELECT "tags".* FROM "tags" WHERE (LOWER(name) = LOWER('cover'))
+  [1m[36m (1.6ms)[0m  [1mSELECT COUNT(*) FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN pictures ON pictures.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Picture' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT pictures.id FROM "pictures" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id[0m
+  [1m[35mActsAsTaggableOn::Tag Load (2.0ms)[0m  SELECT tags.*, taggings.tags_count AS count FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN pictures ON pictures.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Picture' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT pictures.id FROM "pictures" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id
+  [1m[36mPicture Load (0.8ms)[0m  [1mSELECT "pictures".* FROM "pictures" JOIN taggings pictures_taggings_cef26ce ON pictures_taggings_cef26ce.taggable_id = "pictures".id AND pictures_taggings_cef26ce.taggable_type = 'Picture' AND pictures_taggings_cef26ce.tag_id = 3[0m
+  [1m[35mActsAsTaggableOn::Tag Load (0.8ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 5 AND "taggings"."taggable_type" = 'Picture' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  Rendered pictures/index.html.haml within layouts/application (14.2ms)
+Warning. Error encountered while saving cache /Users/Paul/Documents/wdi_2014/project_2/PhotoSharing/tmp/cache/sass/9d94312fe257bfead47e6f3eb4986a4750aa3f1e/application.css.scssc: can't dump anonymous class #<Class:0x007fb58e07f7b0>
+
+Warning. Error encountered while saving cache /Users/Paul/Documents/wdi_2014/project_2/PhotoSharing/tmp/cache/sass/9d94312fe257bfead47e6f3eb4986a4750aa3f1e/pictures.css.scssc: can't dump anonymous class #<Class:0x007fb58e07f7b0>
+
+Compiled application.css  (9ms)  (pid 24903)
+Completed 200 OK in 143.1ms (Views: 135.2ms | ActiveRecord: 5.8ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-17 21:25:48 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-17 21:25:48 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-17 21:25:48 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-17 21:25:48 +0100
+Served asset /application.css - 200 OK (2ms)
+
+
+Started GET "/tags/Cover" for 127.0.0.1 at 2014-05-17 21:25:49 +0100
+Processing by PicturesController#index as HTML
+  Parameters: {"tag"=>"Cover"}
+  [1m[36mActsAsTaggableOn::Tag Load (0.5ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE (LOWER(name) = LOWER('cover'))[0m
+  [1m[35m (1.4ms)[0m  SELECT COUNT(*) FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN pictures ON pictures.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Picture' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT pictures.id FROM "pictures" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id
+  [1m[36mActsAsTaggableOn::Tag Load (1.4ms)[0m  [1mSELECT tags.*, taggings.tags_count AS count FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN pictures ON pictures.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Picture' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT pictures.id FROM "pictures" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id[0m
+  [1m[35mPicture Load (0.8ms)[0m  SELECT "pictures".* FROM "pictures" JOIN taggings pictures_taggings_8e61528 ON pictures_taggings_8e61528.taggable_id = "pictures".id AND pictures_taggings_8e61528.taggable_type = 'Picture' AND pictures_taggings_8e61528.tag_id = 3
+  [1m[36mActsAsTaggableOn::Tag Load (0.7ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 5 AND "taggings"."taggable_type" = 'Picture' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  Rendered pictures/index.html.haml within layouts/application (12.6ms)
+Completed 200 OK in 20.5ms (Views: 12.7ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-17 21:25:49 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-17 21:25:49 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-17 21:25:49 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-17 21:25:49 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/tags/Cover" for 127.0.0.1 at 2014-05-17 21:25:58 +0100
+Processing by PicturesController#index as HTML
+  Parameters: {"tag"=>"Cover"}
+  [1m[35mActsAsTaggableOn::Tag Load (0.4ms)[0m  SELECT "tags".* FROM "tags" WHERE (LOWER(name) = LOWER('cover'))
+  [1m[36m (1.6ms)[0m  [1mSELECT COUNT(*) FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN pictures ON pictures.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Picture' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT pictures.id FROM "pictures" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id[0m
+  [1m[35mActsAsTaggableOn::Tag Load (1.6ms)[0m  SELECT tags.*, taggings.tags_count AS count FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN pictures ON pictures.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Picture' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT pictures.id FROM "pictures" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id
+  [1m[36mPicture Load (0.9ms)[0m  [1mSELECT "pictures".* FROM "pictures" JOIN taggings pictures_taggings_a2597e1 ON pictures_taggings_a2597e1.taggable_id = "pictures".id AND pictures_taggings_a2597e1.taggable_type = 'Picture' AND pictures_taggings_a2597e1.tag_id = 3[0m
+  [1m[35mActsAsTaggableOn::Tag Load (1.0ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 5 AND "taggings"."taggable_type" = 'Picture' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  Rendered pictures/index.html.haml within layouts/application (15.5ms)
+Completed 200 OK in 23.9ms (Views: 15.8ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-17 21:25:59 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-17 21:25:59 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-17 21:25:59 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-17 21:25:59 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/pictures/5" for 127.0.0.1 at 2014-05-17 21:26:00 +0100
+Processing by PicturesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPicture Load (0.8ms)[0m  [1mSELECT "pictures".* FROM "pictures" WHERE "pictures"."id" = $1 LIMIT 1[0m  [["id", "5"]]
+  Rendered pictures/show.html.haml within layouts/application (14.8ms)
+Completed 500 Internal Server Error in 21.9ms
+
+NameError - undefined local variable or method `picture' for #<#<Class:0x007fb58c526270>:0x007fb58ac8c0c0>:
+  app/views/pictures/show.html.haml:3:in `_app_views_pictures_show_html_haml__3027340563087112335_70208847132880'
+  actionpack (3.2.18) lib/action_view/template.rb:145:in `block in render'
+  activesupport (3.2.18) lib/active_support/notifications.rb:125:in `instrument'
+  actionpack (3.2.18) lib/action_view/template.rb:143:in `render'
+  actionpack (3.2.18) lib/action_view/renderer/template_renderer.rb:47:in `block (2 levels) in render_template'
+  actionpack (3.2.18) lib/action_view/renderer/abstract_renderer.rb:38:in `block in instrument'
+  activesupport (3.2.18) lib/active_support/notifications.rb:123:in `block in instrument'
+  activesupport (3.2.18) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (3.2.18) lib/active_support/notifications.rb:123:in `instrument'
+  actionpack (3.2.18) lib/action_view/renderer/abstract_renderer.rb:38:in `instrument'
+  actionpack (3.2.18) lib/action_view/renderer/template_renderer.rb:46:in `block in render_template'
+  actionpack (3.2.18) lib/action_view/renderer/template_renderer.rb:54:in `render_with_layout'
+  actionpack (3.2.18) lib/action_view/renderer/template_renderer.rb:45:in `render_template'
+  actionpack (3.2.18) lib/action_view/renderer/template_renderer.rb:18:in `render'
+  actionpack (3.2.18) lib/action_view/renderer/renderer.rb:36:in `render_template'
+  actionpack (3.2.18) lib/action_view/renderer/renderer.rb:17:in `render'
+  actionpack (3.2.18) lib/abstract_controller/rendering.rb:110:in `_render_template'
+  actionpack (3.2.18) lib/action_controller/metal/streaming.rb:225:in `_render_template'
+  actionpack (3.2.18) lib/abstract_controller/rendering.rb:103:in `render_to_body'
+  actionpack (3.2.18) lib/action_controller/metal/renderers.rb:28:in `render_to_body'
+  actionpack (3.2.18) lib/action_controller/metal/compatibility.rb:50:in `render_to_body'
+  actionpack (3.2.18) lib/abstract_controller/rendering.rb:88:in `render'
+  actionpack (3.2.18) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (3.2.18) lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+  activesupport (3.2.18) lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+  /Users/Paul/.rbenv/versions/2.0.0-p247/lib/ruby/2.0.0/benchmark.rb:296:in `realtime'
+  activesupport (3.2.18) lib/active_support/core_ext/benchmark.rb:5:in `ms'
+  actionpack (3.2.18) lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+  actionpack (3.2.18) lib/action_controller/metal/instrumentation.rb:83:in `cleanup_view_runtime'
+  activerecord (3.2.18) lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+  actionpack (3.2.18) lib/action_controller/metal/instrumentation.rb:39:in `render'
+  actionpack (3.2.18) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (3.2.18) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (3.2.18) lib/abstract_controller/base.rb:167:in `process_action'
+  actionpack (3.2.18) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (3.2.18) lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:414:in `_run__2734601366560467678__process_action__519897159205504989__callbacks'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.18) lib/abstract_controller/callbacks.rb:17:in `process_action'
+  actionpack (3.2.18) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (3.2.18) lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+  activesupport (3.2.18) lib/active_support/notifications.rb:123:in `block in instrument'
+  activesupport (3.2.18) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (3.2.18) lib/active_support/notifications.rb:123:in `instrument'
+  actionpack (3.2.18) lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+  actionpack (3.2.18) lib/action_controller/metal/params_wrapper.rb:207:in `process_action'
+  activerecord (3.2.18) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (3.2.18) lib/abstract_controller/base.rb:121:in `process'
+  actionpack (3.2.18) lib/abstract_controller/rendering.rb:45:in `process'
+  actionpack (3.2.18) lib/action_controller/metal.rb:203:in `dispatch'
+  actionpack (3.2.18) lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  actionpack (3.2.18) lib/action_controller/metal.rb:246:in `block in action'
+  actionpack (3.2.18) lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  actionpack (3.2.18) lib/action_dispatch/routing/route_set.rb:36:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.18) lib/action_dispatch/routing/route_set.rb:608:in `call'
+  warden (1.2.3) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.3) lib/warden/manager.rb:34:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.5) lib/rack/etag.rb:23:in `call'
+  rack (1.4.5) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:210:in `context'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:205:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/cookies.rb:341:in `call'
+  activerecord (3.2.18) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.18) lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:405:in `_run__1562557025757731272__call__4548569040909928546__callbacks'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.18) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:56:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.18) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.18) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.18) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.18) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.18) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.18) lib/rails/engine.rb:484:in `call'
+  railties (3.2.18) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.18) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/Paul/.rbenv/versions/2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/Paul/.rbenv/versions/2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/Paul/.rbenv/versions/2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+
+Started POST "/__better_errors/70208874849440/variables" for 127.0.0.1 at 2014-05-17 21:26:00 +0100
+
+
+Started GET "/pictures/5" for 127.0.0.1 at 2014-05-17 21:26:13 +0100
+Processing by PicturesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mPicture Load (0.6ms)[0m  SELECT "pictures".* FROM "pictures" WHERE "pictures"."id" = $1 LIMIT 1  [["id", "5"]]
+  [1m[36mActsAsTaggableOn::Tag Load (1.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 5 AND "taggings"."taggable_type" = 'Picture' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  Rendered pictures/show.html.haml within layouts/application (9.6ms)
+Completed 200 OK in 16.4ms (Views: 13.5ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-17 21:26:13 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-17 21:26:13 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-17 21:26:13 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-17 21:26:13 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/pictures/5/edit" for 127.0.0.1 at 2014-05-17 21:26:18 +0100
+Processing by PicturesController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mPicture Load (0.9ms)[0m  SELECT "pictures".* FROM "pictures" WHERE "pictures"."id" = $1 LIMIT 1  [["id", "5"]]
+  [1m[36mActsAsTaggableOn::Tag Load (0.8ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 5 AND "taggings"."taggable_type" = 'Picture' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  Rendered pictures/_form.html.haml (45.6ms)
+  Rendered pictures/edit.html.haml within layouts/application (46.5ms)
+Completed 200 OK in 153.0ms (Views: 149.3ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-17 21:26:19 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-17 21:26:19 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-17 21:26:19 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-17 21:26:19 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started PUT "/pictures/5" for 127.0.0.1 at 2014-05-17 21:26:28 +0100
+Processing by PicturesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"f47J4x5YqVyEimjVdeTzdmIzA8VFEKYHnQ0hwXurZ1s=", "picture"=>{"name"=>"Test 2", "tag_list"=>"Cover, Patagonia, Profile"}, "commit"=>"Update Picture", "id"=>"5"}
+  [1m[35mPicture Load (0.6ms)[0m  SELECT "pictures".* FROM "pictures" WHERE "pictures"."id" = $1 LIMIT 1  [["id", "5"]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mActsAsTaggableOn::Tag Load (0.7ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 5 AND "taggings"."taggable_type" = 'Picture' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  [1m[36m (0.5ms)[0m  [1mUPDATE "pictures" SET "updated_at" = '2014-05-17 20:26:28.418090' WHERE "pictures"."id" = 5[0m
+  [1m[35mActsAsTaggableOn::Tag Load (0.6ms)[0m  SELECT "tags".* FROM "tags" WHERE (LOWER(name) = LOWER('cover') OR LOWER(name) = LOWER('patagonia') OR LOWER(name) = LOWER('profile'))
+  [1m[36mActsAsTaggableOn::Tag Load (1.2ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 5 AND "taggings"."taggable_type" = 'Picture' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  [1m[35mActsAsTaggableOn::Tagging Exists (0.5ms)[0m  SELECT 1 AS one FROM "taggings" WHERE ("taggings"."tag_id" = 1 AND "taggings"."taggable_type" = 'Picture' AND "taggings"."taggable_id" = 5 AND "taggings"."context" = 'tags' AND "taggings"."tagger_id" IS NULL AND "taggings"."tagger_type" IS NULL) LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "taggings" ("context", "created_at", "tag_id", "taggable_id", "taggable_type", "tagger_id", "tagger_type") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["context", "tags"], ["created_at", Sat, 17 May 2014 20:26:28 UTC +00:00], ["tag_id", 1], ["taggable_id", 5], ["taggable_type", "Picture"], ["tagger_id", nil], ["tagger_type", nil]]
+  [1m[35mActsAsTaggableOn::Tag Load (0.4ms)[0m  SELECT "tags".* FROM "tags" WHERE "tags"."id" = 1 LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "tags" SET "taggings_count" = COALESCE("taggings_count", 0) + 1 WHERE "tags"."id" = 1[0m
+  [1m[35m (0.3ms)[0m  COMMIT
+Redirected to http://localhost:3000/pictures/5
+Completed 302 Found in 29.6ms (ActiveRecord: 5.7ms)
+
+
+Started GET "/pictures/5" for 127.0.0.1 at 2014-05-17 21:26:28 +0100
+Processing by PicturesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPicture Load (0.4ms)[0m  [1mSELECT "pictures".* FROM "pictures" WHERE "pictures"."id" = $1 LIMIT 1[0m  [["id", "5"]]
+  [1m[35mActsAsTaggableOn::Tag Load (0.8ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 5 AND "taggings"."taggable_type" = 'Picture' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  Rendered pictures/show.html.haml within layouts/application (5.2ms)
+Completed 200 OK in 10.7ms (Views: 8.3ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-17 21:26:28 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-17 21:26:28 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-17 21:26:28 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-17 21:26:28 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/pictures" for 127.0.0.1 at 2014-05-17 21:26:31 +0100
+Processing by PicturesController#index as HTML
+  [1m[36mPicture Load (1.2ms)[0m  [1mSELECT "pictures".* FROM "pictures" [0m
+  [1m[35m (1.5ms)[0m  SELECT COUNT(*) FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN pictures ON pictures.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Picture' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT pictures.id FROM "pictures" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id
+  [1m[36mActsAsTaggableOn::Tag Load (1.3ms)[0m  [1mSELECT tags.*, taggings.tags_count AS count FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN pictures ON pictures.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Picture' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT pictures.id FROM "pictures" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id[0m
+  [1m[35mActsAsTaggableOn::Tag Load (0.7ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 3 AND "taggings"."taggable_type" = 'Picture' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  [1m[36mActsAsTaggableOn::Tag Load (0.7ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 4 AND "taggings"."taggable_type" = 'Picture' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  [1m[35mActsAsTaggableOn::Tag Load (1.0ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 5 AND "taggings"."taggable_type" = 'Picture' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  Rendered pictures/index.html.haml within layouts/application (18.9ms)
+Completed 200 OK in 27.3ms (Views: 19.3ms | ActiveRecord: 6.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-17 21:26:31 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-17 21:26:31 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-17 21:26:31 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-17 21:26:31 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/pictures/3" for 127.0.0.1 at 2014-05-17 21:27:03 +0100
+Processing by PicturesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPicture Load (0.5ms)[0m  [1mSELECT "pictures".* FROM "pictures" WHERE "pictures"."id" = $1 LIMIT 1[0m  [["id", "3"]]
+  [1m[35mActsAsTaggableOn::Tag Load (0.7ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 3 AND "taggings"."taggable_type" = 'Picture' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  Rendered pictures/show.html.haml within layouts/application (4.8ms)
+Completed 200 OK in 12.1ms (Views: 9.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-17 21:27:03 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-17 21:27:03 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-17 21:27:03 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-17 21:27:03 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/pictures/3/edit" for 127.0.0.1 at 2014-05-17 21:27:05 +0100
+Processing by PicturesController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPicture Load (0.3ms)[0m  [1mSELECT "pictures".* FROM "pictures" WHERE "pictures"."id" = $1 LIMIT 1[0m  [["id", "3"]]
+  [1m[35mActsAsTaggableOn::Tag Load (0.9ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 3 AND "taggings"."taggable_type" = 'Picture' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  Rendered pictures/_form.html.haml (6.8ms)
+  Rendered pictures/edit.html.haml within layouts/application (7.8ms)
+Completed 200 OK in 14.7ms (Views: 12.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-17 21:27:05 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-17 21:27:05 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-17 21:27:05 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-17 21:27:05 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started PUT "/pictures/3" for 127.0.0.1 at 2014-05-17 21:27:10 +0100
+Processing by PicturesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"f47J4x5YqVyEimjVdeTzdmIzA8VFEKYHnQ0hwXurZ1s=", "picture"=>{"name"=>"Paul Test", "tag_list"=>"Profile, Awesome"}, "commit"=>"Update Picture", "id"=>"3"}
+  [1m[36mPicture Load (0.7ms)[0m  [1mSELECT "pictures".* FROM "pictures" WHERE "pictures"."id" = $1 LIMIT 1[0m  [["id", "3"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mActsAsTaggableOn::Tag Load (0.7ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 3 AND "taggings"."taggable_type" = 'Picture' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  [1m[35m (0.5ms)[0m  UPDATE "pictures" SET "updated_at" = '2014-05-17 20:27:10.582347' WHERE "pictures"."id" = 3
+  [1m[36mActsAsTaggableOn::Tag Load (0.8ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE (LOWER(name) = LOWER('profile') OR LOWER(name) = LOWER('awesome'))[0m
+  [1m[35mActsAsTaggableOn::Tag Load (0.7ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 3 AND "taggings"."taggable_type" = 'Picture' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  [1m[36mActsAsTaggableOn::Tagging Exists (0.6ms)[0m  [1mSELECT 1 AS one FROM "taggings" WHERE ("taggings"."tag_id" = 1 AND "taggings"."taggable_type" = 'Picture' AND "taggings"."taggable_id" = 3 AND "taggings"."context" = 'tags' AND "taggings"."tagger_id" IS NULL AND "taggings"."tagger_type" IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "taggings" ("context", "created_at", "tag_id", "taggable_id", "taggable_type", "tagger_id", "tagger_type") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["context", "tags"], ["created_at", Sat, 17 May 2014 20:27:10 UTC +00:00], ["tag_id", 1], ["taggable_id", 3], ["taggable_type", "Picture"], ["tagger_id", nil], ["tagger_type", nil]]
+  [1m[36mActsAsTaggableOn::Tag Load (0.4ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE "tags"."id" = 1 LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "tags" SET "taggings_count" = COALESCE("taggings_count", 0) + 1 WHERE "tags"."id" = 1
+  [1m[36mActsAsTaggableOn::Tagging Exists (0.6ms)[0m  [1mSELECT 1 AS one FROM "taggings" WHERE ("taggings"."tag_id" = 2 AND "taggings"."taggable_type" = 'Picture' AND "taggings"."taggable_id" = 3 AND "taggings"."context" = 'tags' AND "taggings"."tagger_id" IS NULL AND "taggings"."tagger_type" IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "taggings" ("context", "created_at", "tag_id", "taggable_id", "taggable_type", "tagger_id", "tagger_type") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["context", "tags"], ["created_at", Sat, 17 May 2014 20:27:10 UTC +00:00], ["tag_id", 2], ["taggable_id", 3], ["taggable_type", "Picture"], ["tagger_id", nil], ["tagger_type", nil]]
+  [1m[36mActsAsTaggableOn::Tag Load (0.4ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE "tags"."id" = 2 LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "tags" SET "taggings_count" = COALESCE("taggings_count", 0) + 1 WHERE "tags"."id" = 2
+  [1m[36m (61.8ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/pictures/3
+Completed 302 Found in 93.4ms (ActiveRecord: 69.5ms)
+
+
+Started GET "/pictures/3" for 127.0.0.1 at 2014-05-17 21:27:10 +0100
+Processing by PicturesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mPicture Load (0.4ms)[0m  SELECT "pictures".* FROM "pictures" WHERE "pictures"."id" = $1 LIMIT 1  [["id", "3"]]
+  [1m[36mActsAsTaggableOn::Tag Load (0.8ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 3 AND "taggings"."taggable_type" = 'Picture' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  Rendered pictures/show.html.haml within layouts/application (5.4ms)
+Completed 200 OK in 12.4ms (Views: 9.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-17 21:27:10 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-17 21:27:10 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-17 21:27:10 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-17 21:27:10 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/pictures" for 127.0.0.1 at 2014-05-17 21:27:12 +0100
+Processing by PicturesController#index as HTML
+  [1m[35mPicture Load (0.5ms)[0m  SELECT "pictures".* FROM "pictures" 
+  [1m[36m (1.6ms)[0m  [1mSELECT COUNT(*) FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN pictures ON pictures.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Picture' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT pictures.id FROM "pictures" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id[0m
+  [1m[35mActsAsTaggableOn::Tag Load (1.4ms)[0m  SELECT tags.*, taggings.tags_count AS count FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN pictures ON pictures.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Picture' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT pictures.id FROM "pictures" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id
+  [1m[36mActsAsTaggableOn::Tag Load (1.0ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 4 AND "taggings"."taggable_type" = 'Picture' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  [1m[35mActsAsTaggableOn::Tag Load (0.9ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 5 AND "taggings"."taggable_type" = 'Picture' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  [1m[36mActsAsTaggableOn::Tag Load (0.9ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 3 AND "taggings"."taggable_type" = 'Picture' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  Rendered pictures/index.html.haml within layouts/application (22.0ms)
+Completed 200 OK in 29.9ms (Views: 22.2ms | ActiveRecord: 6.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-17 21:27:12 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-17 21:27:12 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-17 21:27:12 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-17 21:27:12 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/tags/Profile" for 127.0.0.1 at 2014-05-17 21:27:14 +0100
+Processing by PicturesController#index as HTML
+  Parameters: {"tag"=>"Profile"}
+  [1m[35mActsAsTaggableOn::Tag Load (0.5ms)[0m  SELECT "tags".* FROM "tags" WHERE (LOWER(name) = LOWER('profile'))
+  [1m[36m (1.7ms)[0m  [1mSELECT COUNT(*) FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN pictures ON pictures.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Picture' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT pictures.id FROM "pictures" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id[0m
+  [1m[35mActsAsTaggableOn::Tag Load (1.8ms)[0m  SELECT tags.*, taggings.tags_count AS count FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN pictures ON pictures.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Picture' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT pictures.id FROM "pictures" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id
+  [1m[36mPicture Load (0.9ms)[0m  [1mSELECT "pictures".* FROM "pictures" JOIN taggings pictures_taggings_adaa347 ON pictures_taggings_adaa347.taggable_id = "pictures".id AND pictures_taggings_adaa347.taggable_type = 'Picture' AND pictures_taggings_adaa347.tag_id = 1[0m
+  [1m[35mActsAsTaggableOn::Tag Load (0.8ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 3 AND "taggings"."taggable_type" = 'Picture' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  [1m[36mActsAsTaggableOn::Tag Load (0.8ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 4 AND "taggings"."taggable_type" = 'Picture' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  [1m[35mActsAsTaggableOn::Tag Load (0.9ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 5 AND "taggings"."taggable_type" = 'Picture' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  Rendered pictures/index.html.haml within layouts/application (24.6ms)
+Completed 200 OK in 34.2ms (Views: 23.9ms | ActiveRecord: 7.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-17 21:27:14 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-17 21:27:14 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-17 21:27:14 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-17 21:27:14 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/tags/Awesome" for 127.0.0.1 at 2014-05-17 21:27:14 +0100
+Processing by PicturesController#index as HTML
+  Parameters: {"tag"=>"Awesome"}
+  [1m[36mActsAsTaggableOn::Tag Load (0.7ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE (LOWER(name) = LOWER('awesome'))[0m
+  [1m[35m (1.8ms)[0m  SELECT COUNT(*) FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN pictures ON pictures.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Picture' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT pictures.id FROM "pictures" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id
+  [1m[36mActsAsTaggableOn::Tag Load (2.6ms)[0m  [1mSELECT tags.*, taggings.tags_count AS count FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN pictures ON pictures.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Picture' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT pictures.id FROM "pictures" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id[0m
+  [1m[35mPicture Load (1.1ms)[0m  SELECT "pictures".* FROM "pictures" JOIN taggings pictures_taggings_7f452af ON pictures_taggings_7f452af.taggable_id = "pictures".id AND pictures_taggings_7f452af.taggable_type = 'Picture' AND pictures_taggings_7f452af.tag_id = 2
+  [1m[36mActsAsTaggableOn::Tag Load (0.8ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 3 AND "taggings"."taggable_type" = 'Picture' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  [1m[35mActsAsTaggableOn::Tag Load (0.8ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 4 AND "taggings"."taggable_type" = 'Picture' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  Rendered pictures/index.html.haml within layouts/application (68.7ms)
+Completed 200 OK in 78.0ms (Views: 67.1ms | ActiveRecord: 7.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-17 21:27:15 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-17 21:27:15 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-17 21:27:15 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-17 21:27:15 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/tags/Cover" for 127.0.0.1 at 2014-05-17 21:27:15 +0100
+Processing by PicturesController#index as HTML
+  Parameters: {"tag"=>"Cover"}
+  [1m[36mActsAsTaggableOn::Tag Load (0.9ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE (LOWER(name) = LOWER('cover'))[0m
+  [1m[35m (1.6ms)[0m  SELECT COUNT(*) FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN pictures ON pictures.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Picture' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT pictures.id FROM "pictures" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id
+  [1m[36mActsAsTaggableOn::Tag Load (2.1ms)[0m  [1mSELECT tags.*, taggings.tags_count AS count FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN pictures ON pictures.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Picture' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT pictures.id FROM "pictures" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id[0m
+  [1m[35mPicture Load (1.3ms)[0m  SELECT "pictures".* FROM "pictures" JOIN taggings pictures_taggings_1381ad9 ON pictures_taggings_1381ad9.taggable_id = "pictures".id AND pictures_taggings_1381ad9.taggable_type = 'Picture' AND pictures_taggings_1381ad9.tag_id = 3
+  [1m[36mActsAsTaggableOn::Tag Load (1.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 5 AND "taggings"."taggable_type" = 'Picture' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  Rendered pictures/index.html.haml within layouts/application (16.5ms)
+Completed 200 OK in 25.6ms (Views: 15.6ms | ActiveRecord: 6.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-17 21:27:15 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-17 21:27:15 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-17 21:27:15 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-17 21:27:15 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/tags/Patagonia" for 127.0.0.1 at 2014-05-17 21:27:16 +0100
+Processing by PicturesController#index as HTML
+  Parameters: {"tag"=>"Patagonia"}
+  [1m[35mActsAsTaggableOn::Tag Load (0.6ms)[0m  SELECT "tags".* FROM "tags" WHERE (LOWER(name) = LOWER('patagonia'))
+  [1m[36m (1.6ms)[0m  [1mSELECT COUNT(*) FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN pictures ON pictures.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Picture' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT pictures.id FROM "pictures" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id[0m
+  [1m[35mActsAsTaggableOn::Tag Load (2.0ms)[0m  SELECT tags.*, taggings.tags_count AS count FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN pictures ON pictures.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Picture' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT pictures.id FROM "pictures" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id
+  [1m[36mPicture Load (0.8ms)[0m  [1mSELECT "pictures".* FROM "pictures" JOIN taggings pictures_taggings_b08625e ON pictures_taggings_b08625e.taggable_id = "pictures".id AND pictures_taggings_b08625e.taggable_type = 'Picture' AND pictures_taggings_b08625e.tag_id = 4[0m
+  [1m[35mActsAsTaggableOn::Tag Load (0.8ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 5 AND "taggings"."taggable_type" = 'Picture' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  Rendered pictures/index.html.haml within layouts/application (14.3ms)
+Completed 200 OK in 24.1ms (Views: 15.1ms | ActiveRecord: 5.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-17 21:27:16 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-17 21:27:16 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-17 21:27:16 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-17 21:27:16 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/tags/Patagonia" for 127.0.0.1 at 2014-05-17 21:31:05 +0100
+Processing by PicturesController#index as HTML
+  Parameters: {"tag"=>"Patagonia"}
+  [1m[36mActsAsTaggableOn::Tag Load (0.5ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE (LOWER(name) = LOWER('patagonia'))[0m
+  [1m[35m (1.9ms)[0m  SELECT COUNT(*) FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN pictures ON pictures.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Picture' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT pictures.id FROM "pictures" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id
+  [1m[36mActsAsTaggableOn::Tag Load (1.5ms)[0m  [1mSELECT tags.*, taggings.tags_count AS count FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN pictures ON pictures.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Picture' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT pictures.id FROM "pictures" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id[0m
+  [1m[35mPicture Load (1.1ms)[0m  SELECT "pictures".* FROM "pictures" JOIN taggings pictures_taggings_2aad981 ON pictures_taggings_2aad981.taggable_id = "pictures".id AND pictures_taggings_2aad981.taggable_type = 'Picture' AND pictures_taggings_2aad981.tag_id = 4
+  [1m[36mActsAsTaggableOn::Tag Load (0.7ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 5 AND "taggings"."taggable_type" = 'Picture' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  Rendered pictures/index.html.haml within layouts/application (13.9ms)
+Warning. Error encountered while saving cache /Users/Paul/Documents/wdi_2014/project_2/PhotoSharing/tmp/cache/sass/9d94312fe257bfead47e6f3eb4986a4750aa3f1e/application.css.scssc: can't dump anonymous class #<Class:0x007fb58e07f7b0>
+
+Warning. Error encountered while saving cache /Users/Paul/Documents/wdi_2014/project_2/PhotoSharing/tmp/cache/sass/9d94312fe257bfead47e6f3eb4986a4750aa3f1e/pictures.css.scssc: can't dump anonymous class #<Class:0x007fb58e07f7b0>
+
+Compiled application.css  (11ms)  (pid 24903)
+Completed 200 OK in 43.5ms (Views: 35.3ms | ActiveRecord: 5.7ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-17 21:31:05 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-17 21:31:05 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-17 21:31:05 +0100
+Served asset /application.css - 200 OK (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-17 21:31:05 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/tags/Patagonia" for 127.0.0.1 at 2014-05-17 21:31:06 +0100
+Processing by PicturesController#index as HTML
+  Parameters: {"tag"=>"Patagonia"}
+  [1m[35mActsAsTaggableOn::Tag Load (0.6ms)[0m  SELECT "tags".* FROM "tags" WHERE (LOWER(name) = LOWER('patagonia'))
+  [1m[36m (1.5ms)[0m  [1mSELECT COUNT(*) FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN pictures ON pictures.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Picture' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT pictures.id FROM "pictures" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id[0m
+  [1m[35mActsAsTaggableOn::Tag Load (1.5ms)[0m  SELECT tags.*, taggings.tags_count AS count FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN pictures ON pictures.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Picture' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT pictures.id FROM "pictures" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id
+  [1m[36mPicture Load (0.8ms)[0m  [1mSELECT "pictures".* FROM "pictures" JOIN taggings pictures_taggings_c0789ec ON pictures_taggings_c0789ec.taggable_id = "pictures".id AND pictures_taggings_c0789ec.taggable_type = 'Picture' AND pictures_taggings_c0789ec.tag_id = 4[0m
+  [1m[35mActsAsTaggableOn::Tag Load (0.9ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 5 AND "taggings"."taggable_type" = 'Picture' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  Rendered pictures/index.html.haml within layouts/application (13.6ms)
+Completed 200 OK in 22.2ms (Views: 14.2ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-17 21:31:06 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-17 21:31:06 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-17 21:31:06 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-17 21:31:06 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/tags/Patagonia" for 127.0.0.1 at 2014-05-17 21:31:07 +0100
+Processing by PicturesController#index as HTML
+  Parameters: {"tag"=>"Patagonia"}
+  [1m[36mActsAsTaggableOn::Tag Load (0.4ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE (LOWER(name) = LOWER('patagonia'))[0m
+  [1m[35m (1.5ms)[0m  SELECT COUNT(*) FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN pictures ON pictures.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Picture' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT pictures.id FROM "pictures" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id
+  [1m[36mActsAsTaggableOn::Tag Load (1.4ms)[0m  [1mSELECT tags.*, taggings.tags_count AS count FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN pictures ON pictures.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Picture' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT pictures.id FROM "pictures" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id[0m
+  [1m[35mPicture Load (0.9ms)[0m  SELECT "pictures".* FROM "pictures" JOIN taggings pictures_taggings_ec1b61d ON pictures_taggings_ec1b61d.taggable_id = "pictures".id AND pictures_taggings_ec1b61d.taggable_type = 'Picture' AND pictures_taggings_ec1b61d.tag_id = 4
+  [1m[36mActsAsTaggableOn::Tag Load (0.9ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 5 AND "taggings"."taggable_type" = 'Picture' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  Rendered pictures/index.html.haml within layouts/application (13.9ms)
+Completed 200 OK in 21.5ms (Views: 13.8ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-17 21:31:07 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-17 21:31:07 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-17 21:31:07 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-17 21:31:07 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/tags/Profile" for 127.0.0.1 at 2014-05-17 21:31:07 +0100
+Processing by PicturesController#index as HTML
+  Parameters: {"tag"=>"Profile"}
+  [1m[35mActsAsTaggableOn::Tag Load (0.6ms)[0m  SELECT "tags".* FROM "tags" WHERE (LOWER(name) = LOWER('profile'))
+  [1m[36m (1.9ms)[0m  [1mSELECT COUNT(*) FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN pictures ON pictures.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Picture' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT pictures.id FROM "pictures" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id[0m
+  [1m[35mActsAsTaggableOn::Tag Load (1.4ms)[0m  SELECT tags.*, taggings.tags_count AS count FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN pictures ON pictures.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Picture' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT pictures.id FROM "pictures" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id
+  [1m[36mPicture Load (1.0ms)[0m  [1mSELECT "pictures".* FROM "pictures" JOIN taggings pictures_taggings_ad3ed13 ON pictures_taggings_ad3ed13.taggable_id = "pictures".id AND pictures_taggings_ad3ed13.taggable_type = 'Picture' AND pictures_taggings_ad3ed13.tag_id = 1[0m
+  [1m[35mActsAsTaggableOn::Tag Load (0.9ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 3 AND "taggings"."taggable_type" = 'Picture' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  [1m[36mActsAsTaggableOn::Tag Load (0.8ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 4 AND "taggings"."taggable_type" = 'Picture' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  [1m[35mActsAsTaggableOn::Tag Load (0.7ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 5 AND "taggings"."taggable_type" = 'Picture' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  Rendered pictures/index.html.haml within layouts/application (23.2ms)
+Completed 200 OK in 32.2ms (Views: 21.6ms | ActiveRecord: 7.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-17 21:31:07 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-17 21:31:07 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-17 21:31:07 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-17 21:31:07 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/tags/Awesome" for 127.0.0.1 at 2014-05-17 21:31:08 +0100
+Processing by PicturesController#index as HTML
+  Parameters: {"tag"=>"Awesome"}
+  [1m[36mActsAsTaggableOn::Tag Load (2.1ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE (LOWER(name) = LOWER('awesome'))[0m
+  [1m[35m (2.1ms)[0m  SELECT COUNT(*) FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN pictures ON pictures.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Picture' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT pictures.id FROM "pictures" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id
+  [1m[36mActsAsTaggableOn::Tag Load (2.3ms)[0m  [1mSELECT tags.*, taggings.tags_count AS count FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN pictures ON pictures.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Picture' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT pictures.id FROM "pictures" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id[0m
+  [1m[35mPicture Load (1.2ms)[0m  SELECT "pictures".* FROM "pictures" JOIN taggings pictures_taggings_8e09e99 ON pictures_taggings_8e09e99.taggable_id = "pictures".id AND pictures_taggings_8e09e99.taggable_type = 'Picture' AND pictures_taggings_8e09e99.tag_id = 2
+  [1m[36mActsAsTaggableOn::Tag Load (1.6ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 3 AND "taggings"."taggable_type" = 'Picture' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  [1m[35mActsAsTaggableOn::Tag Load (1.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 4 AND "taggings"."taggable_type" = 'Picture' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  Rendered pictures/index.html.haml within layouts/application (24.6ms)
+Completed 200 OK in 85.7ms (Views: 72.1ms | ActiveRecord: 10.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-17 21:31:08 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-17 21:31:08 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-17 21:31:08 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-17 21:31:08 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/tags/Cover" for 127.0.0.1 at 2014-05-17 21:31:09 +0100
+Processing by PicturesController#index as HTML
+  Parameters: {"tag"=>"Cover"}
+  [1m[36mActsAsTaggableOn::Tag Load (0.4ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE (LOWER(name) = LOWER('cover'))[0m
+  [1m[35m (1.6ms)[0m  SELECT COUNT(*) FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN pictures ON pictures.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Picture' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT pictures.id FROM "pictures" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id
+  [1m[36mActsAsTaggableOn::Tag Load (1.9ms)[0m  [1mSELECT tags.*, taggings.tags_count AS count FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN pictures ON pictures.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Picture' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT pictures.id FROM "pictures" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id[0m
+  [1m[35mPicture Load (0.9ms)[0m  SELECT "pictures".* FROM "pictures" JOIN taggings pictures_taggings_9a93d59 ON pictures_taggings_9a93d59.taggable_id = "pictures".id AND pictures_taggings_9a93d59.taggable_type = 'Picture' AND pictures_taggings_9a93d59.tag_id = 3
+  [1m[36mActsAsTaggableOn::Tag Load (0.8ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 5 AND "taggings"."taggable_type" = 'Picture' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  Rendered pictures/index.html.haml within layouts/application (15.0ms)
+Completed 200 OK in 25.4ms (Views: 14.9ms | ActiveRecord: 5.6ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-17 21:31:09 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-17 21:31:09 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-17 21:31:09 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-17 21:31:09 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/tags/Patagonia" for 127.0.0.1 at 2014-05-17 21:31:10 +0100
+Processing by PicturesController#index as HTML
+  Parameters: {"tag"=>"Patagonia"}
+  [1m[35mActsAsTaggableOn::Tag Load (0.5ms)[0m  SELECT "tags".* FROM "tags" WHERE (LOWER(name) = LOWER('patagonia'))
+  [1m[36m (1.5ms)[0m  [1mSELECT COUNT(*) FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN pictures ON pictures.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Picture' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT pictures.id FROM "pictures" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id[0m
+  [1m[35mActsAsTaggableOn::Tag Load (1.5ms)[0m  SELECT tags.*, taggings.tags_count AS count FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN pictures ON pictures.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Picture' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT pictures.id FROM "pictures" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id
+  [1m[36mPicture Load (1.1ms)[0m  [1mSELECT "pictures".* FROM "pictures" JOIN taggings pictures_taggings_96cefd9 ON pictures_taggings_96cefd9.taggable_id = "pictures".id AND pictures_taggings_96cefd9.taggable_type = 'Picture' AND pictures_taggings_96cefd9.tag_id = 4[0m
+  [1m[35mActsAsTaggableOn::Tag Load (0.9ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 5 AND "taggings"."taggable_type" = 'Picture' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  Rendered pictures/index.html.haml within layouts/application (14.9ms)
+Completed 200 OK in 24.8ms (Views: 15.3ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-17 21:31:10 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-17 21:31:10 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-17 21:31:10 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-17 21:31:10 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/tags/Patagonia" for 127.0.0.1 at 2014-05-17 21:32:00 +0100
+Processing by PicturesController#index as HTML
+  Parameters: {"tag"=>"Patagonia"}
+  [1m[36mActsAsTaggableOn::Tag Load (0.4ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE (LOWER(name) = LOWER('patagonia'))[0m
+  [1m[35m (2.1ms)[0m  SELECT COUNT(*) FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN pictures ON pictures.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Picture' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT pictures.id FROM "pictures" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id
+  [1m[36mActsAsTaggableOn::Tag Load (1.5ms)[0m  [1mSELECT tags.*, taggings.tags_count AS count FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN pictures ON pictures.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Picture' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT pictures.id FROM "pictures" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id[0m
+  [1m[35mPicture Load (0.8ms)[0m  SELECT "pictures".* FROM "pictures" JOIN taggings pictures_taggings_44e944e ON pictures_taggings_44e944e.taggable_id = "pictures".id AND pictures_taggings_44e944e.taggable_type = 'Picture' AND pictures_taggings_44e944e.tag_id = 4
+  [1m[36mActsAsTaggableOn::Tag Load (0.9ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 5 AND "taggings"."taggable_type" = 'Picture' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  Rendered pictures/index.html.haml within layouts/application (16.9ms)
+Completed 200 OK in 25.4ms (Views: 17.6ms | ActiveRecord: 5.7ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-17 21:32:00 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-17 21:32:00 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-17 21:32:00 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-17 21:32:00 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/tags/Patagonia" for 127.0.0.1 at 2014-05-17 21:32:01 +0100
+Processing by PicturesController#index as HTML
+  Parameters: {"tag"=>"Patagonia"}
+  [1m[35mActsAsTaggableOn::Tag Load (0.5ms)[0m  SELECT "tags".* FROM "tags" WHERE (LOWER(name) = LOWER('patagonia'))
+  [1m[36m (1.5ms)[0m  [1mSELECT COUNT(*) FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN pictures ON pictures.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Picture' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT pictures.id FROM "pictures" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id[0m
+  [1m[35mActsAsTaggableOn::Tag Load (1.4ms)[0m  SELECT tags.*, taggings.tags_count AS count FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN pictures ON pictures.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Picture' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT pictures.id FROM "pictures" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id
+  [1m[36mPicture Load (1.0ms)[0m  [1mSELECT "pictures".* FROM "pictures" JOIN taggings pictures_taggings_f9d9963 ON pictures_taggings_f9d9963.taggable_id = "pictures".id AND pictures_taggings_f9d9963.taggable_type = 'Picture' AND pictures_taggings_f9d9963.tag_id = 4[0m
+  [1m[35mActsAsTaggableOn::Tag Load (0.7ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 5 AND "taggings"."taggable_type" = 'Picture' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  Rendered pictures/index.html.haml within layouts/application (13.6ms)
+Completed 200 OK in 21.9ms (Views: 13.6ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-17 21:32:01 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-17 21:32:01 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-17 21:32:01 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-17 21:32:01 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/tags/Profile" for 127.0.0.1 at 2014-05-17 21:32:03 +0100
+Processing by PicturesController#index as HTML
+  Parameters: {"tag"=>"Profile"}
+  [1m[36mActsAsTaggableOn::Tag Load (0.4ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE (LOWER(name) = LOWER('profile'))[0m
+  [1m[35m (2.2ms)[0m  SELECT COUNT(*) FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN pictures ON pictures.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Picture' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT pictures.id FROM "pictures" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id
+  [1m[36mActsAsTaggableOn::Tag Load (1.5ms)[0m  [1mSELECT tags.*, taggings.tags_count AS count FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN pictures ON pictures.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Picture' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT pictures.id FROM "pictures" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id[0m
+  [1m[35mPicture Load (1.0ms)[0m  SELECT "pictures".* FROM "pictures" JOIN taggings pictures_taggings_cd9723c ON pictures_taggings_cd9723c.taggable_id = "pictures".id AND pictures_taggings_cd9723c.taggable_type = 'Picture' AND pictures_taggings_cd9723c.tag_id = 1
+  [1m[36mActsAsTaggableOn::Tag Load (0.8ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 3 AND "taggings"."taggable_type" = 'Picture' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  [1m[35mActsAsTaggableOn::Tag Load (1.0ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 4 AND "taggings"."taggable_type" = 'Picture' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  [1m[36mActsAsTaggableOn::Tag Load (0.8ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 5 AND "taggings"."taggable_type" = 'Picture' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  Rendered pictures/index.html.haml within layouts/application (23.1ms)
+Completed 200 OK in 31.4ms (Views: 20.5ms | ActiveRecord: 7.8ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-17 21:32:03 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-17 21:32:03 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-17 21:32:03 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-17 21:32:03 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/tags/Awesome" for 127.0.0.1 at 2014-05-17 21:32:03 +0100
+Processing by PicturesController#index as HTML
+  Parameters: {"tag"=>"Awesome"}
+  [1m[35mActsAsTaggableOn::Tag Load (0.6ms)[0m  SELECT "tags".* FROM "tags" WHERE (LOWER(name) = LOWER('awesome'))
+  [1m[36m (2.2ms)[0m  [1mSELECT COUNT(*) FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN pictures ON pictures.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Picture' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT pictures.id FROM "pictures" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id[0m
+  [1m[35mActsAsTaggableOn::Tag Load (1.7ms)[0m  SELECT tags.*, taggings.tags_count AS count FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN pictures ON pictures.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Picture' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT pictures.id FROM "pictures" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id
+  [1m[36mPicture Load (0.9ms)[0m  [1mSELECT "pictures".* FROM "pictures" JOIN taggings pictures_taggings_82259e4 ON pictures_taggings_82259e4.taggable_id = "pictures".id AND pictures_taggings_82259e4.taggable_type = 'Picture' AND pictures_taggings_82259e4.tag_id = 2[0m
+  [1m[35mActsAsTaggableOn::Tag Load (1.0ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 3 AND "taggings"."taggable_type" = 'Picture' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  [1m[36mActsAsTaggableOn::Tag Load (1.2ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 4 AND "taggings"."taggable_type" = 'Picture' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  Rendered pictures/index.html.haml within layouts/application (21.0ms)
+Completed 200 OK in 29.9ms (Views: 19.7ms | ActiveRecord: 7.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-17 21:32:04 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-17 21:32:04 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-17 21:32:04 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-17 21:32:04 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/tags/Cover" for 127.0.0.1 at 2014-05-17 21:32:04 +0100
+Processing by PicturesController#index as HTML
+  Parameters: {"tag"=>"Cover"}
+  [1m[35mActsAsTaggableOn::Tag Load (1.7ms)[0m  SELECT "tags".* FROM "tags" WHERE (LOWER(name) = LOWER('cover'))
+  [1m[36m (1.5ms)[0m  [1mSELECT COUNT(*) FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN pictures ON pictures.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Picture' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT pictures.id FROM "pictures" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id[0m
+  [1m[35mActsAsTaggableOn::Tag Load (1.8ms)[0m  SELECT tags.*, taggings.tags_count AS count FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN pictures ON pictures.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Picture' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT pictures.id FROM "pictures" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id
+  [1m[36mPicture Load (0.9ms)[0m  [1mSELECT "pictures".* FROM "pictures" JOIN taggings pictures_taggings_dbee23e ON pictures_taggings_dbee23e.taggable_id = "pictures".id AND pictures_taggings_dbee23e.taggable_type = 'Picture' AND pictures_taggings_dbee23e.tag_id = 3[0m
+  [1m[35mActsAsTaggableOn::Tag Load (1.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 5 AND "taggings"."taggable_type" = 'Picture' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  Rendered pictures/index.html.haml within layouts/application (14.7ms)
+Completed 200 OK in 25.3ms (Views: 15.4ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-17 21:32:04 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-17 21:32:04 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-17 21:32:04 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-17 21:32:04 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/tags/Patagonia" for 127.0.0.1 at 2014-05-17 21:32:05 +0100
+Processing by PicturesController#index as HTML
+  Parameters: {"tag"=>"Patagonia"}
+  [1m[36mActsAsTaggableOn::Tag Load (0.5ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE (LOWER(name) = LOWER('patagonia'))[0m
+  [1m[35m (1.6ms)[0m  SELECT COUNT(*) FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN pictures ON pictures.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Picture' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT pictures.id FROM "pictures" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id
+  [1m[36mActsAsTaggableOn::Tag Load (1.7ms)[0m  [1mSELECT tags.*, taggings.tags_count AS count FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN pictures ON pictures.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Picture' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT pictures.id FROM "pictures" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id[0m
+  [1m[35mPicture Load (1.0ms)[0m  SELECT "pictures".* FROM "pictures" JOIN taggings pictures_taggings_4c01ab3 ON pictures_taggings_4c01ab3.taggable_id = "pictures".id AND pictures_taggings_4c01ab3.taggable_type = 'Picture' AND pictures_taggings_4c01ab3.tag_id = 4
+  [1m[36mActsAsTaggableOn::Tag Load (1.0ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 5 AND "taggings"."taggable_type" = 'Picture' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  Rendered pictures/index.html.haml within layouts/application (62.4ms)
+Completed 200 OK in 73.0ms (Views: 63.0ms | ActiveRecord: 5.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-17 21:32:05 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-17 21:32:05 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-17 21:32:05 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-17 21:32:05 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/tags/Patagonia" for 127.0.0.1 at 2014-05-17 21:33:09 +0100
+Processing by PicturesController#index as HTML
+  Parameters: {"tag"=>"Patagonia"}
+  [1m[35mActsAsTaggableOn::Tag Load (0.5ms)[0m  SELECT "tags".* FROM "tags" WHERE (LOWER(name) = LOWER('patagonia'))
+  [1m[36m (2.2ms)[0m  [1mSELECT COUNT(*) FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN pictures ON pictures.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Picture' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT pictures.id FROM "pictures" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id[0m
+  [1m[35mActsAsTaggableOn::Tag Load (1.4ms)[0m  SELECT tags.*, taggings.tags_count AS count FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN pictures ON pictures.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Picture' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT pictures.id FROM "pictures" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id
+  [1m[36mPicture Load (1.1ms)[0m  [1mSELECT "pictures".* FROM "pictures" JOIN taggings pictures_taggings_c002690 ON pictures_taggings_c002690.taggable_id = "pictures".id AND pictures_taggings_c002690.taggable_type = 'Picture' AND pictures_taggings_c002690.tag_id = 4[0m
+  [1m[35mActsAsTaggableOn::Tag Load (0.8ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 5 AND "taggings"."taggable_type" = 'Picture' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  Rendered pictures/index.html.haml within layouts/application (16.1ms)
+Completed 200 OK in 24.5ms (Views: 15.5ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-17 21:33:09 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-17 21:33:09 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-17 21:33:09 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-17 21:33:09 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/tags/Patagonia" for 127.0.0.1 at 2014-05-17 21:33:10 +0100
+Processing by PicturesController#index as HTML
+  Parameters: {"tag"=>"Patagonia"}
+  [1m[36mActsAsTaggableOn::Tag Load (0.5ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE (LOWER(name) = LOWER('patagonia'))[0m
+  [1m[35m (1.4ms)[0m  SELECT COUNT(*) FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN pictures ON pictures.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Picture' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT pictures.id FROM "pictures" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id
+  [1m[36mActsAsTaggableOn::Tag Load (1.8ms)[0m  [1mSELECT tags.*, taggings.tags_count AS count FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN pictures ON pictures.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Picture' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT pictures.id FROM "pictures" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id[0m
+  [1m[35mPicture Load (0.8ms)[0m  SELECT "pictures".* FROM "pictures" JOIN taggings pictures_taggings_c23b6b4 ON pictures_taggings_c23b6b4.taggable_id = "pictures".id AND pictures_taggings_c23b6b4.taggable_type = 'Picture' AND pictures_taggings_c23b6b4.tag_id = 4
+  [1m[36mActsAsTaggableOn::Tag Load (0.9ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 5 AND "taggings"."taggable_type" = 'Picture' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  Rendered pictures/index.html.haml within layouts/application (14.3ms)
+Completed 200 OK in 22.8ms (Views: 14.8ms | ActiveRecord: 5.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-17 21:33:10 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-17 21:33:10 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-17 21:33:10 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-17 21:33:10 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/tags/Profile" for 127.0.0.1 at 2014-05-17 21:33:12 +0100
+Processing by PicturesController#index as HTML
+  Parameters: {"tag"=>"Profile"}
+  [1m[35mActsAsTaggableOn::Tag Load (1.0ms)[0m  SELECT "tags".* FROM "tags" WHERE (LOWER(name) = LOWER('profile'))
+  [1m[36m (1.7ms)[0m  [1mSELECT COUNT(*) FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN pictures ON pictures.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Picture' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT pictures.id FROM "pictures" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id[0m
+  [1m[35mActsAsTaggableOn::Tag Load (2.2ms)[0m  SELECT tags.*, taggings.tags_count AS count FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN pictures ON pictures.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Picture' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT pictures.id FROM "pictures" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id
+  [1m[36mPicture Load (1.1ms)[0m  [1mSELECT "pictures".* FROM "pictures" JOIN taggings pictures_taggings_e9f1185 ON pictures_taggings_e9f1185.taggable_id = "pictures".id AND pictures_taggings_e9f1185.taggable_type = 'Picture' AND pictures_taggings_e9f1185.tag_id = 1[0m
+  [1m[35mActsAsTaggableOn::Tag Load (0.8ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 3 AND "taggings"."taggable_type" = 'Picture' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  [1m[36mActsAsTaggableOn::Tag Load (0.8ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 4 AND "taggings"."taggable_type" = 'Picture' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  [1m[35mActsAsTaggableOn::Tag Load (0.8ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 5 AND "taggings"."taggable_type" = 'Picture' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  Rendered pictures/index.html.haml within layouts/application (23.8ms)
+Completed 200 OK in 33.3ms (Views: 21.7ms | ActiveRecord: 8.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-17 21:33:12 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-17 21:33:12 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-17 21:33:12 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-17 21:33:12 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/tags/Awesome" for 127.0.0.1 at 2014-05-17 21:33:13 +0100
+Processing by PicturesController#index as HTML
+  Parameters: {"tag"=>"Awesome"}
+  [1m[36mActsAsTaggableOn::Tag Load (0.5ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE (LOWER(name) = LOWER('awesome'))[0m
+  [1m[35m (2.4ms)[0m  SELECT COUNT(*) FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN pictures ON pictures.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Picture' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT pictures.id FROM "pictures" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id
+  [1m[36mActsAsTaggableOn::Tag Load (1.7ms)[0m  [1mSELECT tags.*, taggings.tags_count AS count FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN pictures ON pictures.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Picture' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT pictures.id FROM "pictures" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id[0m
+  [1m[35mPicture Load (1.0ms)[0m  SELECT "pictures".* FROM "pictures" JOIN taggings pictures_taggings_b847b6e ON pictures_taggings_b847b6e.taggable_id = "pictures".id AND pictures_taggings_b847b6e.taggable_type = 'Picture' AND pictures_taggings_b847b6e.tag_id = 2
+  [1m[36mActsAsTaggableOn::Tag Load (1.3ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 3 AND "taggings"."taggable_type" = 'Picture' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  [1m[35mActsAsTaggableOn::Tag Load (0.9ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 4 AND "taggings"."taggable_type" = 'Picture' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  Rendered pictures/index.html.haml within layouts/application (20.0ms)
+Completed 200 OK in 28.2ms (Views: 17.6ms | ActiveRecord: 7.9ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-17 21:33:14 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-17 21:33:14 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-17 21:33:14 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-17 21:33:14 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/tags/Awesome" for 127.0.0.1 at 2014-05-17 21:33:38 +0100
+Processing by PicturesController#index as HTML
+  Parameters: {"tag"=>"Awesome"}
+  [1m[36mActsAsTaggableOn::Tag Load (0.5ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE (LOWER(name) = LOWER('awesome'))[0m
+  [1m[35m (1.7ms)[0m  SELECT COUNT(*) FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN pictures ON pictures.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Picture' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT pictures.id FROM "pictures" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id
+  [1m[36mActsAsTaggableOn::Tag Load (1.6ms)[0m  [1mSELECT tags.*, taggings.tags_count AS count FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN pictures ON pictures.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Picture' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT pictures.id FROM "pictures" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id[0m
+  [1m[35mPicture Load (0.8ms)[0m  SELECT "pictures".* FROM "pictures" JOIN taggings pictures_taggings_2e60b9e ON pictures_taggings_2e60b9e.taggable_id = "pictures".id AND pictures_taggings_2e60b9e.taggable_type = 'Picture' AND pictures_taggings_2e60b9e.tag_id = 2
+  [1m[36mActsAsTaggableOn::Tag Load (0.8ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 3 AND "taggings"."taggable_type" = 'Picture' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  [1m[35mActsAsTaggableOn::Tag Load (0.8ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 4 AND "taggings"."taggable_type" = 'Picture' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  Rendered pictures/index.html.haml within layouts/application (19.9ms)
+Completed 200 OK in 28.0ms (Views: 19.2ms | ActiveRecord: 6.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-17 21:33:38 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-17 21:33:38 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-17 21:33:38 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-17 21:33:38 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/tags/Awesome" for 127.0.0.1 at 2014-05-17 21:33:39 +0100
+Processing by PicturesController#index as HTML
+  Parameters: {"tag"=>"Awesome"}
+  [1m[36mActsAsTaggableOn::Tag Load (0.5ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE (LOWER(name) = LOWER('awesome'))[0m
+  [1m[35m (1.5ms)[0m  SELECT COUNT(*) FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN pictures ON pictures.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Picture' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT pictures.id FROM "pictures" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id
+  [1m[36mActsAsTaggableOn::Tag Load (1.4ms)[0m  [1mSELECT tags.*, taggings.tags_count AS count FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN pictures ON pictures.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Picture' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT pictures.id FROM "pictures" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id[0m
+  [1m[35mPicture Load (0.9ms)[0m  SELECT "pictures".* FROM "pictures" JOIN taggings pictures_taggings_5c679ea ON pictures_taggings_5c679ea.taggable_id = "pictures".id AND pictures_taggings_5c679ea.taggable_type = 'Picture' AND pictures_taggings_5c679ea.tag_id = 2
+  [1m[36mActsAsTaggableOn::Tag Load (0.8ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 3 AND "taggings"."taggable_type" = 'Picture' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  [1m[35mActsAsTaggableOn::Tag Load (0.8ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 4 AND "taggings"."taggable_type" = 'Picture' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  Rendered pictures/index.html.haml within layouts/application (18.3ms)
+Completed 200 OK in 26.5ms (Views: 18.5ms | ActiveRecord: 5.8ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-17 21:33:40 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-17 21:33:40 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-17 21:33:40 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-17 21:33:40 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/tags/Awesome" for 127.0.0.1 at 2014-05-17 21:33:41 +0100
+Processing by PicturesController#index as HTML
+  Parameters: {"tag"=>"Awesome"}
+  [1m[36mActsAsTaggableOn::Tag Load (0.6ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE (LOWER(name) = LOWER('awesome'))[0m
+  [1m[35m (1.5ms)[0m  SELECT COUNT(*) FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN pictures ON pictures.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Picture' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT pictures.id FROM "pictures" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id
+  [1m[36mActsAsTaggableOn::Tag Load (2.2ms)[0m  [1mSELECT tags.*, taggings.tags_count AS count FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN pictures ON pictures.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Picture' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT pictures.id FROM "pictures" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id[0m
+  [1m[35mPicture Load (1.1ms)[0m  SELECT "pictures".* FROM "pictures" JOIN taggings pictures_taggings_94a2ac7 ON pictures_taggings_94a2ac7.taggable_id = "pictures".id AND pictures_taggings_94a2ac7.taggable_type = 'Picture' AND pictures_taggings_94a2ac7.tag_id = 2
+  [1m[36mActsAsTaggableOn::Tag Load (0.8ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 3 AND "taggings"."taggable_type" = 'Picture' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  [1m[35mActsAsTaggableOn::Tag Load (0.8ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 4 AND "taggings"."taggable_type" = 'Picture' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  Rendered pictures/index.html.haml within layouts/application (19.9ms)
+Completed 200 OK in 29.2ms (Views: 19.0ms | ActiveRecord: 6.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-17 21:33:41 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-17 21:33:41 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-17 21:33:41 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-17 21:33:41 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/tags/Profile" for 127.0.0.1 at 2014-05-17 21:33:41 +0100
+Processing by PicturesController#index as HTML
+  Parameters: {"tag"=>"Profile"}
+  [1m[36mActsAsTaggableOn::Tag Load (0.5ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE (LOWER(name) = LOWER('profile'))[0m
+  [1m[35m (1.4ms)[0m  SELECT COUNT(*) FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN pictures ON pictures.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Picture' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT pictures.id FROM "pictures" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id
+  [1m[36mActsAsTaggableOn::Tag Load (1.5ms)[0m  [1mSELECT tags.*, taggings.tags_count AS count FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN pictures ON pictures.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Picture' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT pictures.id FROM "pictures" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id[0m
+  [1m[35mPicture Load (0.9ms)[0m  SELECT "pictures".* FROM "pictures" JOIN taggings pictures_taggings_abf1fc3 ON pictures_taggings_abf1fc3.taggable_id = "pictures".id AND pictures_taggings_abf1fc3.taggable_type = 'Picture' AND pictures_taggings_abf1fc3.tag_id = 1
+  [1m[36mActsAsTaggableOn::Tag Load (1.0ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 3 AND "taggings"."taggable_type" = 'Picture' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  [1m[35mActsAsTaggableOn::Tag Load (0.8ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 4 AND "taggings"."taggable_type" = 'Picture' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  [1m[36mActsAsTaggableOn::Tag Load (1.0ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 5 AND "taggings"."taggable_type" = 'Picture' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  Rendered pictures/index.html.haml within layouts/application (23.6ms)
+Completed 200 OK in 32.8ms (Views: 22.6ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-17 21:33:41 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-17 21:33:41 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-17 21:33:41 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-17 21:33:41 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/pictures/new" for 127.0.0.1 at 2014-05-17 21:33:43 +0100
+Processing by PicturesController#new as HTML
+  [1m[35mActsAsTaggableOn::Tag Load (0.8ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" IS NULL AND "taggings"."taggable_type" = 'Picture' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  Rendered pictures/_form.html.haml (6.6ms)
+  Rendered pictures/new.html.haml within layouts/application (7.7ms)
+Completed 200 OK in 113.1ms (Views: 111.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-17 21:33:43 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-17 21:33:43 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-17 21:33:43 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-17 21:33:43 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/pictures" for 127.0.0.1 at 2014-05-17 21:33:44 +0100
+Processing by PicturesController#index as HTML
+  [1m[36mPicture Load (1.2ms)[0m  [1mSELECT "pictures".* FROM "pictures" [0m
+  [1m[35m (2.4ms)[0m  SELECT COUNT(*) FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN pictures ON pictures.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Picture' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT pictures.id FROM "pictures" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id
+  [1m[36mActsAsTaggableOn::Tag Load (1.8ms)[0m  [1mSELECT tags.*, taggings.tags_count AS count FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN pictures ON pictures.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Picture' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT pictures.id FROM "pictures" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id[0m
+  [1m[35mActsAsTaggableOn::Tag Load (0.8ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 4 AND "taggings"."taggable_type" = 'Picture' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  [1m[36mActsAsTaggableOn::Tag Load (0.8ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 5 AND "taggings"."taggable_type" = 'Picture' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  [1m[35mActsAsTaggableOn::Tag Load (0.8ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 3 AND "taggings"."taggable_type" = 'Picture' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  Rendered pictures/index.html.haml within layouts/application (22.1ms)
+Completed 200 OK in 29.2ms (Views: 20.1ms | ActiveRecord: 7.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-17 21:33:44 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-17 21:33:44 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-17 21:33:44 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-17 21:33:44 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/pictures/3" for 127.0.0.1 at 2014-05-17 21:33:46 +0100
+Processing by PicturesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPicture Load (1.3ms)[0m  [1mSELECT "pictures".* FROM "pictures" WHERE "pictures"."id" = $1 LIMIT 1[0m  [["id", "3"]]
+  [1m[35mActsAsTaggableOn::Tag Load (1.6ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 3 AND "taggings"."taggable_type" = 'Picture' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  Rendered pictures/show.html.haml within layouts/application (6.7ms)
+Completed 200 OK in 14.5ms (Views: 10.1ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-17 21:33:46 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-17 21:33:46 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-17 21:33:46 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-17 21:33:46 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/tags/Profile" for 127.0.0.1 at 2014-05-17 21:33:48 +0100
+Processing by PicturesController#index as HTML
+  Parameters: {"tag"=>"Profile"}
+  [1m[36mActsAsTaggableOn::Tag Load (0.7ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE (LOWER(name) = LOWER('profile'))[0m
+  [1m[35m (1.9ms)[0m  SELECT COUNT(*) FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN pictures ON pictures.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Picture' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT pictures.id FROM "pictures" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id
+  [1m[36mActsAsTaggableOn::Tag Load (1.8ms)[0m  [1mSELECT tags.*, taggings.tags_count AS count FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN pictures ON pictures.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Picture' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT pictures.id FROM "pictures" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id[0m
+  [1m[35mPicture Load (0.9ms)[0m  SELECT "pictures".* FROM "pictures" JOIN taggings pictures_taggings_85914bf ON pictures_taggings_85914bf.taggable_id = "pictures".id AND pictures_taggings_85914bf.taggable_type = 'Picture' AND pictures_taggings_85914bf.tag_id = 1
+  [1m[36mActsAsTaggableOn::Tag Load (0.8ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 3 AND "taggings"."taggable_type" = 'Picture' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  [1m[35mActsAsTaggableOn::Tag Load (1.0ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 4 AND "taggings"."taggable_type" = 'Picture' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  [1m[36mActsAsTaggableOn::Tag Load (1.0ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 5 AND "taggings"."taggable_type" = 'Picture' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  Rendered pictures/index.html.haml within layouts/application (24.4ms)
+Completed 200 OK in 35.0ms (Views: 23.7ms | ActiveRecord: 8.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-17 21:33:48 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-17 21:33:48 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-17 21:33:48 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-17 21:33:48 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/tags/Awesome" for 127.0.0.1 at 2014-05-17 21:33:50 +0100
+Processing by PicturesController#index as HTML
+  Parameters: {"tag"=>"Awesome"}
+  [1m[35mActsAsTaggableOn::Tag Load (0.6ms)[0m  SELECT "tags".* FROM "tags" WHERE (LOWER(name) = LOWER('awesome'))
+  [1m[36m (1.7ms)[0m  [1mSELECT COUNT(*) FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN pictures ON pictures.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Picture' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT pictures.id FROM "pictures" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id[0m
+  [1m[35mActsAsTaggableOn::Tag Load (1.6ms)[0m  SELECT tags.*, taggings.tags_count AS count FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN pictures ON pictures.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Picture' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT pictures.id FROM "pictures" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id
+  [1m[36mPicture Load (0.9ms)[0m  [1mSELECT "pictures".* FROM "pictures" JOIN taggings pictures_taggings_4cbd22e ON pictures_taggings_4cbd22e.taggable_id = "pictures".id AND pictures_taggings_4cbd22e.taggable_type = 'Picture' AND pictures_taggings_4cbd22e.tag_id = 2[0m
+  [1m[35mActsAsTaggableOn::Tag Load (0.7ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 3 AND "taggings"."taggable_type" = 'Picture' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  [1m[36mActsAsTaggableOn::Tag Load (1.2ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 4 AND "taggings"."taggable_type" = 'Picture' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  Rendered pictures/index.html.haml within layouts/application (18.5ms)
+Completed 200 OK in 27.5ms (Views: 17.8ms | ActiveRecord: 6.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-17 21:33:50 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-17 21:33:50 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-17 21:33:50 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-17 21:33:50 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/tags/Cover" for 127.0.0.1 at 2014-05-17 21:33:51 +0100
+Processing by PicturesController#index as HTML
+  Parameters: {"tag"=>"Cover"}
+  [1m[35mActsAsTaggableOn::Tag Load (0.6ms)[0m  SELECT "tags".* FROM "tags" WHERE (LOWER(name) = LOWER('cover'))
+  [1m[36m (1.8ms)[0m  [1mSELECT COUNT(*) FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN pictures ON pictures.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Picture' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT pictures.id FROM "pictures" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id[0m
+  [1m[35mActsAsTaggableOn::Tag Load (2.3ms)[0m  SELECT tags.*, taggings.tags_count AS count FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN pictures ON pictures.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Picture' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT pictures.id FROM "pictures" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id
+  [1m[36mPicture Load (0.9ms)[0m  [1mSELECT "pictures".* FROM "pictures" JOIN taggings pictures_taggings_7ab3333 ON pictures_taggings_7ab3333.taggable_id = "pictures".id AND pictures_taggings_7ab3333.taggable_type = 'Picture' AND pictures_taggings_7ab3333.tag_id = 3[0m
+  [1m[35mActsAsTaggableOn::Tag Load (0.8ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 5 AND "taggings"."taggable_type" = 'Picture' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  Rendered pictures/index.html.haml within layouts/application (16.6ms)
+Completed 200 OK in 26.2ms (Views: 16.3ms | ActiveRecord: 6.5ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-17 21:33:51 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-17 21:33:51 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-17 21:33:51 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-17 21:33:51 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/tags/Patagonia" for 127.0.0.1 at 2014-05-17 21:33:51 +0100
+Processing by PicturesController#index as HTML
+  Parameters: {"tag"=>"Patagonia"}
+  [1m[36mActsAsTaggableOn::Tag Load (1.0ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE (LOWER(name) = LOWER('patagonia'))[0m
+  [1m[35m (1.8ms)[0m  SELECT COUNT(*) FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN pictures ON pictures.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Picture' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT pictures.id FROM "pictures" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id
+  [1m[36mActsAsTaggableOn::Tag Load (1.5ms)[0m  [1mSELECT tags.*, taggings.tags_count AS count FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN pictures ON pictures.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Picture' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT pictures.id FROM "pictures" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id[0m
+  [1m[35mPicture Load (1.1ms)[0m  SELECT "pictures".* FROM "pictures" JOIN taggings pictures_taggings_6d3a357 ON pictures_taggings_6d3a357.taggable_id = "pictures".id AND pictures_taggings_6d3a357.taggable_type = 'Picture' AND pictures_taggings_6d3a357.tag_id = 4
+  [1m[36mActsAsTaggableOn::Tag Load (1.2ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 5 AND "taggings"."taggable_type" = 'Picture' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  Rendered pictures/index.html.haml within layouts/application (16.0ms)
+Completed 200 OK in 26.3ms (Views: 16.4ms | ActiveRecord: 6.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-17 21:33:51 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-17 21:33:51 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-17 21:33:51 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-17 21:33:51 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/tags/Patagonia" for 127.0.0.1 at 2014-05-17 21:35:52 +0100
+Processing by PicturesController#index as HTML
+  Parameters: {"tag"=>"Patagonia"}
+  [1m[35mActsAsTaggableOn::Tag Load (0.5ms)[0m  SELECT "tags".* FROM "tags" WHERE (LOWER(name) = LOWER('patagonia'))
+  [1m[36m (1.5ms)[0m  [1mSELECT COUNT(*) FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN pictures ON pictures.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Picture' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT pictures.id FROM "pictures" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id[0m
+  [1m[35mActsAsTaggableOn::Tag Load (2.1ms)[0m  SELECT tags.*, taggings.tags_count AS count FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN pictures ON pictures.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Picture' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT pictures.id FROM "pictures" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id
+  [1m[36mPicture Load (0.8ms)[0m  [1mSELECT "pictures".* FROM "pictures" JOIN taggings pictures_taggings_0232df0 ON pictures_taggings_0232df0.taggable_id = "pictures".id AND pictures_taggings_0232df0.taggable_type = 'Picture' AND pictures_taggings_0232df0.tag_id = 4[0m
+  [1m[35mActsAsTaggableOn::Tag Load (0.8ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 5 AND "taggings"."taggable_type" = 'Picture' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  Rendered pictures/index.html.haml within layouts/application (15.4ms)
+Completed 500 Internal Server Error in 28.5ms
+
+Sprockets::FileNotFound - couldn't find file 'codemirror'
+  (in /Users/Paul/Documents/wdi_2014/project_2/PhotoSharing/app/assets/stylesheets/application.css.scss:11):
+  sprockets (2.2.2) lib/sprockets/context.rb:102:in `resolve'
+  sprockets (2.2.2) lib/sprockets/context.rb:142:in `require_asset'
+  sprockets (2.2.2) lib/sprockets/directive_processor.rb:215:in `process_require_directive'
+  sprockets (2.2.2) lib/sprockets/directive_processor.rb:165:in `block in process_directives'
+  sprockets (2.2.2) lib/sprockets/directive_processor.rb:163:in `process_directives'
+  sprockets (2.2.2) lib/sprockets/directive_processor.rb:97:in `evaluate'
+  tilt (1.4.1) lib/tilt/template.rb:103:in `render'
+  sprockets (2.2.2) lib/sprockets/context.rb:193:in `block in evaluate'
+  sprockets (2.2.2) lib/sprockets/context.rb:190:in `evaluate'
+  sprockets (2.2.2) lib/sprockets/processed_asset.rb:12:in `initialize'
+  sprockets (2.2.2) lib/sprockets/base.rb:249:in `block in build_asset'
+  sprockets (2.2.2) lib/sprockets/base.rb:270:in `circular_call_protection'
+  sprockets (2.2.2) lib/sprockets/base.rb:248:in `build_asset'
+  sprockets (2.2.2) lib/sprockets/index.rb:93:in `block in build_asset'
+  sprockets (2.2.2) lib/sprockets/caching.rb:19:in `cache_asset'
+  sprockets (2.2.2) lib/sprockets/index.rb:92:in `build_asset'
+  sprockets (2.2.2) lib/sprockets/base.rb:169:in `find_asset'
+  sprockets (2.2.2) lib/sprockets/index.rb:60:in `find_asset'
+  sprockets (2.2.2) lib/sprockets/bundled_asset.rb:38:in `init_with'
+  sprockets (2.2.2) lib/sprockets/asset.rb:24:in `from_hash'
+  sprockets (2.2.2) lib/sprockets/caching.rb:15:in `cache_asset'
+  sprockets (2.2.2) lib/sprockets/index.rb:92:in `build_asset'
+  sprockets (2.2.2) lib/sprockets/base.rb:169:in `find_asset'
+  sprockets (2.2.2) lib/sprockets/index.rb:60:in `find_asset'
+  sprockets (2.2.2) lib/sprockets/environment.rb:78:in `find_asset'
+  sprockets (2.2.2) lib/sprockets/base.rb:177:in `[]'
+  actionpack (3.2.18) lib/sprockets/helpers/rails_helper.rb:126:in `asset_for'
+  actionpack (3.2.18) lib/sprockets/helpers/rails_helper.rb:44:in `block in stylesheet_link_tag'
+  actionpack (3.2.18) lib/sprockets/helpers/rails_helper.rb:43:in `stylesheet_link_tag'
+  app/views/layouts/application.html.haml:5:in `_app_views_layouts_application_html_haml__2049183668640460383_70208853063640'
+  actionpack (3.2.18) lib/action_view/template.rb:145:in `block in render'
+  activesupport (3.2.18) lib/active_support/notifications.rb:125:in `instrument'
+  actionpack (3.2.18) lib/action_view/template.rb:143:in `render'
+  actionpack (3.2.18) lib/action_view/renderer/template_renderer.rb:59:in `render_with_layout'
+  actionpack (3.2.18) lib/action_view/renderer/template_renderer.rb:45:in `render_template'
+  actionpack (3.2.18) lib/action_view/renderer/template_renderer.rb:18:in `render'
+  actionpack (3.2.18) lib/action_view/renderer/renderer.rb:36:in `render_template'
+  actionpack (3.2.18) lib/action_view/renderer/renderer.rb:17:in `render'
+  actionpack (3.2.18) lib/abstract_controller/rendering.rb:110:in `_render_template'
+  actionpack (3.2.18) lib/action_controller/metal/streaming.rb:225:in `_render_template'
+  actionpack (3.2.18) lib/abstract_controller/rendering.rb:103:in `render_to_body'
+  actionpack (3.2.18) lib/action_controller/metal/renderers.rb:28:in `render_to_body'
+  actionpack (3.2.18) lib/action_controller/metal/compatibility.rb:50:in `render_to_body'
+  actionpack (3.2.18) lib/abstract_controller/rendering.rb:88:in `render'
+  actionpack (3.2.18) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (3.2.18) lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+  activesupport (3.2.18) lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+  /Users/Paul/.rbenv/versions/2.0.0-p247/lib/ruby/2.0.0/benchmark.rb:296:in `realtime'
+  activesupport (3.2.18) lib/active_support/core_ext/benchmark.rb:5:in `ms'
+  actionpack (3.2.18) lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+  actionpack (3.2.18) lib/action_controller/metal/instrumentation.rb:83:in `cleanup_view_runtime'
+  activerecord (3.2.18) lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+  actionpack (3.2.18) lib/action_controller/metal/instrumentation.rb:39:in `render'
+  actionpack (3.2.18) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (3.2.18) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (3.2.18) lib/abstract_controller/base.rb:167:in `process_action'
+  actionpack (3.2.18) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (3.2.18) lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:414:in `_run__2734601366560467678__process_action__2042032728255519231__callbacks'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.18) lib/abstract_controller/callbacks.rb:17:in `process_action'
+  actionpack (3.2.18) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (3.2.18) lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+  activesupport (3.2.18) lib/active_support/notifications.rb:123:in `block in instrument'
+  activesupport (3.2.18) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (3.2.18) lib/active_support/notifications.rb:123:in `instrument'
+  actionpack (3.2.18) lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+  actionpack (3.2.18) lib/action_controller/metal/params_wrapper.rb:207:in `process_action'
+  activerecord (3.2.18) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (3.2.18) lib/abstract_controller/base.rb:121:in `process'
+  actionpack (3.2.18) lib/abstract_controller/rendering.rb:45:in `process'
+  actionpack (3.2.18) lib/action_controller/metal.rb:203:in `dispatch'
+  actionpack (3.2.18) lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  actionpack (3.2.18) lib/action_controller/metal.rb:246:in `block in action'
+  actionpack (3.2.18) lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  actionpack (3.2.18) lib/action_dispatch/routing/route_set.rb:36:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.18) lib/action_dispatch/routing/route_set.rb:608:in `call'
+  warden (1.2.3) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.3) lib/warden/manager.rb:34:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.5) lib/rack/etag.rb:23:in `call'
+  rack (1.4.5) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:210:in `context'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:205:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/cookies.rb:341:in `call'
+  activerecord (3.2.18) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.18) lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:405:in `_run__1562557025757731272__call__4548569040909928546__callbacks'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.18) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:56:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.18) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.18) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.18) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.18) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.18) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.18) lib/rails/engine.rb:484:in `call'
+  railties (3.2.18) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.18) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/Paul/.rbenv/versions/2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/Paul/.rbenv/versions/2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/Paul/.rbenv/versions/2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+
+Started POST "/__better_errors/70208855685300/variables" for 127.0.0.1 at 2014-05-17 21:35:52 +0100
+
+
+Started GET "/tags/Patagonia" for 127.0.0.1 at 2014-05-17 21:36:02 +0100
+Processing by PicturesController#index as HTML
+  Parameters: {"tag"=>"Patagonia"}
+  [1m[36mActsAsTaggableOn::Tag Load (0.8ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE (LOWER(name) = LOWER('patagonia'))[0m
+  [1m[35m (2.2ms)[0m  SELECT COUNT(*) FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN pictures ON pictures.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Picture' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT pictures.id FROM "pictures" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id
+  [1m[36mActsAsTaggableOn::Tag Load (2.0ms)[0m  [1mSELECT tags.*, taggings.tags_count AS count FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN pictures ON pictures.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Picture' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT pictures.id FROM "pictures" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id[0m
+  [1m[35mPicture Load (1.0ms)[0m  SELECT "pictures".* FROM "pictures" JOIN taggings pictures_taggings_57d5944 ON pictures_taggings_57d5944.taggable_id = "pictures".id AND pictures_taggings_57d5944.taggable_type = 'Picture' AND pictures_taggings_57d5944.tag_id = 4
+  [1m[36mActsAsTaggableOn::Tag Load (1.0ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 5 AND "taggings"."taggable_type" = 'Picture' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  Rendered pictures/index.html.haml within layouts/application (17.6ms)
+Completed 200 OK in 27.3ms (Views: 17.8ms | ActiveRecord: 7.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-17 21:36:02 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-17 21:36:02 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-17 21:36:02 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-17 21:36:02 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/tags/Patagonia" for 127.0.0.1 at 2014-05-17 21:36:03 +0100
+Processing by PicturesController#index as HTML
+  Parameters: {"tag"=>"Patagonia"}
+  [1m[35mActsAsTaggableOn::Tag Load (0.6ms)[0m  SELECT "tags".* FROM "tags" WHERE (LOWER(name) = LOWER('patagonia'))
+  [1m[36m (1.5ms)[0m  [1mSELECT COUNT(*) FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN pictures ON pictures.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Picture' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT pictures.id FROM "pictures" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id[0m
+  [1m[35mActsAsTaggableOn::Tag Load (2.1ms)[0m  SELECT tags.*, taggings.tags_count AS count FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN pictures ON pictures.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Picture' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT pictures.id FROM "pictures" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id
+  [1m[36mPicture Load (1.0ms)[0m  [1mSELECT "pictures".* FROM "pictures" JOIN taggings pictures_taggings_59996d2 ON pictures_taggings_59996d2.taggable_id = "pictures".id AND pictures_taggings_59996d2.taggable_type = 'Picture' AND pictures_taggings_59996d2.tag_id = 4[0m
+  [1m[35mActsAsTaggableOn::Tag Load (1.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 5 AND "taggings"."taggable_type" = 'Picture' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  Rendered pictures/index.html.haml within layouts/application (15.5ms)
+Completed 200 OK in 25.6ms (Views: 16.7ms | ActiveRecord: 6.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-17 21:36:03 +0100
+Served asset /application.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-17 21:36:03 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-17 21:36:03 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-17 21:36:03 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/tags/Awesome" for 127.0.0.1 at 2014-05-17 21:36:03 +0100
+Processing by PicturesController#index as HTML
+  Parameters: {"tag"=>"Awesome"}
+  [1m[36mActsAsTaggableOn::Tag Load (1.0ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE (LOWER(name) = LOWER('awesome'))[0m
+  [1m[35m (1.7ms)[0m  SELECT COUNT(*) FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN pictures ON pictures.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Picture' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT pictures.id FROM "pictures" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id
+  [1m[36mActsAsTaggableOn::Tag Load (1.7ms)[0m  [1mSELECT tags.*, taggings.tags_count AS count FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN pictures ON pictures.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Picture' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT pictures.id FROM "pictures" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id[0m
+  [1m[35mPicture Load (1.0ms)[0m  SELECT "pictures".* FROM "pictures" JOIN taggings pictures_taggings_c2f6f99 ON pictures_taggings_c2f6f99.taggable_id = "pictures".id AND pictures_taggings_c2f6f99.taggable_type = 'Picture' AND pictures_taggings_c2f6f99.tag_id = 2
+  [1m[36mActsAsTaggableOn::Tag Load (1.0ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 3 AND "taggings"."taggable_type" = 'Picture' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  [1m[35mActsAsTaggableOn::Tag Load (1.0ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 4 AND "taggings"."taggable_type" = 'Picture' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  Rendered pictures/index.html.haml within layouts/application (19.9ms)
+Completed 200 OK in 29.9ms (Views: 19.4ms | ActiveRecord: 7.3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-17 21:36:04 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-17 21:36:04 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-17 21:36:04 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-17 21:36:04 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/tags/Profile" for 127.0.0.1 at 2014-05-17 21:36:05 +0100
+Processing by PicturesController#index as HTML
+  Parameters: {"tag"=>"Profile"}
+  [1m[36mActsAsTaggableOn::Tag Load (1.2ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE (LOWER(name) = LOWER('profile'))[0m
+  [1m[35m (1.9ms)[0m  SELECT COUNT(*) FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN pictures ON pictures.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Picture' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT pictures.id FROM "pictures" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id
+  [1m[36mActsAsTaggableOn::Tag Load (1.6ms)[0m  [1mSELECT tags.*, taggings.tags_count AS count FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN pictures ON pictures.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Picture' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT pictures.id FROM "pictures" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id[0m
+  [1m[35mPicture Load (1.5ms)[0m  SELECT "pictures".* FROM "pictures" JOIN taggings pictures_taggings_f0ef8db ON pictures_taggings_f0ef8db.taggable_id = "pictures".id AND pictures_taggings_f0ef8db.taggable_type = 'Picture' AND pictures_taggings_f0ef8db.tag_id = 1
+  [1m[36mActsAsTaggableOn::Tag Load (1.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 3 AND "taggings"."taggable_type" = 'Picture' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  [1m[35mActsAsTaggableOn::Tag Load (0.8ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 4 AND "taggings"."taggable_type" = 'Picture' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  [1m[36mActsAsTaggableOn::Tag Load (0.8ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 5 AND "taggings"."taggable_type" = 'Picture' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  Rendered pictures/index.html.haml within layouts/application (27.6ms)
+Completed 200 OK in 38.7ms (Views: 26.4ms | ActiveRecord: 8.9ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-17 21:36:05 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-17 21:36:05 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-17 21:36:05 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-17 21:36:05 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/tags/Awesome" for 127.0.0.1 at 2014-05-17 21:36:05 +0100
+Processing by PicturesController#index as HTML
+  Parameters: {"tag"=>"Awesome"}
+  [1m[35mActsAsTaggableOn::Tag Load (0.5ms)[0m  SELECT "tags".* FROM "tags" WHERE (LOWER(name) = LOWER('awesome'))
+  [1m[36m (1.6ms)[0m  [1mSELECT COUNT(*) FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN pictures ON pictures.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Picture' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT pictures.id FROM "pictures" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id[0m
+  [1m[35mActsAsTaggableOn::Tag Load (1.4ms)[0m  SELECT tags.*, taggings.tags_count AS count FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN pictures ON pictures.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Picture' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT pictures.id FROM "pictures" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id
+  [1m[36mPicture Load (1.2ms)[0m  [1mSELECT "pictures".* FROM "pictures" JOIN taggings pictures_taggings_56bf648 ON pictures_taggings_56bf648.taggable_id = "pictures".id AND pictures_taggings_56bf648.taggable_type = 'Picture' AND pictures_taggings_56bf648.tag_id = 2[0m
+  [1m[35mActsAsTaggableOn::Tag Load (0.8ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 3 AND "taggings"."taggable_type" = 'Picture' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  [1m[36mActsAsTaggableOn::Tag Load (1.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 4 AND "taggings"."taggable_type" = 'Picture' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  Rendered pictures/index.html.haml within layouts/application (19.8ms)
+Completed 200 OK in 28.4ms (Views: 18.7ms | ActiveRecord: 6.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-17 21:36:06 +0100
+Served asset /application.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-17 21:36:06 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-17 21:36:06 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-17 21:36:06 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/tags/Cover" for 127.0.0.1 at 2014-05-17 21:36:06 +0100
+Processing by PicturesController#index as HTML
+  Parameters: {"tag"=>"Cover"}
+  [1m[35mActsAsTaggableOn::Tag Load (0.6ms)[0m  SELECT "tags".* FROM "tags" WHERE (LOWER(name) = LOWER('cover'))
+  [1m[36m (2.3ms)[0m  [1mSELECT COUNT(*) FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN pictures ON pictures.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Picture' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT pictures.id FROM "pictures" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id[0m
+  [1m[35mActsAsTaggableOn::Tag Load (2.2ms)[0m  SELECT tags.*, taggings.tags_count AS count FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN pictures ON pictures.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Picture' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT pictures.id FROM "pictures" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id
+  [1m[36mPicture Load (0.9ms)[0m  [1mSELECT "pictures".* FROM "pictures" JOIN taggings pictures_taggings_8c2133d ON pictures_taggings_8c2133d.taggable_id = "pictures".id AND pictures_taggings_8c2133d.taggable_type = 'Picture' AND pictures_taggings_8c2133d.tag_id = 3[0m
+  [1m[35mActsAsTaggableOn::Tag Load (0.9ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 5 AND "taggings"."taggable_type" = 'Picture' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  Rendered pictures/index.html.haml within layouts/application (17.0ms)
+Completed 200 OK in 27.1ms (Views: 17.1ms | ActiveRecord: 6.9ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-17 21:36:06 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-17 21:36:06 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-17 21:36:06 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-17 21:36:06 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/tags/Patagonia" for 127.0.0.1 at 2014-05-17 21:36:06 +0100
+Processing by PicturesController#index as HTML
+  Parameters: {"tag"=>"Patagonia"}
+  [1m[36mActsAsTaggableOn::Tag Load (0.6ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE (LOWER(name) = LOWER('patagonia'))[0m
+  [1m[35m (1.5ms)[0m  SELECT COUNT(*) FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN pictures ON pictures.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Picture' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT pictures.id FROM "pictures" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id
+  [1m[36mActsAsTaggableOn::Tag Load (1.4ms)[0m  [1mSELECT tags.*, taggings.tags_count AS count FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN pictures ON pictures.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Picture' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT pictures.id FROM "pictures" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id[0m
+  [1m[35mPicture Load (1.0ms)[0m  SELECT "pictures".* FROM "pictures" JOIN taggings pictures_taggings_c632780 ON pictures_taggings_c632780.taggable_id = "pictures".id AND pictures_taggings_c632780.taggable_type = 'Picture' AND pictures_taggings_c632780.tag_id = 4
+  [1m[36mActsAsTaggableOn::Tag Load (0.8ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 5 AND "taggings"."taggable_type" = 'Picture' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  Rendered pictures/index.html.haml within layouts/application (14.6ms)
+Completed 200 OK in 25.9ms (Views: 17.1ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-17 21:36:06 +0100
+Served asset /application.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-17 21:36:06 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-17 21:36:06 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-17 21:36:06 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/pictures/new" for 127.0.0.1 at 2014-05-17 21:36:07 +0100
+Processing by PicturesController#new as HTML
+  [1m[35mActsAsTaggableOn::Tag Load (0.8ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" IS NULL AND "taggings"."taggable_type" = 'Picture' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  Rendered pictures/_form.html.haml (6.3ms)
+  Rendered pictures/new.html.haml within layouts/application (7.1ms)
+Completed 200 OK in 16.3ms (Views: 13.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-17 21:36:07 +0100
+Served asset /application.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-17 21:36:08 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-17 21:36:08 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-17 21:36:08 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/pictures" for 127.0.0.1 at 2014-05-17 21:36:08 +0100
+Processing by PicturesController#index as HTML
+  [1m[36mPicture Load (1.6ms)[0m  [1mSELECT "pictures".* FROM "pictures" [0m
+  [1m[35m (1.6ms)[0m  SELECT COUNT(*) FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN pictures ON pictures.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Picture' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT pictures.id FROM "pictures" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id
+  [1m[36mActsAsTaggableOn::Tag Load (2.0ms)[0m  [1mSELECT tags.*, taggings.tags_count AS count FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN pictures ON pictures.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Picture' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT pictures.id FROM "pictures" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id[0m
+  [1m[35mActsAsTaggableOn::Tag Load (0.8ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 4 AND "taggings"."taggable_type" = 'Picture' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  [1m[36mActsAsTaggableOn::Tag Load (0.9ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 5 AND "taggings"."taggable_type" = 'Picture' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  [1m[35mActsAsTaggableOn::Tag Load (0.8ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 3 AND "taggings"."taggable_type" = 'Picture' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  Rendered pictures/index.html.haml within layouts/application (21.2ms)
+Completed 200 OK in 29.5ms (Views: 20.2ms | ActiveRecord: 7.8ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-17 21:36:08 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-17 21:36:08 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-17 21:36:08 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-17 21:36:08 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/tags/Awesome" for 127.0.0.1 at 2014-05-17 21:36:09 +0100
+Processing by PicturesController#index as HTML
+  Parameters: {"tag"=>"Awesome"}
+  [1m[36mActsAsTaggableOn::Tag Load (0.6ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE (LOWER(name) = LOWER('awesome'))[0m
+  [1m[35m (1.8ms)[0m  SELECT COUNT(*) FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN pictures ON pictures.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Picture' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT pictures.id FROM "pictures" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id
+  [1m[36mActsAsTaggableOn::Tag Load (1.7ms)[0m  [1mSELECT tags.*, taggings.tags_count AS count FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN pictures ON pictures.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Picture' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT pictures.id FROM "pictures" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id[0m
+  [1m[35mPicture Load (0.9ms)[0m  SELECT "pictures".* FROM "pictures" JOIN taggings pictures_taggings_ae4a4bf ON pictures_taggings_ae4a4bf.taggable_id = "pictures".id AND pictures_taggings_ae4a4bf.taggable_type = 'Picture' AND pictures_taggings_ae4a4bf.tag_id = 2
+  [1m[36mActsAsTaggableOn::Tag Load (1.0ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 3 AND "taggings"."taggable_type" = 'Picture' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  [1m[35mActsAsTaggableOn::Tag Load (0.9ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 4 AND "taggings"."taggable_type" = 'Picture' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  Rendered pictures/index.html.haml within layouts/application (21.2ms)
+Completed 200 OK in 30.4ms (Views: 20.4ms | ActiveRecord: 6.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-17 21:36:09 +0100
+Served asset /application.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-17 21:36:09 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-17 21:36:09 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-17 21:36:09 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/tags/Profile" for 127.0.0.1 at 2014-05-17 21:36:09 +0100
+Processing by PicturesController#index as HTML
+  Parameters: {"tag"=>"Profile"}
+  [1m[36mActsAsTaggableOn::Tag Load (0.6ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE (LOWER(name) = LOWER('profile'))[0m
+  [1m[35m (1.7ms)[0m  SELECT COUNT(*) FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN pictures ON pictures.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Picture' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT pictures.id FROM "pictures" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id
+  [1m[36mActsAsTaggableOn::Tag Load (1.4ms)[0m  [1mSELECT tags.*, taggings.tags_count AS count FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN pictures ON pictures.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Picture' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT pictures.id FROM "pictures" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id[0m
+  [1m[35mPicture Load (1.2ms)[0m  SELECT "pictures".* FROM "pictures" JOIN taggings pictures_taggings_719409d ON pictures_taggings_719409d.taggable_id = "pictures".id AND pictures_taggings_719409d.taggable_type = 'Picture' AND pictures_taggings_719409d.tag_id = 1
+  [1m[36mActsAsTaggableOn::Tag Load (0.8ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 3 AND "taggings"."taggable_type" = 'Picture' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  [1m[35mActsAsTaggableOn::Tag Load (1.0ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 4 AND "taggings"."taggable_type" = 'Picture' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  [1m[36mActsAsTaggableOn::Tag Load (0.9ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 5 AND "taggings"."taggable_type" = 'Picture' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  Rendered pictures/index.html.haml within layouts/application (24.0ms)
+Completed 200 OK in 33.0ms (Views: 22.4ms | ActiveRecord: 7.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-17 21:36:10 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-17 21:36:10 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-17 21:36:10 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-17 21:36:10 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/tags/Awesome" for 127.0.0.1 at 2014-05-17 21:36:10 +0100
+Processing by PicturesController#index as HTML
+  Parameters: {"tag"=>"Awesome"}
+  [1m[35mActsAsTaggableOn::Tag Load (0.8ms)[0m  SELECT "tags".* FROM "tags" WHERE (LOWER(name) = LOWER('awesome'))
+  [1m[36m (1.7ms)[0m  [1mSELECT COUNT(*) FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN pictures ON pictures.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Picture' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT pictures.id FROM "pictures" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id[0m
+  [1m[35mActsAsTaggableOn::Tag Load (1.6ms)[0m  SELECT tags.*, taggings.tags_count AS count FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN pictures ON pictures.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Picture' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT pictures.id FROM "pictures" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id
+  [1m[36mPicture Load (0.9ms)[0m  [1mSELECT "pictures".* FROM "pictures" JOIN taggings pictures_taggings_9458e85 ON pictures_taggings_9458e85.taggable_id = "pictures".id AND pictures_taggings_9458e85.taggable_type = 'Picture' AND pictures_taggings_9458e85.tag_id = 2[0m
+  [1m[35mActsAsTaggableOn::Tag Load (1.0ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 3 AND "taggings"."taggable_type" = 'Picture' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  [1m[36mActsAsTaggableOn::Tag Load (0.9ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 4 AND "taggings"."taggable_type" = 'Picture' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  Rendered pictures/index.html.haml within layouts/application (20.6ms)
+Completed 200 OK in 30.5ms (Views: 20.6ms | ActiveRecord: 6.8ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-17 21:36:10 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-17 21:36:10 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-17 21:36:10 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-17 21:36:10 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/tags/Cover" for 127.0.0.1 at 2014-05-17 21:36:11 +0100
+Processing by PicturesController#index as HTML
+  Parameters: {"tag"=>"Cover"}
+  [1m[35mActsAsTaggableOn::Tag Load (0.5ms)[0m  SELECT "tags".* FROM "tags" WHERE (LOWER(name) = LOWER('cover'))
+  [1m[36m (2.0ms)[0m  [1mSELECT COUNT(*) FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN pictures ON pictures.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Picture' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT pictures.id FROM "pictures" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id[0m
+  [1m[35mActsAsTaggableOn::Tag Load (1.7ms)[0m  SELECT tags.*, taggings.tags_count AS count FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN pictures ON pictures.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Picture' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT pictures.id FROM "pictures" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id
+  [1m[36mPicture Load (0.8ms)[0m  [1mSELECT "pictures".* FROM "pictures" JOIN taggings pictures_taggings_f51bbc2 ON pictures_taggings_f51bbc2.taggable_id = "pictures".id AND pictures_taggings_f51bbc2.taggable_type = 'Picture' AND pictures_taggings_f51bbc2.tag_id = 3[0m
+  [1m[35mActsAsTaggableOn::Tag Load (0.9ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 5 AND "taggings"."taggable_type" = 'Picture' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  Rendered pictures/index.html.haml within layouts/application (15.0ms)
+Completed 200 OK in 24.0ms (Views: 15.5ms | ActiveRecord: 5.9ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-17 21:36:11 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-17 21:36:11 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-17 21:36:11 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-17 21:36:11 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/tags/Patagonia" for 127.0.0.1 at 2014-05-17 21:36:11 +0100
+Processing by PicturesController#index as HTML
+  Parameters: {"tag"=>"Patagonia"}
+  [1m[36mActsAsTaggableOn::Tag Load (0.4ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE (LOWER(name) = LOWER('patagonia'))[0m
+  [1m[35m (1.6ms)[0m  SELECT COUNT(*) FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN pictures ON pictures.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Picture' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT pictures.id FROM "pictures" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id
+  [1m[36mActsAsTaggableOn::Tag Load (1.9ms)[0m  [1mSELECT tags.*, taggings.tags_count AS count FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN pictures ON pictures.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Picture' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT pictures.id FROM "pictures" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id[0m
+  [1m[35mPicture Load (1.2ms)[0m  SELECT "pictures".* FROM "pictures" JOIN taggings pictures_taggings_d8227da ON pictures_taggings_d8227da.taggable_id = "pictures".id AND pictures_taggings_d8227da.taggable_type = 'Picture' AND pictures_taggings_d8227da.tag_id = 4
+  [1m[36mActsAsTaggableOn::Tag Load (1.0ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 5 AND "taggings"."taggable_type" = 'Picture' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  Rendered pictures/index.html.haml within layouts/application (15.6ms)
+Completed 200 OK in 26.8ms (Views: 16.3ms | ActiveRecord: 6.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-17 21:36:11 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-17 21:36:11 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-17 21:36:11 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-17 21:36:11 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/tags/Profile" for 127.0.0.1 at 2014-05-17 21:36:12 +0100
+Processing by PicturesController#index as HTML
+  Parameters: {"tag"=>"Profile"}
+  [1m[35mActsAsTaggableOn::Tag Load (1.2ms)[0m  SELECT "tags".* FROM "tags" WHERE (LOWER(name) = LOWER('profile'))
+  [1m[36m (1.5ms)[0m  [1mSELECT COUNT(*) FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN pictures ON pictures.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Picture' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT pictures.id FROM "pictures" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id[0m
+  [1m[35mActsAsTaggableOn::Tag Load (1.7ms)[0m  SELECT tags.*, taggings.tags_count AS count FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN pictures ON pictures.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Picture' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT pictures.id FROM "pictures" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id
+  [1m[36mPicture Load (1.1ms)[0m  [1mSELECT "pictures".* FROM "pictures" JOIN taggings pictures_taggings_1bef723 ON pictures_taggings_1bef723.taggable_id = "pictures".id AND pictures_taggings_1bef723.taggable_type = 'Picture' AND pictures_taggings_1bef723.tag_id = 1[0m
+  [1m[35mActsAsTaggableOn::Tag Load (0.9ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 3 AND "taggings"."taggable_type" = 'Picture' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  [1m[36mActsAsTaggableOn::Tag Load (1.0ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 4 AND "taggings"."taggable_type" = 'Picture' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  [1m[35mActsAsTaggableOn::Tag Load (1.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 5 AND "taggings"."taggable_type" = 'Picture' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  Rendered pictures/index.html.haml within layouts/application (25.8ms)
+Completed 200 OK in 37.7ms (Views: 26.0ms | ActiveRecord: 8.3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-17 21:36:12 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-17 21:36:12 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-17 21:36:12 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-17 21:36:12 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/tags/Awesome" for 127.0.0.1 at 2014-05-17 21:36:12 +0100
+Processing by PicturesController#index as HTML
+  Parameters: {"tag"=>"Awesome"}
+  [1m[36mActsAsTaggableOn::Tag Load (0.5ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE (LOWER(name) = LOWER('awesome'))[0m
+  [1m[35m (2.5ms)[0m  SELECT COUNT(*) FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN pictures ON pictures.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Picture' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT pictures.id FROM "pictures" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id
+  [1m[36mActsAsTaggableOn::Tag Load (2.5ms)[0m  [1mSELECT tags.*, taggings.tags_count AS count FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN pictures ON pictures.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Picture' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT pictures.id FROM "pictures" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id[0m
+  [1m[35mPicture Load (0.8ms)[0m  SELECT "pictures".* FROM "pictures" JOIN taggings pictures_taggings_2346e76 ON pictures_taggings_2346e76.taggable_id = "pictures".id AND pictures_taggings_2346e76.taggable_type = 'Picture' AND pictures_taggings_2346e76.tag_id = 2
+  [1m[36mActsAsTaggableOn::Tag Load (0.8ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 3 AND "taggings"."taggable_type" = 'Picture' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  [1m[35mActsAsTaggableOn::Tag Load (0.7ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 4 AND "taggings"."taggable_type" = 'Picture' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  Rendered pictures/index.html.haml within layouts/application (20.3ms)
+Completed 200 OK in 28.1ms (Views: 17.7ms | ActiveRecord: 7.8ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-17 21:36:12 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-17 21:36:12 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-17 21:36:12 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-17 21:36:12 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/tags/Cover" for 127.0.0.1 at 2014-05-17 21:36:13 +0100
+Processing by PicturesController#index as HTML
+  Parameters: {"tag"=>"Cover"}
+  [1m[36mActsAsTaggableOn::Tag Load (0.5ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE (LOWER(name) = LOWER('cover'))[0m
+  [1m[35m (1.5ms)[0m  SELECT COUNT(*) FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN pictures ON pictures.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Picture' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT pictures.id FROM "pictures" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id
+  [1m[36mActsAsTaggableOn::Tag Load (1.4ms)[0m  [1mSELECT tags.*, taggings.tags_count AS count FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN pictures ON pictures.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Picture' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT pictures.id FROM "pictures" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id[0m
+  [1m[35mPicture Load (0.9ms)[0m  SELECT "pictures".* FROM "pictures" JOIN taggings pictures_taggings_e1e55a4 ON pictures_taggings_e1e55a4.taggable_id = "pictures".id AND pictures_taggings_e1e55a4.taggable_type = 'Picture' AND pictures_taggings_e1e55a4.tag_id = 3
+  [1m[36mActsAsTaggableOn::Tag Load (1.0ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 5 AND "taggings"."taggable_type" = 'Picture' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  Rendered pictures/index.html.haml within layouts/application (15.0ms)
+Completed 200 OK in 24.4ms (Views: 15.8ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-17 21:36:13 +0100
+Served asset /application.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-17 21:36:13 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-17 21:36:13 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-17 21:36:13 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/tags/Patagonia" for 127.0.0.1 at 2014-05-17 21:36:13 +0100
+Processing by PicturesController#index as HTML
+  Parameters: {"tag"=>"Patagonia"}
+  [1m[35mActsAsTaggableOn::Tag Load (0.7ms)[0m  SELECT "tags".* FROM "tags" WHERE (LOWER(name) = LOWER('patagonia'))
+  [1m[36m (2.2ms)[0m  [1mSELECT COUNT(*) FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN pictures ON pictures.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Picture' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT pictures.id FROM "pictures" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id[0m
+  [1m[35mActsAsTaggableOn::Tag Load (1.9ms)[0m  SELECT tags.*, taggings.tags_count AS count FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN pictures ON pictures.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Picture' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT pictures.id FROM "pictures" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id
+  [1m[36mPicture Load (0.8ms)[0m  [1mSELECT "pictures".* FROM "pictures" JOIN taggings pictures_taggings_c29798b ON pictures_taggings_c29798b.taggable_id = "pictures".id AND pictures_taggings_c29798b.taggable_type = 'Picture' AND pictures_taggings_c29798b.tag_id = 4[0m
+  [1m[35mActsAsTaggableOn::Tag Load (0.8ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 5 AND "taggings"."taggable_type" = 'Picture' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  Rendered pictures/index.html.haml within layouts/application (15.6ms)
+Completed 200 OK in 25.3ms (Views: 15.8ms | ActiveRecord: 6.4ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-17 21:36:13 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-17 21:36:13 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-17 21:36:13 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-17 21:36:13 +0100
+Served asset /application.js - 304 Not Modified (0ms)

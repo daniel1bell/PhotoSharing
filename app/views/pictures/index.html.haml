@@ -1,6 +1,6 @@
 = link_to('New Picture', new_picture_path)
 
-.tag_cloud
+#tag_cloud
   - tag_cloud Picture.tag_counts, %w[s m l] do |tag, css_class| 
     = link_to tag.name, tag_path(tag.name), class: css_class
 %ul
