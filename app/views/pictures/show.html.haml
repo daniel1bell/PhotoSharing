@@ -1,5 +1,6 @@
 %h1 
   = @picture.name
+  = raw picture.tag_list.map { |t| link_to t, tag_path(t) }.join(', ')
   = image_tag @picture.picture_image.url
 %ul
   %li

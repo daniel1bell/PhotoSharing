@@ -6,6 +6,10 @@
   .field
     = f.label :picture_image
     %br/
-    = f.file_field :picture_image  
+    = f.file_field :picture_image
+  .field
+    = f.label :tag_list, "Tags (separated by commas)"
+    %br/
+    = f.text_field :tag_list   
   .actions
     = f.submit

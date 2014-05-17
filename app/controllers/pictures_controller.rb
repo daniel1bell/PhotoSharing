@@ -3,7 +3,11 @@ class PicturesController < ApplicationController
 # basic picture controller - still needs to be connected with User, Photo & Comment Controller
 
   def index
-    @pictures = Picture.all
+    if params[:tag]
+      @pictures = Picture.tagged_with(params[:tag])
+    else
+      @pictures = Picture.all
+    end
   end
 
   def new
