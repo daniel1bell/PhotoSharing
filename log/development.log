@@ -11581,3 +11581,1445 @@ Served asset /pictures.css - 304 Not Modified (0ms)
 
 Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-18 13:59:10 +0100
 Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2014-05-18 14:02:13 +0100
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"OZqIgSOxftYH8sUQ+U88g08E6hq0aWB5GXXHnkW07Gw="}
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 11.2ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-05-18 14:02:13 +0100
+Processing by AlbumsController#index as HTML
+Completed 401 Unauthorized in 0.5ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-05-18 14:02:13 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (0.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 19.1ms (Views: 17.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/pictures.css?body=1" for 127.0.0.1 at 2014-05-18 14:02:13 +0100
+Served asset /pictures.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-18 14:02:13 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-18 14:02:13 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-18 14:02:13 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-18 14:02:13 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/albums" for 127.0.0.1 at 2014-05-18 14:02:16 +0100
+Processing by AlbumsController#index as HTML
+Completed 401 Unauthorized in 0.5ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-05-18 14:02:16 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (0.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 16.8ms (Views: 15.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/pictures.css?body=1" for 127.0.0.1 at 2014-05-18 14:02:16 +0100
+Served asset /pictures.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-18 14:02:16 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-18 14:02:16 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-18 14:02:16 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-18 14:02:16 +0100
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/albums" for 127.0.0.1 at 2014-05-18 14:02:17 +0100
+Processing by AlbumsController#index as HTML
+Completed 401 Unauthorized in 0.5ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-05-18 14:02:17 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (0.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 17.6ms (Views: 16.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/pictures.css?body=1" for 127.0.0.1 at 2014-05-18 14:02:18 +0100
+Served asset /pictures.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-18 14:02:18 +0100
+Served asset /application.css - 304 Not Modified (80ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-18 14:02:18 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-18 14:02:18 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-18 14:02:18 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2014-05-18 14:02:26 +0100
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"s4iNWl/EK395y9VNyUYTj5NHJxl6eDoNEMkFh1L5GXU=", "user"=>{"email"=>"scottygammon@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (2.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'scottygammon@gmail.com' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.7ms)[0m  [1mUPDATE "users" SET "current_sign_in_at" = '2014-05-18 13:02:26.495577', "sign_in_count" = 2, "updated_at" = '2014-05-18 13:02:26.496997' WHERE "users"."id" = 1[0m
+  [1m[35m (2.3ms)[0m  COMMIT
+Redirected to http://localhost:3000/albums
+Completed 302 Found in 159.8ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/albums" for 127.0.0.1 at 2014-05-18 14:02:26 +0100
+Processing by AlbumsController#index as HTML
+  [1m[36mUser Load (4.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mAlbum Load (0.4ms)[0m  SELECT "albums".* FROM "albums" 
+  Rendered albums/index.html.haml within layouts/application (0.8ms)
+Completed 200 OK in 17.6ms (Views: 10.6ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-18 14:02:26 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-18 14:02:26 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-18 14:02:26 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-18 14:02:26 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pictures.css?body=1" for 127.0.0.1 at 2014-05-18 14:02:26 +0100
+Served asset /pictures.css - 304 Not Modified (0ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2014-05-18 14:02:41 +0100
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"V0nF58OSV/Zppxv1iCFDRH7hFwudyLCMT4SjXgNZ79U="}
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 8.8ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-05-18 14:02:42 +0100
+Processing by AlbumsController#index as HTML
+Completed 401 Unauthorized in 2.0ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-05-18 14:02:42 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (0.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 17.5ms (Views: 16.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-18 14:02:42 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-18 14:02:42 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-18 14:02:42 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-18 14:02:42 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pictures.css?body=1" for 127.0.0.1 at 2014-05-18 14:02:42 +0100
+Served asset /pictures.css - 304 Not Modified (0ms)
+
+
+Started GET "/albums" for 127.0.0.1 at 2014-05-18 14:02:45 +0100
+Processing by AlbumsController#index as HTML
+Completed 401 Unauthorized in 0.5ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-05-18 14:02:45 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (0.7ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 22.7ms (Views: 20.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-18 14:02:45 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-18 14:02:45 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-18 14:02:45 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pictures.css?body=1" for 127.0.0.1 at 2014-05-18 14:02:45 +0100
+Served asset /pictures.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-18 14:02:45 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/pictures" for 127.0.0.1 at 2014-05-18 14:02:46 +0100
+Processing by PicturesController#index as HTML
+Completed 401 Unauthorized in 0.9ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-05-18 14:02:46 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (0.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 18.9ms (Views: 17.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-18 14:02:47 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-18 14:02:47 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-18 14:02:47 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pictures.css?body=1" for 127.0.0.1 at 2014-05-18 14:02:47 +0100
+Served asset /pictures.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-18 14:02:47 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/albums" for 127.0.0.1 at 2014-05-18 14:02:47 +0100
+Processing by AlbumsController#index as HTML
+Completed 401 Unauthorized in 0.5ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-05-18 14:02:47 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (1.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 23.8ms (Views: 22.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/pictures.css?body=1" for 127.0.0.1 at 2014-05-18 14:02:47 +0100
+Served asset /pictures.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-18 14:02:47 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-18 14:02:47 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-18 14:02:47 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-18 14:02:47 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/pictures" for 127.0.0.1 at 2014-05-18 14:02:48 +0100
+Processing by PicturesController#index as HTML
+Completed 401 Unauthorized in 0.4ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-05-18 14:02:48 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (0.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 19.7ms (Views: 18.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/pictures.css?body=1" for 127.0.0.1 at 2014-05-18 14:02:48 +0100
+Served asset /pictures.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-18 14:02:48 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-18 14:02:48 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-18 14:02:48 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-18 14:02:48 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-05-18 14:02:49 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (0.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 17.8ms (Views: 16.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-18 14:02:49 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-18 14:02:49 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pictures.css?body=1" for 127.0.0.1 at 2014-05-18 14:02:49 +0100
+Served asset /pictures.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-18 14:02:49 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-18 14:02:49 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2014-05-18 14:02:56 +0100
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"e+yZN0otTrex9bvwq1PdoOjOfmG8y3+FXAr1deVPRKY=", "user"=>{"email"=>"scottygammon@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[35mUser Load (1.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = 'scottygammon@gmail.com' LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.6ms)[0m  UPDATE "users" SET "last_sign_in_at" = '2014-05-18 13:02:26.495577', "current_sign_in_at" = '2014-05-18 13:02:56.853870', "sign_in_count" = 3, "updated_at" = '2014-05-18 13:02:56.855308' WHERE "users"."id" = 1
+  [1m[36m (1.8ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/pictures
+Completed 302 Found in 175.2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/pictures" for 127.0.0.1 at 2014-05-18 14:02:56 +0100
+Processing by PicturesController#index as HTML
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mPicture Load (1.8ms)[0m  [1mSELECT "pictures".* FROM "pictures" [0m
+  [1m[35m (7.5ms)[0m  SELECT COUNT(*) FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN pictures ON pictures.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Picture' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT pictures.id FROM "pictures" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id
+  Rendered pictures/index.html.haml within layouts/application (21.0ms)
+Completed 200 OK in 48.3ms (Views: 23.2ms | ActiveRecord: 18.1ms)
+
+
+Started GET "/assets/pictures.css?body=1" for 127.0.0.1 at 2014-05-18 14:02:57 +0100
+Served asset /pictures.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-18 14:02:57 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-18 14:02:57 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-18 14:02:57 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-18 14:02:57 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-05-18 14:15:31 +0100
+Processing by AlbumsController#index as HTML
+  [1m[36mUser Load (1.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mAlbum Load (0.9ms)[0m  SELECT "albums".* FROM "albums" 
+  Rendered albums/index.html.haml within layouts/application (0.8ms)
+Completed 200 OK in 218.3ms (Views: 21.5ms | ActiveRecord: 27.0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-18 14:15:32 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pictures.css?body=1" for 127.0.0.1 at 2014-05-18 14:15:32 +0100
+Served asset /pictures.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-18 14:15:32 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-18 14:15:32 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-18 14:15:32 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/albums" for 127.0.0.1 at 2014-05-18 14:15:36 +0100
+Processing by AlbumsController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mAlbum Load (0.3ms)[0m  SELECT "albums".* FROM "albums" 
+  Rendered albums/index.html.haml within layouts/application (0.8ms)
+Completed 200 OK in 15.5ms (Views: 11.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/pictures.css?body=1" for 127.0.0.1 at 2014-05-18 14:15:37 +0100
+Served asset /pictures.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-18 14:15:37 +0100
+Served asset /application.css - 304 Not Modified (70ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-18 14:15:37 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-18 14:15:37 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-18 14:15:37 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/pictures" for 127.0.0.1 at 2014-05-18 14:15:38 +0100
+Processing by PicturesController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mPicture Load (0.9ms)[0m  SELECT "pictures".* FROM "pictures" 
+  [1m[36m (5.6ms)[0m  [1mSELECT COUNT(*) FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN pictures ON pictures.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Picture' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT pictures.id FROM "pictures" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id[0m
+  Rendered pictures/index.html.haml within layouts/application (9.3ms)
+Completed 200 OK in 35.4ms (Views: 19.3ms | ActiveRecord: 11.2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-18 14:15:39 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-18 14:15:39 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-18 14:15:39 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pictures.css?body=1" for 127.0.0.1 at 2014-05-18 14:15:39 +0100
+Served asset /pictures.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-18 14:15:39 +0100
+Served asset /application.css - 304 Not Modified (73ms)
+
+
+Started GET "/pictures/new" for 127.0.0.1 at 2014-05-18 14:15:40 +0100
+Processing by PicturesController#new as HTML
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mActsAsTaggableOn::Tag Load (0.8ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" IS NULL AND "taggings"."taggable_type" = 'Picture' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  Rendered pictures/_form.html.haml (49.1ms)
+  Rendered pictures/new.html.haml within layouts/application (52.2ms)
+Completed 200 OK in 101.7ms (Views: 57.2ms | ActiveRecord: 6.9ms)
+
+
+Started GET "/assets/pictures.css?body=1" for 127.0.0.1 at 2014-05-18 14:15:41 +0100
+Served asset /pictures.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-18 14:15:41 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-18 14:15:41 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-18 14:15:41 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-18 14:15:41 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-05-18 14:15:42 +0100
+Processing by Devise::SessionsController#new as HTML
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 4.0ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-05-18 14:15:43 +0100
+Processing by AlbumsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mAlbum Load (0.3ms)[0m  SELECT "albums".* FROM "albums" 
+  Rendered albums/index.html.haml within layouts/application (1.0ms)
+Completed 200 OK in 13.2ms (Views: 10.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/pictures.css?body=1" for 127.0.0.1 at 2014-05-18 14:15:43 +0100
+Served asset /pictures.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-18 14:15:43 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-18 14:15:43 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-18 14:15:43 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-18 14:15:43 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-05-18 14:15:47 +0100
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 3.2ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-05-18 14:15:47 +0100
+Processing by AlbumsController#index as HTML
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mAlbum Load (0.3ms)[0m  [1mSELECT "albums".* FROM "albums" [0m
+  Rendered albums/index.html.haml within layouts/application (0.7ms)
+Completed 200 OK in 13.2ms (Views: 9.9ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/pictures.css?body=1" for 127.0.0.1 at 2014-05-18 14:15:47 +0100
+Served asset /pictures.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-18 14:15:47 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-18 14:15:47 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-18 14:15:47 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-18 14:15:47 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/albums" for 127.0.0.1 at 2014-05-18 14:15:49 +0100
+Processing by AlbumsController#index as HTML
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mAlbum Load (1.2ms)[0m  [1mSELECT "albums".* FROM "albums" [0m
+  Rendered albums/index.html.haml within layouts/application (0.8ms)
+Completed 200 OK in 19.5ms (Views: 13.5ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/pictures.css?body=1" for 127.0.0.1 at 2014-05-18 14:15:49 +0100
+Served asset /pictures.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-18 14:15:49 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-18 14:15:49 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-18 14:15:49 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-18 14:15:49 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/albums/new" for 127.0.0.1 at 2014-05-18 14:15:50 +0100
+Processing by AlbumsController#new as HTML
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  Rendered albums/_form.html.haml (9.2ms)
+  Rendered albums/new.html.haml within layouts/application (17.4ms)
+Completed 200 OK in 43.9ms (Views: 29.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-18 14:15:50 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-18 14:15:50 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-18 14:15:50 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-18 14:15:50 +0100
+Served asset /application.css - 304 Not Modified (76ms)
+
+
+Started GET "/assets/pictures.css?body=1" for 127.0.0.1 at 2014-05-18 14:15:50 +0100
+Served asset /pictures.css - 304 Not Modified (0ms)
+
+
+Started GET "/pictures" for 127.0.0.1 at 2014-05-18 14:15:52 +0100
+Processing by PicturesController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mPicture Load (0.4ms)[0m  SELECT "pictures".* FROM "pictures" 
+  [1m[36m (2.4ms)[0m  [1mSELECT COUNT(*) FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN pictures ON pictures.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Picture' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT pictures.id FROM "pictures" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id[0m
+  Rendered pictures/index.html.haml within layouts/application (7.1ms)
+Completed 200 OK in 20.7ms (Views: 14.6ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/assets/pictures.css?body=1" for 127.0.0.1 at 2014-05-18 14:15:52 +0100
+Served asset /pictures.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-18 14:15:52 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-18 14:15:52 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-18 14:15:52 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-18 14:15:52 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-05-18 14:16:00 +0100
+Processing by Devise::SessionsController#new as HTML
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 3.2ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-05-18 14:16:00 +0100
+Processing by AlbumsController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mAlbum Load (0.3ms)[0m  SELECT "albums".* FROM "albums" 
+  Rendered albums/index.html.haml within layouts/application (0.7ms)
+Completed 200 OK in 13.1ms (Views: 10.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/pictures.css?body=1" for 127.0.0.1 at 2014-05-18 14:16:00 +0100
+Served asset /pictures.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-18 14:16:00 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-18 14:16:00 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-18 14:16:00 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-18 14:16:00 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2014-05-18 14:16:02 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 4.1ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-05-18 14:16:02 +0100
+Processing by AlbumsController#index as HTML
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mAlbum Load (0.3ms)[0m  [1mSELECT "albums".* FROM "albums" [0m
+  Rendered albums/index.html.haml within layouts/application (0.7ms)
+Completed 200 OK in 13.0ms (Views: 10.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-18 14:16:03 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pictures.css?body=1" for 127.0.0.1 at 2014-05-18 14:16:03 +0100
+Served asset /pictures.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-18 14:16:03 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-18 14:16:03 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-18 14:16:03 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-05-18 14:16:04 +0100
+Processing by Devise::SessionsController#new as HTML
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 3.5ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-05-18 14:16:04 +0100
+Processing by AlbumsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mAlbum Load (0.3ms)[0m  SELECT "albums".* FROM "albums" 
+  Rendered albums/index.html.haml within layouts/application (0.7ms)
+Completed 200 OK in 13.0ms (Views: 9.9ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-18 14:16:04 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-18 14:16:04 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-18 14:16:04 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pictures.css?body=1" for 127.0.0.1 at 2014-05-18 14:16:04 +0100
+Served asset /pictures.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-18 14:16:04 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/albums" for 127.0.0.1 at 2014-05-18 14:16:07 +0100
+Processing by AlbumsController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mAlbum Load (0.3ms)[0m  SELECT "albums".* FROM "albums" 
+  Rendered albums/index.html.haml within layouts/application (0.7ms)
+Completed 200 OK in 14.1ms (Views: 10.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/pictures.css?body=1" for 127.0.0.1 at 2014-05-18 14:16:07 +0100
+Served asset /pictures.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-18 14:16:07 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-18 14:16:07 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-18 14:16:07 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-18 14:16:07 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/pictures" for 127.0.0.1 at 2014-05-18 14:16:29 +0100
+Processing by PicturesController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mPicture Load (0.5ms)[0m  SELECT "pictures".* FROM "pictures" 
+  [1m[36m (2.4ms)[0m  [1mSELECT COUNT(*) FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN pictures ON pictures.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Picture' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT pictures.id FROM "pictures" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id[0m
+  Rendered pictures/index.html.haml within layouts/application (6.0ms)
+Completed 200 OK in 20.7ms (Views: 13.5ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-18 14:16:29 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pictures.css?body=1" for 127.0.0.1 at 2014-05-18 14:16:29 +0100
+Served asset /pictures.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-18 14:16:29 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-18 14:16:29 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-18 14:16:29 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/albums" for 127.0.0.1 at 2014-05-18 14:16:30 +0100
+Processing by AlbumsController#index as HTML
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mAlbum Load (0.4ms)[0m  [1mSELECT "albums".* FROM "albums" [0m
+  Rendered albums/index.html.haml within layouts/application (0.8ms)
+Completed 200 OK in 14.3ms (Views: 10.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-18 14:16:30 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-18 14:16:30 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-18 14:16:30 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pictures.css?body=1" for 127.0.0.1 at 2014-05-18 14:16:30 +0100
+Served asset /pictures.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-18 14:16:30 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2014-05-18 14:17:16 +0100
+Processing by AlbumsController#index as HTML
+  [1m[36mUser Load (1.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mAlbum Load (0.6ms)[0m  SELECT "albums".* FROM "albums" 
+  Rendered albums/index.html.haml within layouts/application (5.5ms)
+Completed 200 OK in 223.1ms (Views: 121.5ms | ActiveRecord: 22.2ms)
+
+
+Started GET "/assets/pictures.css?body=1" for 127.0.0.1 at 2014-05-18 14:17:16 +0100
+Served asset /pictures.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-18 14:17:16 +0100
+Served asset /jquery.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-18 14:17:17 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-18 14:17:17 +0100
+Served asset /application.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-18 14:17:17 +0100
+Served asset /application.css - 304 Not Modified (9ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-05-18 14:17:20 +0100
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 35.6ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-05-18 14:17:20 +0100
+Processing by AlbumsController#index as HTML
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mAlbum Load (0.3ms)[0m  [1mSELECT "albums".* FROM "albums" [0m
+  Rendered albums/index.html.haml within layouts/application (0.7ms)
+Completed 200 OK in 13.3ms (Views: 10.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-18 14:17:20 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-18 14:17:20 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-18 14:17:20 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-18 14:17:20 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pictures.css?body=1" for 127.0.0.1 at 2014-05-18 14:17:20 +0100
+Served asset /pictures.css - 304 Not Modified (0ms)
+
+
+Started GET "/albums" for 127.0.0.1 at 2014-05-18 14:17:22 +0100
+Processing by AlbumsController#index as HTML
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mAlbum Load (0.3ms)[0m  [1mSELECT "albums".* FROM "albums" [0m
+  Rendered albums/index.html.haml within layouts/application (0.7ms)
+Completed 200 OK in 13.9ms (Views: 10.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-18 14:17:22 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pictures.css?body=1" for 127.0.0.1 at 2014-05-18 14:17:22 +0100
+Served asset /pictures.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-18 14:17:22 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-18 14:17:22 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-18 14:17:22 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/albums/new" for 127.0.0.1 at 2014-05-18 14:17:23 +0100
+Processing by AlbumsController#new as HTML
+  [1m[35mUser Load (0.9ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  Rendered albums/_form.html.haml (9.7ms)
+  Rendered albums/new.html.haml within layouts/application (20.5ms)
+Completed 200 OK in 47.3ms (Views: 31.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/pictures.css?body=1" for 127.0.0.1 at 2014-05-18 14:17:23 +0100
+Served asset /pictures.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-18 14:17:23 +0100
+Served asset /application.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-18 14:17:23 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-18 14:17:23 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-18 14:17:23 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/pictures" for 127.0.0.1 at 2014-05-18 14:17:25 +0100
+Processing by PicturesController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mPicture Load (1.0ms)[0m  SELECT "pictures".* FROM "pictures" 
+  [1m[36m (4.9ms)[0m  [1mSELECT COUNT(*) FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN pictures ON pictures.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Picture' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT pictures.id FROM "pictures" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id[0m
+  Rendered pictures/index.html.haml within layouts/application (20.4ms)
+Completed 200 OK in 47.5ms (Views: 26.9ms | ActiveRecord: 15.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-18 14:17:25 +0100
+Served asset /application.css - 304 Not Modified (9ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-18 14:17:25 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-18 14:17:25 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-18 14:17:25 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pictures.css?body=1" for 127.0.0.1 at 2014-05-18 14:17:25 +0100
+Served asset /pictures.css - 304 Not Modified (0ms)
+
+
+Started GET "/pictures/new" for 127.0.0.1 at 2014-05-18 14:17:27 +0100
+Processing by PicturesController#new as HTML
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mActsAsTaggableOn::Tag Load (0.9ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" IS NULL AND "taggings"."taggable_type" = 'Picture' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  Rendered pictures/_form.html.haml (45.4ms)
+  Rendered pictures/new.html.haml within layouts/application (48.5ms)
+Completed 200 OK in 98.7ms (Views: 56.6ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-18 14:17:27 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pictures.css?body=1" for 127.0.0.1 at 2014-05-18 14:17:27 +0100
+Served asset /pictures.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-18 14:17:27 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-18 14:17:27 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-18 14:17:27 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-05-18 14:17:29 +0100
+Processing by Devise::SessionsController#new as HTML
+  [1m[35mUser Load (0.9ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 3.9ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-05-18 14:17:29 +0100
+Processing by AlbumsController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mAlbum Load (0.3ms)[0m  SELECT "albums".* FROM "albums" 
+  Rendered albums/index.html.haml within layouts/application (0.8ms)
+Completed 200 OK in 13.1ms (Views: 10.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-18 14:17:29 +0100
+Served asset /application.css - 304 Not Modified (66ms)
+
+
+Started GET "/assets/pictures.css?body=1" for 127.0.0.1 at 2014-05-18 14:17:29 +0100
+Served asset /pictures.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-18 14:17:29 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-18 14:17:29 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-18 14:17:29 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-05-18 14:17:31 +0100
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 4.7ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-05-18 14:17:31 +0100
+Processing by AlbumsController#index as HTML
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mAlbum Load (0.8ms)[0m  [1mSELECT "albums".* FROM "albums" [0m
+  Rendered albums/index.html.haml within layouts/application (0.8ms)
+Completed 200 OK in 15.2ms (Views: 11.5ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-18 14:17:31 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pictures.css?body=1" for 127.0.0.1 at 2014-05-18 14:17:31 +0100
+Served asset /pictures.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-18 14:17:31 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-18 14:17:31 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-18 14:17:31 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-05-18 14:17:31 +0100
+Processing by Devise::SessionsController#new as HTML
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 3.2ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-05-18 14:17:31 +0100
+Processing by AlbumsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mAlbum Load (0.3ms)[0m  SELECT "albums".* FROM "albums" 
+  Rendered albums/index.html.haml within layouts/application (0.7ms)
+Completed 200 OK in 13.3ms (Views: 10.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/pictures.css?body=1" for 127.0.0.1 at 2014-05-18 14:17:32 +0100
+Served asset /pictures.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-18 14:17:32 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-18 14:17:32 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-18 14:17:32 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-18 14:17:32 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-05-18 14:18:15 +0100
+Processing by AlbumsController#index as HTML
+Completed 401 Unauthorized in 0.9ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-05-18 14:18:15 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (2.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (13.8ms)
+Completed 200 OK in 34.9ms (Views: 31.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/pictures.css?body=1" for 127.0.0.1 at 2014-05-18 14:18:15 +0100
+Served asset /pictures.css - 200 OK (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-18 14:18:15 +0100
+Served asset /application.js - 200 OK (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-18 14:18:15 +0100
+Served asset /jquery.js - 200 OK (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-18 14:18:15 +0100
+Served asset /jquery_ujs.js - 200 OK (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-18 14:18:15 +0100
+Served asset /application.css - 200 OK (0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2014-05-18 14:18:30 +0100
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9Kv8ghOmn4jq3eaPdMeRoinxyWNepvWNJvB+L0JLzx8=", "user"=>{"email"=>"scottygammon@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (19.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'scottygammon@gmail.com' LIMIT 1[0m
+  [1m[35m (0.7ms)[0m  BEGIN
+  [1m[36m (6.3ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = '2014-05-18 13:02:56.853870', "current_sign_in_at" = '2014-05-18 13:18:30.976146', "sign_in_count" = 4, "updated_at" = '2014-05-18 13:18:30.981906' WHERE "users"."id" = 1[0m
+  [1m[35m (1.8ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 292.1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-05-18 14:18:31 +0100
+Processing by AlbumsController#index as HTML
+  [1m[36mUser Load (1.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mAlbum Load (0.3ms)[0m  SELECT "albums".* FROM "albums" 
+  Rendered albums/index.html.haml within layouts/application (0.8ms)
+Completed 200 OK in 14.8ms (Views: 10.6ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/albums" for 127.0.0.1 at 2014-05-18 14:18:34 +0100
+Processing by AlbumsController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mAlbum Load (0.4ms)[0m  SELECT "albums".* FROM "albums" 
+  Rendered albums/index.html.haml within layouts/application (0.7ms)
+Completed 200 OK in 15.9ms (Views: 10.0ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/pictures" for 127.0.0.1 at 2014-05-18 14:18:35 +0100
+Processing by PicturesController#index as HTML
+  [1m[36mUser Load (1.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mPicture Load (0.7ms)[0m  SELECT "pictures".* FROM "pictures" 
+  [1m[36m (11.0ms)[0m  [1mSELECT COUNT(*) FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN pictures ON pictures.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Picture' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT pictures.id FROM "pictures" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id[0m
+  Rendered pictures/index.html.haml within layouts/application (15.1ms)
+Completed 200 OK in 31.8ms (Views: 14.6ms | ActiveRecord: 13.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-05-18 14:19:16 +0100
+Processing by AlbumsController#index as HTML
+Completed 401 Unauthorized in 126.0ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-05-18 14:19:17 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (0.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 86.5ms (Views: 20.7ms | ActiveRecord: 29.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-18 14:19:17 +0100
+Served asset /application.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-18 14:19:17 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pictures.css?body=1" for 127.0.0.1 at 2014-05-18 14:19:17 +0100
+Served asset /pictures.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-18 14:19:17 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-18 14:19:17 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-05-18 14:19:18 +0100
+Processing by AlbumsController#index as HTML
+  [1m[35mUser Load (1.9ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mAlbum Load (0.7ms)[0m  [1mSELECT "albums".* FROM "albums" [0m
+  Rendered albums/index.html.haml within layouts/application (0.7ms)
+Completed 200 OK in 24.1ms (Views: 12.7ms | ActiveRecord: 6.3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-18 14:19:18 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-18 14:19:18 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-18 14:19:18 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pictures.css?body=1" for 127.0.0.1 at 2014-05-18 14:19:18 +0100
+Served asset /pictures.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-18 14:19:18 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2014-05-18 14:19:21 +0100
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"jDfr3343nRIyIT6neYwgZMINOIYLUYnr4gNXGVP85qg="}
+  [1m[35mUser Load (0.9ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 77.9ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-05-18 14:19:22 +0100
+Processing by AlbumsController#index as HTML
+Completed 401 Unauthorized in 0.6ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-05-18 14:19:22 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (1.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 18.8ms (Views: 17.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-18 14:19:22 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pictures.css?body=1" for 127.0.0.1 at 2014-05-18 14:19:22 +0100
+Served asset /pictures.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-18 14:19:22 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-18 14:19:22 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-18 14:19:22 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2014-05-18 14:19:35 +0100
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9f7LrtK13dWbQWCqyCMJ3Pgl7fbAsp+urQrnjnaPYKg=", "user"=>{"email"=>"scottygammon@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (2.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'scottygammon@gmail.com' LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  BEGIN
+  [1m[36m (1.0ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = '2014-05-18 13:18:30.976146', "current_sign_in_at" = '2014-05-18 13:19:35.329426', "sign_in_count" = 5, "updated_at" = '2014-05-18 13:19:35.330998' WHERE "users"."id" = 1[0m
+  [1m[35m (2.2ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 153.6ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-05-18 14:19:35 +0100
+Processing by AlbumsController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mAlbum Load (0.3ms)[0m  SELECT "albums".* FROM "albums" 
+  Rendered albums/index.html.haml within layouts/application (0.7ms)
+Completed 200 OK in 12.6ms (Views: 9.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/pictures.css?body=1" for 127.0.0.1 at 2014-05-18 14:19:35 +0100
+Served asset /pictures.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-18 14:19:35 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-18 14:19:35 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-18 14:19:35 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-18 14:19:35 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-05-18 14:19:45 +0100
+Processing by AlbumsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mAlbum Load (0.3ms)[0m  SELECT "albums".* FROM "albums" 
+  Rendered albums/index.html.haml within layouts/application (0.7ms)
+Completed 200 OK in 191.4ms (Views: 13.5ms | ActiveRecord: 11.3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-18 14:19:46 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-18 14:19:46 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-18 14:19:46 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-18 14:19:46 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pictures.css?body=1" for 127.0.0.1 at 2014-05-18 14:19:46 +0100
+Served asset /pictures.css - 304 Not Modified (0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-05-18 14:19:48 +0100
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 4.0ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-05-18 14:19:48 +0100
+Processing by AlbumsController#index as HTML
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mAlbum Load (0.3ms)[0m  [1mSELECT "albums".* FROM "albums" [0m
+  Rendered albums/index.html.haml within layouts/application (1.3ms)
+Completed 200 OK in 13.7ms (Views: 10.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-18 14:19:48 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-18 14:19:48 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-18 14:19:48 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pictures.css?body=1" for 127.0.0.1 at 2014-05-18 14:19:48 +0100
+Served asset /pictures.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-18 14:19:48 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-05-18 14:19:50 +0100
+Processing by Devise::SessionsController#new as HTML
+  [1m[35mUser Load (1.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 4.0ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-05-18 14:19:50 +0100
+Processing by AlbumsController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mAlbum Load (0.3ms)[0m  SELECT "albums".* FROM "albums" 
+  Rendered albums/index.html.haml within layouts/application (0.7ms)
+Completed 200 OK in 13.2ms (Views: 10.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/pictures.css?body=1" for 127.0.0.1 at 2014-05-18 14:19:50 +0100
+Served asset /pictures.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-18 14:19:50 +0100
+Served asset /application.css - 304 Not Modified (76ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-18 14:19:50 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-18 14:19:50 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-18 14:19:50 +0100
+Served asset /application.js - 304 Not Modified (0ms)
