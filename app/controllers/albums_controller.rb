@@ -4,7 +4,7 @@ class AlbumsController < ApplicationController
   before_filter :authenticate_user!
 
   def index
-    @albums = current_user.albums
+    @albums = Album.all
   end
 
   def new
