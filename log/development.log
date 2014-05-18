@@ -47,3 +47,48 @@ Migrating to CreatePictures (20140517091956)
   [1m[36m (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20140517091956')[0m
   [1m[35m (0.6ms)[0m  COMMIT
   [1m[36m (0.3ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Connecting to database specified by database.yml
+  [1m[36m (0.8ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (205.3ms)[0m  DROP DATABASE IF EXISTS "PhotoSharingApp_test"
+  [1m[36m (1028.5ms)[0m  [1mCREATE DATABASE "PhotoSharingApp_test" ENCODING = 'unicode'[0m
+  [1m[35m (14.5ms)[0m  CREATE TABLE "albums" ("id" serial primary key, "name" character varying(255), "description" text, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (1.4ms)[0m  [1mCREATE INDEX "index_albums_on_user_id" ON "albums" ("user_id")[0m
+  [1m[35m (5.6ms)[0m  CREATE TABLE "pictures" ("id" serial primary key, "user_id" integer, "name" character varying(255), "image" text, "datetime" timestamp, "latitude" character varying(255), "longitude" character varying(255), "altitude" decimal, "image_length" integer, "image_height" integer, "orientation" integer, "camera_make" character varying(255), "camera_model" character varying(255), "exposure" integer, "flash" boolean, "focal_length" decimal, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (1.6ms)[0m  [1mCREATE INDEX "index_pictures_on_user_id" ON "pictures" ("user_id")[0m
+  [1m[35m (4.7ms)[0m  CREATE TABLE "users" ("id" serial primary key, "user_name" character varying(255), "profile_pic" text, "role" character varying(255), "bio" text, "url" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (1.1ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [1m[35m (1.5ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.3ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (0.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140517091956')
+  [1m[36m (0.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140517091218')[0m
+  [1m[35m (0.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140517091327')
+Connecting to database specified by database.yml
+  [1m[36m (0.4ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateUsers (20140517091218)
+Migrating to CreateAlbums (20140517091327)
+Migrating to CreatePictures (20140517091956)
+Migrating to ActsAsTaggableOnMigration (20140518102230)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (33.9ms)[0m  [1mCREATE TABLE "tags" ("id" serial primary key, "name" character varying(255)) [0m
+  [1m[35m (5.6ms)[0m  CREATE TABLE "taggings" ("id" serial primary key, "tag_id" integer, "taggable_id" integer, "taggable_type" character varying(255), "tagger_id" integer, "tagger_type" character varying(255), "context" character varying(128), "created_at" timestamp) 
+  [1m[36m (1.0ms)[0m  [1mCREATE INDEX "index_taggings_on_tag_id" ON "taggings" ("tag_id")[0m
+  [1m[35m (1.3ms)[0m  CREATE INDEX "index_taggings_on_taggable_id_and_taggable_type_and_context" ON "taggings" ("taggable_id", "taggable_type", "context")
+  [1m[36m (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20140518102230')[0m
+  [1m[35m (1.0ms)[0m  COMMIT
+Migrating to AddMissingUniqueIndices (20140518102231)
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (1.0ms)[0m  CREATE UNIQUE INDEX "index_tags_on_name" ON "tags" ("name")
+  [1m[36m (24.5ms)[0m  [1mDROP INDEX "index_taggings_on_tag_id"[0m
+  [1m[35m (0.5ms)[0m  DROP INDEX "index_taggings_on_taggable_id_and_taggable_type_and_context"
+  [1m[36m (2.2ms)[0m  [1mCREATE UNIQUE INDEX "taggings_idx" ON "taggings" ("tag_id", "taggable_id", "taggable_type", "context", "tagger_id", "tagger_type")[0m
+  [1m[35m (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20140518102231')
+  [1m[36m (1.5ms)[0m  [1mCOMMIT[0m
+Migrating to AddTaggingsCounterCacheToTags (20140518102232)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (18.0ms)[0m  [1mALTER TABLE "tags" ADD COLUMN "taggings_count" integer DEFAULT 0[0m
+  [1m[35mActsAsTaggableOn::Tag Load (0.6ms)[0m  SELECT "tags".* FROM "tags" ORDER BY "tags"."id" ASC LIMIT 1000
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20140518102232')[0m
+  [1m[35m (0.8ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
