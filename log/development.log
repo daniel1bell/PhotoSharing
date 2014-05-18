@@ -11111,6 +11111,139 @@ Served asset /jquery.js - 304 Not Modified (0ms)
 Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-18 13:24:12 +0100
 Served asset /jquery_ujs.js - 304 Not Modified (0ms)
 Connecting to database specified by database.yml
+<<<<<<< HEAD
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2014-05-18 14:00:56 +0100
+Processing by AlbumsController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mAlbum Load (0.4ms)[0m  SELECT "albums".* FROM "albums" 
+  Rendered albums/index.html.haml within layouts/application (3.2ms)
+Completed 200 OK in 109.1ms (Views: 25.6ms | ActiveRecord: 13.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-18 14:00:56 +0100
+Served asset /application.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/pictures.css?body=1" for 127.0.0.1 at 2014-05-18 14:00:56 +0100
+Served asset /pictures.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-18 14:00:56 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-18 14:00:56 +0100
+Served asset /application.js - 304 Not Modified (37ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-18 14:00:56 +0100
+Served asset /jquery.js - 304 Not Modified (2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-05-18 14:01:20 +0100
+Processing by AlbumsController#index as HTML
+Completed 401 Unauthorized in 0.4ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-05-18 14:01:20 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (1.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 48.5ms (Views: 47.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-18 14:01:20 +0100
+Served asset /application.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/pictures.css?body=1" for 127.0.0.1 at 2014-05-18 14:01:20 +0100
+Served asset /pictures.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-18 14:01:20 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-18 14:01:20 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-18 14:01:20 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2014-05-18 14:01:23 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.erb (0.3ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 11.8ms (Views: 10.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-18 14:01:23 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pictures.css?body=1" for 127.0.0.1 at 2014-05-18 14:01:23 +0100
+Served asset /pictures.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-18 14:01:23 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-18 14:01:23 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-18 14:01:23 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2014-05-18 14:01:34 +0100
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HXw2Qel9jagqPQIkVP2wRsKg/fv+5xuyhYQKeicLNd4=", "user"=>{"email"=>"paul@varga.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.9ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."email" = 'paul@varga.com' LIMIT 1
+  [1m[36mSQL (3.2ms)[0m  [1mINSERT INTO "users" ("bio", "created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "last_sign_in_at", "last_sign_in_ip", "profile_pic", "remember_created_at", "reset_password_sent_at", "reset_password_token", "role", "sign_in_count", "updated_at", "url", "user_name") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17) RETURNING "id"[0m  [["bio", nil], ["created_at", Sun, 18 May 2014 13:01:35 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "paul@varga.com"], ["encrypted_password", "$2a$10$Y8SWj9OiwMDukDtSV1MQ.uf0FUXQsmMzI1kp0g.9OgeO2d0wnWNJ."], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["profile_pic", nil], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["role", nil], ["sign_in_count", 0], ["updated_at", Sun, 18 May 2014 13:01:35 UTC +00:00], ["url", nil], ["user_name", nil]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.5ms)[0m  UPDATE "users" SET "last_sign_in_at" = '2014-05-18 13:01:35.032964', "current_sign_in_at" = '2014-05-18 13:01:35.032964', "last_sign_in_ip" = '127.0.0.1', "current_sign_in_ip" = '127.0.0.1', "sign_in_count" = 1, "updated_at" = '2014-05-18 13:01:35.033797' WHERE "users"."id" = 2
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 146.2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-05-18 14:01:35 +0100
+Processing by AlbumsController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  [1m[36mAlbum Load (0.2ms)[0m  [1mSELECT "albums".* FROM "albums" [0m
+  Rendered albums/index.html.haml within layouts/application (0.6ms)
+Completed 200 OK in 7.4ms (Views: 5.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-18 14:01:35 +0100
+Served asset /application.css - 304 Not Modified (6ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-18 14:01:35 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-18 14:01:35 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-18 14:01:35 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pictures.css?body=1" for 127.0.0.1 at 2014-05-18 14:01:35 +0100
+Served asset /pictures.css - 304 Not Modified (0ms)
+=======
   [1m[36m (2.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
 Migrating to CreateUsers (20140517091218)
 Migrating to CreateAlbums (20140517091327)
@@ -11581,6 +11714,7 @@ Served asset /pictures.css - 304 Not Modified (0ms)
 
 Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-18 13:59:10 +0100
 Served asset /application.css - 304 Not Modified (0ms)
+<<<<<<< HEAD
 
 
 Started DELETE "/users/sign_out" for 127.0.0.1 at 2014-05-18 14:02:13 +0100
@@ -13023,3 +13157,6 @@ Served asset /jquery.js - 304 Not Modified (0ms)
 
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-18 14:19:50 +0100
 Served asset /application.js - 304 Not Modified (0ms)
+=======
+>>>>>>> 60869c6a5840f5b63a34f89e2fb1f8b66e39d2ed
+>>>>>>> 4e762ee5368ed083711e5e7e9524cbaf127bea6e

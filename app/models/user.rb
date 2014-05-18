@@ -11,6 +11,7 @@ class User < ActiveRecord::Base
   attr_accessible :bio, :profile_pic, :role, :url, :user_name
 
   acts_as_tagger
+  acts_as_voter
 
   # METHODS BELOW
 
