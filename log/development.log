@@ -11111,6 +11111,7 @@ Served asset /jquery.js - 304 Not Modified (0ms)
 Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-18 13:24:12 +0100
 Served asset /jquery_ujs.js - 304 Not Modified (0ms)
 Connecting to database specified by database.yml
+<<<<<<< HEAD
 Connecting to database specified by database.yml
 Connecting to database specified by database.yml
 
@@ -11242,3 +11243,475 @@ Served asset /jquery_ujs.js - 304 Not Modified (0ms)
 
 Started GET "/assets/pictures.css?body=1" for 127.0.0.1 at 2014-05-18 14:01:35 +0100
 Served asset /pictures.css - 304 Not Modified (0ms)
+=======
+  [1m[36m (2.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateUsers (20140517091218)
+Migrating to CreateAlbums (20140517091327)
+Migrating to CreatePictures (20140517091956)
+Migrating to AddPictureImageToPictures (20140517192522)
+Migrating to ActsAsTaggableOnMigration (20140517194115)
+Migrating to AddMissingUniqueIndices (20140517194116)
+Migrating to AddTaggingsCounterCacheToTags (20140517194117)
+Migrating to AddDeviseToUsers (20140518092029)
+Migrating to ActsAsVotableMigration (20140518104414)
+  [1m[35m (1.1ms)[0m  BEGIN
+  [1m[36m (51.0ms)[0m  [1mCREATE TABLE "votes" ("id" serial primary key, "votable_id" integer, "votable_type" character varying(255), "voter_id" integer, "voter_type" character varying(255), "vote_flag" boolean, "vote_scope" character varying(255), "vote_weight" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (2.6ms)[0m  CREATE INDEX "index_votes_on_votable_id_and_votable_type" ON "votes" ("votable_id", "votable_type")
+  [1m[36m (1.6ms)[0m  [1mCREATE INDEX "index_votes_on_voter_id_and_voter_type" ON "votes" ("voter_id", "voter_type")[0m
+  [1m[35m (1.7ms)[0m  CREATE INDEX "index_votes_on_voter_id_and_voter_type_and_vote_scope" ON "votes" ("voter_id", "voter_type", "vote_scope")
+  [1m[36m (1.6ms)[0m  [1mCREATE INDEX "index_votes_on_votable_id_and_votable_type_and_vote_scope" ON "votes" ("votable_id", "votable_type", "vote_scope")[0m
+  [1m[35m (2.6ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20140518104414')
+  [1m[36m (187.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2014-05-18 13:36:12 +0100
+Processing by AlbumsController#index as HTML
+Completed 401 Unauthorized in 71.0ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-05-18 13:36:12 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (2.7ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (17.2ms)
+Compiled application.js  (17ms)  (pid 8118)
+Completed 200 OK in 220.7ms (Views: 86.3ms | ActiveRecord: 19.7ms)
+
+
+Started GET "/assets/pictures.css?body=1" for 127.0.0.1 at 2014-05-18 13:36:13 +0100
+Served asset /pictures.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-18 13:36:13 +0100
+Served asset /jquery.js - 304 Not Modified (134ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-18 13:36:13 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-18 13:36:13 +0100
+Served asset /application.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-18 13:36:13 +0100
+Served asset /application.css - 304 Not Modified (6ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-05-18 13:55:19 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (0.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (6.0ms)
+Completed 500 Internal Server Error in 19.6ms
+
+Haml::SyntaxError - Got "else" with no preceding "if":
+  app/views/layouts/application.html.haml:14:in `'
+  haml (4.0.5) lib/haml/parser.rb:295:in `silent_script'
+  haml (4.0.5) lib/haml/parser.rb:225:in `process_line'
+  haml (4.0.5) lib/haml/parser.rb:121:in `parse'
+  haml (4.0.5) lib/haml/engine.rb:66:in `initialize'
+  haml (4.0.5) lib/haml/template/plugin.rb:25:in `compile'
+  haml (4.0.5) lib/haml/template/plugin.rb:30:in `call'
+  actionpack (3.2.18) lib/action_view/template.rb:268:in `compile'
+  actionpack (3.2.18) lib/action_view/template.rb:244:in `block in compile!'
+  actionpack (3.2.18) lib/action_view/template.rb:232:in `compile!'
+  actionpack (3.2.18) lib/action_view/template.rb:144:in `block in render'
+  activesupport (3.2.18) lib/active_support/notifications.rb:125:in `instrument'
+  actionpack (3.2.18) lib/action_view/template.rb:143:in `render'
+  actionpack (3.2.18) lib/action_view/renderer/template_renderer.rb:59:in `render_with_layout'
+  actionpack (3.2.18) lib/action_view/renderer/template_renderer.rb:45:in `render_template'
+  actionpack (3.2.18) lib/action_view/renderer/template_renderer.rb:18:in `render'
+  actionpack (3.2.18) lib/action_view/renderer/renderer.rb:36:in `render_template'
+  actionpack (3.2.18) lib/action_view/renderer/renderer.rb:17:in `render'
+  actionpack (3.2.18) lib/abstract_controller/rendering.rb:110:in `_render_template'
+  actionpack (3.2.18) lib/action_controller/metal/streaming.rb:225:in `_render_template'
+  actionpack (3.2.18) lib/abstract_controller/rendering.rb:103:in `render_to_body'
+  actionpack (3.2.18) lib/action_controller/metal/renderers.rb:28:in `render_to_body'
+  actionpack (3.2.18) lib/action_controller/metal/compatibility.rb:50:in `render_to_body'
+  actionpack (3.2.18) lib/abstract_controller/rendering.rb:88:in `render'
+  actionpack (3.2.18) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (3.2.18) lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+  activesupport (3.2.18) lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+  /Users/Scotty/.rbenv/versions/2.0.0-p247/lib/ruby/2.0.0/benchmark.rb:296:in `realtime'
+  activesupport (3.2.18) lib/active_support/core_ext/benchmark.rb:5:in `ms'
+  actionpack (3.2.18) lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+  actionpack (3.2.18) lib/action_controller/metal/instrumentation.rb:83:in `cleanup_view_runtime'
+  activerecord (3.2.18) lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+  actionpack (3.2.18) lib/action_controller/metal/instrumentation.rb:39:in `render'
+  actionpack (3.2.18) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (3.2.18) lib/action_controller/metal/responder.rb:232:in `default_render'
+  actionpack (3.2.18) lib/action_controller/metal/responder.rb:160:in `to_html'
+  actionpack (3.2.18) lib/action_controller/metal/responder.rb:153:in `respond'
+  actionpack (3.2.18) lib/action_controller/metal/responder.rb:146:in `call'
+  actionpack (3.2.18) lib/action_controller/metal/mime_responds.rb:239:in `respond_with'
+  devise (3.2.4) app/controllers/devise/sessions_controller.rb:10:in `new'
+  actionpack (3.2.18) lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+  actionpack (3.2.18) lib/abstract_controller/base.rb:167:in `process_action'
+  actionpack (3.2.18) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (3.2.18) lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:436:in `_run__1800150302990277021__process_action__1086389952587826413__callbacks'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.18) lib/abstract_controller/callbacks.rb:17:in `process_action'
+  actionpack (3.2.18) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (3.2.18) lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+  activesupport (3.2.18) lib/active_support/notifications.rb:123:in `block in instrument'
+  activesupport (3.2.18) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (3.2.18) lib/active_support/notifications.rb:123:in `instrument'
+  actionpack (3.2.18) lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+  actionpack (3.2.18) lib/action_controller/metal/params_wrapper.rb:207:in `process_action'
+  activerecord (3.2.18) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (3.2.18) lib/abstract_controller/base.rb:121:in `process'
+  actionpack (3.2.18) lib/abstract_controller/rendering.rb:45:in `process'
+  actionpack (3.2.18) lib/action_controller/metal.rb:203:in `dispatch'
+  actionpack (3.2.18) lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  actionpack (3.2.18) lib/action_controller/metal.rb:246:in `block in action'
+  actionpack (3.2.18) lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  actionpack (3.2.18) lib/action_dispatch/routing/route_set.rb:36:in `call'
+  actionpack (3.2.18) lib/action_dispatch/routing/mapper.rb:43:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.18) lib/action_dispatch/routing/route_set.rb:608:in `call'
+  warden (1.2.3) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.3) lib/warden/manager.rb:34:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.5) lib/rack/etag.rb:23:in `call'
+  rack (1.4.5) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:210:in `context'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:205:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/cookies.rb:341:in `call'
+  activerecord (3.2.18) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.18) lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:405:in `_run__422874288073713452__call__3664805917152984363__callbacks'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.18) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:56:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.18) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.18) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.18) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.18) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.18) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.18) lib/rails/engine.rb:484:in `call'
+  railties (3.2.18) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.18) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/Scotty/.rbenv/versions/2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/Scotty/.rbenv/versions/2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/Scotty/.rbenv/versions/2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+
+Started POST "/__better_errors/70304769892500/variables" for 127.0.0.1 at 2014-05-18 13:55:19 +0100
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-05-18 13:56:23 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (0.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 27.3ms (Views: 26.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-18 13:56:24 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pictures.css?body=1" for 127.0.0.1 at 2014-05-18 13:56:24 +0100
+Served asset /pictures.css - 304 Not Modified (6ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-18 13:56:24 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-18 13:56:24 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-18 13:56:24 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2014-05-18 13:56:27 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.erb (0.4ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 101.2ms (Views: 99.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/pictures.css?body=1" for 127.0.0.1 at 2014-05-18 13:56:27 +0100
+Served asset /pictures.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-18 13:56:27 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-18 13:56:27 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-18 13:56:27 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-18 13:56:27 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2014-05-18 13:56:36 +0100
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OZqIgSOxftYH8sUQ+U88g08E6hq0aWB5GXXHnkW07Gw=", "user"=>{"email"=>"scottygammon@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36m (3.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (27.9ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."email" = 'scottygammon@gmail.com' LIMIT 1
+  [1m[36mSQL (35.2ms)[0m  [1mINSERT INTO "users" ("bio", "created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "last_sign_in_at", "last_sign_in_ip", "profile_pic", "remember_created_at", "reset_password_sent_at", "reset_password_token", "role", "sign_in_count", "updated_at", "url", "user_name") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17) RETURNING "id"[0m  [["bio", nil], ["created_at", Sun, 18 May 2014 12:56:36 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "scottygammon@gmail.com"], ["encrypted_password", "$2a$10$VbjTMsy54S7WWxwYvnBgeOUpxFOFy2iQ9SXaAVJwbmDmWm8aKtnQ."], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["profile_pic", nil], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["role", nil], ["sign_in_count", 0], ["updated_at", Sun, 18 May 2014 12:56:36 UTC +00:00], ["url", nil], ["user_name", nil]]
+  [1m[35m (197.8ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (3.6ms)[0m  UPDATE "users" SET "last_sign_in_at" = '2014-05-18 12:56:36.793247', "current_sign_in_at" = '2014-05-18 12:56:36.793247', "last_sign_in_ip" = '127.0.0.1', "current_sign_in_ip" = '127.0.0.1', "sign_in_count" = 1, "updated_at" = '2014-05-18 12:56:36.794879' WHERE "users"."id" = 1
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 452.3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-05-18 13:56:36 +0100
+Processing by AlbumsController#index as HTML
+  [1m[35mUser Load (1.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mAlbum Load (1.3ms)[0m  [1mSELECT "albums".* FROM "albums" [0m
+  Rendered albums/index.html.haml within layouts/application (3.6ms)
+Completed 200 OK in 55.6ms (Views: 18.0ms | ActiveRecord: 21.2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-18 13:56:36 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-18 13:56:36 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pictures.css?body=1" for 127.0.0.1 at 2014-05-18 13:56:36 +0100
+Served asset /pictures.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-18 13:56:36 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-18 13:56:37 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-05-18 13:56:45 +0100
+Processing by AlbumsController#index as HTML
+  [1m[35mUser Load (1.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mAlbum Load (0.4ms)[0m  [1mSELECT "albums".* FROM "albums" [0m
+  Rendered albums/index.html.haml within layouts/application (0.7ms)
+Completed 200 OK in 14.1ms (Views: 9.7ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/assets/pictures.css?body=1" for 127.0.0.1 at 2014-05-18 13:56:45 +0100
+Served asset /pictures.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-18 13:56:45 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-18 13:56:45 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-18 13:56:45 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-18 13:56:45 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-05-18 13:56:48 +0100
+Processing by AlbumsController#index as HTML
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mAlbum Load (0.3ms)[0m  [1mSELECT "albums".* FROM "albums" [0m
+  Rendered albums/index.html.haml within layouts/application (0.9ms)
+Completed 200 OK in 14.5ms (Views: 10.9ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-18 13:56:48 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pictures.css?body=1" for 127.0.0.1 at 2014-05-18 13:56:48 +0100
+Served asset /pictures.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-18 13:56:48 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-18 13:56:48 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-18 13:56:48 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-05-18 13:56:51 +0100
+Processing by AlbumsController#index as HTML
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mAlbum Load (0.3ms)[0m  [1mSELECT "albums".* FROM "albums" [0m
+  Rendered albums/index.html.haml within layouts/application (0.7ms)
+Completed 200 OK in 12.3ms (Views: 8.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-18 13:56:51 +0100
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/pictures.css?body=1" for 127.0.0.1 at 2014-05-18 13:56:51 +0100
+Served asset /pictures.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-18 13:56:51 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-18 13:56:51 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-18 13:56:51 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/albums" for 127.0.0.1 at 2014-05-18 13:58:45 +0100
+Processing by AlbumsController#index as HTML
+  [1m[35mUser Load (1.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mAlbum Load (0.3ms)[0m  [1mSELECT "albums".* FROM "albums" [0m
+  Rendered albums/index.html.haml within layouts/application (0.7ms)
+Completed 200 OK in 14.9ms (Views: 10.7ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-18 13:58:45 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-18 13:58:45 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-18 13:58:45 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pictures.css?body=1" for 127.0.0.1 at 2014-05-18 13:58:45 +0100
+Served asset /pictures.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-18 13:58:45 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/albums" for 127.0.0.1 at 2014-05-18 13:58:48 +0100
+Processing by AlbumsController#index as HTML
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mAlbum Load (0.3ms)[0m  [1mSELECT "albums".* FROM "albums" [0m
+  Rendered albums/index.html.haml within layouts/application (0.7ms)
+Completed 200 OK in 13.5ms (Views: 9.5ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/pictures.css?body=1" for 127.0.0.1 at 2014-05-18 13:58:48 +0100
+Served asset /pictures.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-18 13:58:48 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-18 13:58:48 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-18 13:58:48 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-18 13:58:48 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/albums" for 127.0.0.1 at 2014-05-18 13:58:50 +0100
+Processing by AlbumsController#index as HTML
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mAlbum Load (0.3ms)[0m  [1mSELECT "albums".* FROM "albums" [0m
+  Rendered albums/index.html.haml within layouts/application (0.7ms)
+Completed 200 OK in 85.5ms (Views: 81.9ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-18 13:58:50 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-18 13:58:50 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pictures.css?body=1" for 127.0.0.1 at 2014-05-18 13:58:50 +0100
+Served asset /pictures.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-18 13:58:50 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-18 13:58:50 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/albums" for 127.0.0.1 at 2014-05-18 13:59:10 +0100
+Processing by AlbumsController#index as HTML
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mAlbum Load (0.8ms)[0m  [1mSELECT "albums".* FROM "albums" [0m
+  Rendered albums/index.html.haml within layouts/application (0.7ms)
+Completed 200 OK in 13.3ms (Views: 9.1ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-18 13:59:10 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-18 13:59:10 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-18 13:59:10 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pictures.css?body=1" for 127.0.0.1 at 2014-05-18 13:59:10 +0100
+Served asset /pictures.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-18 13:59:10 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+>>>>>>> 60869c6a5840f5b63a34f89e2fb1f8b66e39d2ed
