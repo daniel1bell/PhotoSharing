@@ -10,7 +10,9 @@ class User < ActiveRecord::Base
 
   attr_accessible :bio, :profile_pic, :role, :url, :user_name
 
-<<<<<<< HEAD
+  acts_as_tagger
+
+  # METHODS BELOW
 
   # def self.find_for_facebook_oauth(auth)
   #   if user = User.find_by_email(auth.info.email)
@@ -30,7 +32,6 @@ class User < ActiveRecord::Base
   #   end
   # end
 
-<<<<<<< HEAD
   def self.new_with_session(params, session)
     super.tap do |user|
       if data = session["devise.facebook_data"] && session["devise.facebook_data"]["extra"]["raw_info"]
@@ -38,10 +39,7 @@ class User < ActiveRecord::Base
       end
     end
   end
-=======
-  acts_as_tagger
->>>>>>> act_as_taggable
-=======
+  
   # def self.new_with_session(params, session)
   #   super.tap do |user|
   #     if data = session["devise.facebook_data"] && session["devise.facebook_data"]["extra"]["raw_info"]
@@ -49,5 +47,4 @@ class User < ActiveRecord::Base
   #     end
   #   end
   # end
->>>>>>> e284903f320412e453f599d814ada2a417a01be0
 end

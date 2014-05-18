@@ -10776,3 +10776,4 @@ Served asset /pictures.css - 304 Not Modified (0ms)
 Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-18 12:55:38 +0100
 Served asset /application.css - 304 Not Modified (0ms)
 >>>>>>> e284903f320412e453f599d814ada2a417a01be0
+Connecting to database specified by database.yml
