@@ -15,6 +15,11 @@ gem 'carrierwave', '~> 0.9.0'
 gem 'rmagick'
 gem 'acts-as-taggable-on'
 
+#  Gems for tagging and voting.
+
+gem 'acts-as-taggable-on'
+gem 'acts_as_votable', '~> 0.9.0'
+
 #  Gems for authorisation and authentication
 
 gem 'devise'

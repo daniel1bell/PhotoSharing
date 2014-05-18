@@ -10,6 +10,7 @@ class User < ActiveRecord::Base
 
   attr_accessible :bio, :profile_pic, :role, :url, :user_name
 
+<<<<<<< HEAD
 
   def self.find_for_facebook_oauth(auth)
     if user = User.find_by_email(auth.info.email)
@@ -36,4 +37,7 @@ class User < ActiveRecord::Base
       end
     end
   end
+=======
+  acts_as_tagger
+>>>>>>> act_as_taggable
 end
