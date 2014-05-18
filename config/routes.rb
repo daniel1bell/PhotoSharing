@@ -4,7 +4,10 @@ PhotoSharingApp::Application.routes.draw do
   # intial home root to album#index until User Model & Homepage is created
 
   get 'tags/:tag', to: 'pictures#index', as: :tag
-  resources :albums, :pictures
+  
+  resources :albums do
+    resources :pictures
+  end
 
   root to: "albums#index"
 
