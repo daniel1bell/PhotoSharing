@@ -17,6 +17,7 @@ gem 'rmagick'
 #  Gems for tagging and voting.
 
 gem 'acts-as-taggable-on'
+gem 'acts_as_votable', '~> 0.9.0'
 
 #  Gems for authorisation and authentication
 
