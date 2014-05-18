@@ -188,8 +188,10 @@ PLATFORMS
 
 DEPENDENCIES
   acts-as-taggable-on
+<<<<<<< HEAD
+=======
   acts_as_votable (~> 0.9.0)
-  act_as_taggable
+>>>>>>> act_as_taggable
   better_errors
   binding_of_caller
   cancan (~> 1.6.10)
