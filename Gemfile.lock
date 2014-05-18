@@ -31,10 +31,8 @@ GEM
     acts-as-taggable-on (3.2.3)
       actionpack (>= 3, < 5)
       activerecord (>= 3, < 5)
-<<<<<<< HEAD
-=======
     acts_as_votable (0.9.0)
->>>>>>> act_as_taggable
+    act_as_taggable
     arel (3.0.3)
     bcrypt (3.1.7)
     better_errors (1.1.0)
