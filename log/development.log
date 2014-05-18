@@ -11110,3 +11110,57 @@ Served asset /jquery.js - 304 Not Modified (0ms)
 
 Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-18 13:24:12 +0100
 Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+Connecting to database specified by database.yml
+  [1m[36m (2.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateUsers (20140517091218)
+Migrating to CreateAlbums (20140517091327)
+Migrating to CreatePictures (20140517091956)
+Migrating to AddPictureImageToPictures (20140517192522)
+Migrating to ActsAsTaggableOnMigration (20140517194115)
+Migrating to AddMissingUniqueIndices (20140517194116)
+Migrating to AddTaggingsCounterCacheToTags (20140517194117)
+Migrating to AddDeviseToUsers (20140518092029)
+Migrating to ActsAsVotableMigration (20140518104414)
+  [1m[35m (1.1ms)[0m  BEGIN
+  [1m[36m (51.0ms)[0m  [1mCREATE TABLE "votes" ("id" serial primary key, "votable_id" integer, "votable_type" character varying(255), "voter_id" integer, "voter_type" character varying(255), "vote_flag" boolean, "vote_scope" character varying(255), "vote_weight" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (2.6ms)[0m  CREATE INDEX "index_votes_on_votable_id_and_votable_type" ON "votes" ("votable_id", "votable_type")
+  [1m[36m (1.6ms)[0m  [1mCREATE INDEX "index_votes_on_voter_id_and_voter_type" ON "votes" ("voter_id", "voter_type")[0m
+  [1m[35m (1.7ms)[0m  CREATE INDEX "index_votes_on_voter_id_and_voter_type_and_vote_scope" ON "votes" ("voter_id", "voter_type", "vote_scope")
+  [1m[36m (1.6ms)[0m  [1mCREATE INDEX "index_votes_on_votable_id_and_votable_type_and_vote_scope" ON "votes" ("votable_id", "votable_type", "vote_scope")[0m
+  [1m[35m (2.6ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20140518104414')
+  [1m[36m (187.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2014-05-18 13:36:12 +0100
+Processing by AlbumsController#index as HTML
+Completed 401 Unauthorized in 71.0ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-05-18 13:36:12 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (2.7ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (17.2ms)
+Compiled application.js  (17ms)  (pid 8118)
+Completed 200 OK in 220.7ms (Views: 86.3ms | ActiveRecord: 19.7ms)
+
+
+Started GET "/assets/pictures.css?body=1" for 127.0.0.1 at 2014-05-18 13:36:13 +0100
+Served asset /pictures.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-18 13:36:13 +0100
+Served asset /jquery.js - 304 Not Modified (134ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-18 13:36:13 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-18 13:36:13 +0100
+Served asset /application.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-18 13:36:13 +0100
+Served asset /application.css - 304 Not Modified (6ms)

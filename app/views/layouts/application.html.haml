@@ -7,14 +7,13 @@
     = csrf_meta_tags
   %body
 
-    / .login
-    / - if current_user
-    / Logged in as:
-    / \#{current_user.name}#{current_user.email}#{link_to 'logout', destroy_user_session_path, method: :delete}
-    / %img{src: current_user.remote_avatar_url}/
-    / - else
-    / = link_to 'sign in', new_user_session_path
-    / = link_to 'register', new_user_registration_path
+    .login
+    - if current_user
+    = current_user.email
+    = link_to "Log out", destroy_user_session_path, method: :delete
+    - else
+    = link_to "Sign In", new_user_session_path
+    = link_to "Register", new_user_registration_path
 
     %p.notice= notice # Needed for Devise to alert User
     %p.alert= alert
