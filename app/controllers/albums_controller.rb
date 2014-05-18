@@ -1,6 +1,7 @@
 class AlbumsController < ApplicationController
 
 # basic album controller - still needs to be connected with User, Photo & Comment Controller
+  before_filter :authenticate_user!
 
   def index
     @albums = Album.all

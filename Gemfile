@@ -20,6 +20,7 @@ gem 'acts-as-taggable-on'
 gem 'devise'
 gem 'cancan', '~> 1.6.10'
 gem 'omniauth' # still need to add facebook and twitter auth gems
+gem 'omniauth-facebook'
 
 gem 'haml-rails'
 

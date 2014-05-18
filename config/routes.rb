@@ -1,4 +1,6 @@
 PhotoSharingApp::Application.routes.draw do
+  devise_for :users
+
   # intial home root to album#index until User Model & Homepage is created
 
   get 'tags/:tag', to: 'pictures#index', as: :tag

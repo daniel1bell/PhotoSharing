@@ -1,6 +1,7 @@
 class PicturesController < ApplicationController
 
 # basic picture controller - still needs to be connected with User, Photo & Comment Controller
+  before_filter :authenticate_user!
 
   def index
     if params[:tag]

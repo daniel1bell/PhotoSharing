@@ -10090,3 +10090,432 @@ Served asset /jquery_ujs.js - 304 Not Modified (0ms)
 
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-17 21:36:13 +0100
 Served asset /application.js - 304 Not Modified (0ms)
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (10.2ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [1m[35m (3.7ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.5ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateUsers (20140517091218)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (11.3ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "user_name" character varying(255), "profile_pic" text, "role" character varying(255), "bio" text, "url" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (1.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20140517091218')
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+Migrating to CreateAlbums (20140517091327)
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (8.2ms)[0m  [1mCREATE TABLE "albums" ("id" serial primary key, "name" character varying(255), "description" text, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (1.3ms)[0m  CREATE INDEX "index_albums_on_user_id" ON "albums" ("user_id")
+  [1m[36m (0.8ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20140517091327')[0m
+  [1m[35m (0.7ms)[0m  COMMIT
+Migrating to CreatePictures (20140517091956)
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (9.1ms)[0m  CREATE TABLE "pictures" ("id" serial primary key, "user_id" integer, "name" character varying(255), "image" text, "datetime" timestamp, "latitude" character varying(255), "longitude" character varying(255), "altitude" decimal, "image_length" integer, "image_height" integer, "orientation" integer, "camera_make" character varying(255), "camera_model" character varying(255), "exposure" integer, "flash" boolean, "focal_length" decimal, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (1.4ms)[0m  [1mCREATE INDEX "index_pictures_on_user_id" ON "pictures" ("user_id")[0m
+  [1m[35m (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20140517091956')
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+Migrating to AddPictureImageToPictures (20140517192522)
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (2.1ms)[0m  [1mALTER TABLE "pictures" ADD COLUMN "picture_image" character varying(255)[0m
+  [1m[35m (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20140517192522')
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Migrating to ActsAsTaggableOnMigration (20140517194115)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (5.0ms)[0m  [1mCREATE TABLE "tags" ("id" serial primary key, "name" character varying(255)) [0m
+  [1m[35m (7.6ms)[0m  CREATE TABLE "taggings" ("id" serial primary key, "tag_id" integer, "taggable_id" integer, "taggable_type" character varying(255), "tagger_id" integer, "tagger_type" character varying(255), "context" character varying(128), "created_at" timestamp) 
+  [1m[36m (1.3ms)[0m  [1mCREATE INDEX "index_taggings_on_tag_id" ON "taggings" ("tag_id")[0m
+  [1m[35m (1.8ms)[0m  CREATE INDEX "index_taggings_on_taggable_id_and_taggable_type_and_context" ON "taggings" ("taggable_id", "taggable_type", "context")
+  [1m[36m (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20140517194115')[0m
+  [1m[35m (0.7ms)[0m  COMMIT
+Migrating to AddMissingUniqueIndices (20140517194116)
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35m (1.8ms)[0m  CREATE UNIQUE INDEX "index_tags_on_name" ON "tags" ("name")
+  [1m[36m (1.4ms)[0m  [1mDROP INDEX "index_taggings_on_tag_id"[0m
+  [1m[35m (0.5ms)[0m  DROP INDEX "index_taggings_on_taggable_id_and_taggable_type_and_context"
+  [1m[36m (4.0ms)[0m  [1mCREATE UNIQUE INDEX "taggings_idx" ON "taggings" ("tag_id", "taggable_id", "taggable_type", "context", "tagger_id", "tagger_type")[0m
+  [1m[35m (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20140517194116')
+  [1m[36m (2.2ms)[0m  [1mCOMMIT[0m
+Migrating to AddTaggingsCounterCacheToTags (20140517194117)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (6.5ms)[0m  [1mALTER TABLE "tags" ADD COLUMN "taggings_count" integer DEFAULT 0[0m
+  [1m[35mActsAsTaggableOn::Tag Load (1.2ms)[0m  SELECT "tags".* FROM "tags" ORDER BY "tags"."id" ASC LIMIT 1000
+  [1m[36m (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20140517194117')[0m
+  [1m[35m (1.3ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2014-05-18 10:21:34 +0100
+Processing by AlbumsController#index as HTML
+  [1m[36mAlbum Load (1.2ms)[0m  [1mSELECT "albums".* FROM "albums" [0m
+  Rendered albums/index.html.haml within layouts/application (5.3ms)
+Warning. Error encountered while saving cache /Users/Scotty/Documents/PhotoSharing/tmp/cache/sass/1a9f59a2c210f41f3b613cf7969b16e01c6f0511/pictures.css.scssc: can't dump anonymous class #<Class:0x007fd1d9f2f3c0>
+
+Compiled pictures.css  (18ms)  (pid 5189)
+Compiled application.css  (3ms)  (pid 5189)
+Compiled jquery.js  (12ms)  (pid 5189)
+Compiled jquery_ujs.js  (0ms)  (pid 5189)
+Compiled application.js  (275ms)  (pid 5189)
+Completed 200 OK in 403.0ms (Views: 359.6ms | ActiveRecord: 15.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-18 10:21:35 +0100
+Served asset /application.css - 304 Not Modified (16ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-18 10:21:35 +0100
+Served asset /application.js - 304 Not Modified (15ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-18 10:21:35 +0100
+Served asset /jquery.js - 304 Not Modified (92ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-18 10:21:35 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/pictures.css?body=1" for 127.0.0.1 at 2014-05-18 10:21:35 +0100
+Served asset /pictures.css - 200 OK (2ms)
+
+
+Started GET "/albums/new" for 127.0.0.1 at 2014-05-18 10:21:39 +0100
+Processing by AlbumsController#new as HTML
+  Rendered albums/_form.html.haml (27.2ms)
+  Rendered albums/new.html.haml within layouts/application (34.2ms)
+Completed 200 OK in 55.3ms (Views: 43.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-18 10:21:39 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-18 10:21:39 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-18 10:21:39 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-18 10:21:39 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/albums" for 127.0.0.1 at 2014-05-18 10:21:43 +0100
+Processing by AlbumsController#index as HTML
+  [1m[35mAlbum Load (0.5ms)[0m  SELECT "albums".* FROM "albums" 
+  Rendered albums/index.html.haml within layouts/application (0.8ms)
+Completed 200 OK in 11.1ms (Views: 9.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-18 10:21:43 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-18 10:21:43 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-18 10:21:43 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-18 10:21:43 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/pictures" for 127.0.0.1 at 2014-05-18 10:21:44 +0100
+Processing by PicturesController#index as HTML
+  [1m[36mPicture Load (3.8ms)[0m  [1mSELECT "pictures".* FROM "pictures" [0m
+  [1m[35m (8.2ms)[0m  SELECT COUNT(*) FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN pictures ON pictures.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Picture' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT pictures.id FROM "pictures" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id
+  Rendered pictures/index.html.haml within layouts/application (25.1ms)
+Completed 200 OK in 51.5ms (Views: 25.5ms | ActiveRecord: 21.1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-18 10:21:44 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-18 10:21:44 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-18 10:21:44 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-18 10:21:44 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/pictures/new" for 127.0.0.1 at 2014-05-18 10:21:46 +0100
+Processing by PicturesController#new as HTML
+  [1m[36mActsAsTaggableOn::Tag Load (1.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" IS NULL AND "taggings"."taggable_type" = 'Picture' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  Rendered pictures/_form.html.haml (52.9ms)
+  Rendered pictures/new.html.haml within layouts/application (56.3ms)
+Completed 200 OK in 162.1ms (Views: 64.2ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-18 10:21:46 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-18 10:21:46 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-18 10:21:46 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-18 10:21:46 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/albums" for 127.0.0.1 at 2014-05-18 10:21:49 +0100
+Processing by AlbumsController#index as HTML
+  [1m[35mAlbum Load (0.4ms)[0m  SELECT "albums".* FROM "albums" 
+  Rendered albums/index.html.haml within layouts/application (0.8ms)
+Completed 200 OK in 10.7ms (Views: 9.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-18 10:21:49 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-18 10:21:49 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-18 10:21:49 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-18 10:21:49 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-05-18 10:21:57 +0100
+Processing by AlbumsController#index as HTML
+  [1m[36mAlbum Load (0.5ms)[0m  [1mSELECT "albums".* FROM "albums" [0m
+  Rendered albums/index.html.haml within layouts/application (2.0ms)
+Completed 200 OK in 14.2ms (Views: 12.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-18 10:21:57 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-18 10:21:57 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-18 10:21:57 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-18 10:21:57 +0100
+Served asset /application.css - 304 Not Modified (71ms)
+Connecting to database specified by database.yml
+  [1m[36m (0.7ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateUsers (20140517091218)
+Migrating to CreateAlbums (20140517091327)
+Migrating to CreatePictures (20140517091956)
+Migrating to AddPictureImageToPictures (20140517192522)
+Migrating to ActsAsTaggableOnMigration (20140517194115)
+Migrating to AddMissingUniqueIndices (20140517194116)
+Migrating to AddTaggingsCounterCacheToTags (20140517194117)
+Migrating to AddDeviseToUsers (20140518092029)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (22.3ms)[0m  [1mALTER TABLE "users" ADD COLUMN "email" character varying(255) DEFAULT '' NOT NULL[0m
+  [1m[35m (20.5ms)[0m  ALTER TABLE "users" ADD COLUMN "encrypted_password" character varying(255) DEFAULT '' NOT NULL
+  [1m[36m (0.7ms)[0m  [1mALTER TABLE "users" ADD COLUMN "reset_password_token" character varying(255)[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "users" ADD COLUMN "reset_password_sent_at" timestamp
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "users" ADD COLUMN "remember_created_at" timestamp[0m
+  [1m[35m (8.2ms)[0m  ALTER TABLE "users" ADD COLUMN "sign_in_count" integer DEFAULT 0 NOT NULL
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "users" ADD COLUMN "current_sign_in_at" timestamp[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "users" ADD COLUMN "last_sign_in_at" timestamp
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "users" ADD COLUMN "current_sign_in_ip" character varying(255)[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "users" ADD COLUMN "last_sign_in_ip" character varying(255)
+  [1m[36m (2.4ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (1.3ms)[0m  CREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")
+  [1m[36m (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20140518092029')[0m
+  [1m[35m (226.3ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2014-05-18 10:43:53 +0100
+Processing by AlbumsController#index as HTML
+Completed 401 Unauthorized in 22.1ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-05-18 10:43:53 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (3.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (16.4ms)
+Completed 200 OK in 203.6ms (Views: 124.9ms | ActiveRecord: 14.7ms)
+
+
+Started GET "/assets/pictures.css?body=1" for 127.0.0.1 at 2014-05-18 10:43:53 +0100
+Served asset /pictures.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-18 10:43:53 +0100
+Served asset /jquery.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-18 10:43:53 +0100
+Served asset /application.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-18 10:43:53 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-18 10:43:54 +0100
+Served asset /application.css - 304 Not Modified (6ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-05-18 11:10:08 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (105.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (137.5ms)
+Completed 500 Internal Server Error in 299.6ms
+
+NoMethodError - undefined method `omniauth_authorize_path' for #<#<Class:0x007fc7d2e396e8>:0x007fc7d373a5d0>:
+  app/views/devise/shared/_links.erb:23:in `block in _app_views_devise_shared__links_erb___1006398992705285984_70248129922980'
+  app/views/devise/shared/_links.erb:22:in `_app_views_devise_shared__links_erb___1006398992705285984_70248129922980'
+  actionpack (3.2.18) lib/action_view/template.rb:145:in `block in render'
+  activesupport (3.2.18) lib/active_support/notifications.rb:125:in `instrument'
+  actionpack (3.2.18) lib/action_view/template.rb:143:in `render'
+  actionpack (3.2.18) lib/action_view/renderer/partial_renderer.rb:265:in `render_partial'
+  actionpack (3.2.18) lib/action_view/renderer/partial_renderer.rb:238:in `block in render'
+  actionpack (3.2.18) lib/action_view/renderer/abstract_renderer.rb:38:in `block in instrument'
+  activesupport (3.2.18) lib/active_support/notifications.rb:123:in `block in instrument'
+  activesupport (3.2.18) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (3.2.18) lib/active_support/notifications.rb:123:in `instrument'
+  actionpack (3.2.18) lib/action_view/renderer/abstract_renderer.rb:38:in `instrument'
+  actionpack (3.2.18) lib/action_view/renderer/partial_renderer.rb:237:in `render'
+  actionpack (3.2.18) lib/action_view/renderer/renderer.rb:41:in `render_partial'
+  actionpack (3.2.18) lib/action_view/helpers/rendering_helper.rb:27:in `render'
+  haml (4.0.5) lib/haml/helpers/action_view_mods.rb:12:in `render_with_haml'
+  app/views/devise/sessions/new.html.erb:17:in `_app_views_devise_sessions_new_html_erb__2351355483097801853_70248106891460'
+  actionpack (3.2.18) lib/action_view/template.rb:145:in `block in render'
+  activesupport (3.2.18) lib/active_support/notifications.rb:125:in `instrument'
+  actionpack (3.2.18) lib/action_view/template.rb:143:in `render'
+  actionpack (3.2.18) lib/action_view/renderer/template_renderer.rb:47:in `block (2 levels) in render_template'
+  actionpack (3.2.18) lib/action_view/renderer/abstract_renderer.rb:38:in `block in instrument'
+  activesupport (3.2.18) lib/active_support/notifications.rb:123:in `block in instrument'
+  activesupport (3.2.18) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (3.2.18) lib/active_support/notifications.rb:123:in `instrument'
+  actionpack (3.2.18) lib/action_view/renderer/abstract_renderer.rb:38:in `instrument'
+  actionpack (3.2.18) lib/action_view/renderer/template_renderer.rb:46:in `block in render_template'
+  actionpack (3.2.18) lib/action_view/renderer/template_renderer.rb:54:in `render_with_layout'
+  actionpack (3.2.18) lib/action_view/renderer/template_renderer.rb:45:in `render_template'
+  actionpack (3.2.18) lib/action_view/renderer/template_renderer.rb:18:in `render'
+  actionpack (3.2.18) lib/action_view/renderer/renderer.rb:36:in `render_template'
+  actionpack (3.2.18) lib/action_view/renderer/renderer.rb:17:in `render'
+  actionpack (3.2.18) lib/abstract_controller/rendering.rb:110:in `_render_template'
+  actionpack (3.2.18) lib/action_controller/metal/streaming.rb:225:in `_render_template'
+  actionpack (3.2.18) lib/abstract_controller/rendering.rb:103:in `render_to_body'
+  actionpack (3.2.18) lib/action_controller/metal/renderers.rb:28:in `render_to_body'
+  actionpack (3.2.18) lib/action_controller/metal/compatibility.rb:50:in `render_to_body'
+  actionpack (3.2.18) lib/abstract_controller/rendering.rb:88:in `render'
+  actionpack (3.2.18) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (3.2.18) lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+  activesupport (3.2.18) lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+  /Users/Scotty/.rbenv/versions/2.0.0-p247/lib/ruby/2.0.0/benchmark.rb:296:in `realtime'
+  activesupport (3.2.18) lib/active_support/core_ext/benchmark.rb:5:in `ms'
+  actionpack (3.2.18) lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+  actionpack (3.2.18) lib/action_controller/metal/instrumentation.rb:83:in `cleanup_view_runtime'
+  activerecord (3.2.18) lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+  actionpack (3.2.18) lib/action_controller/metal/instrumentation.rb:39:in `render'
+  actionpack (3.2.18) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (3.2.18) lib/action_controller/metal/responder.rb:232:in `default_render'
+  actionpack (3.2.18) lib/action_controller/metal/responder.rb:160:in `to_html'
+  actionpack (3.2.18) lib/action_controller/metal/responder.rb:153:in `respond'
+  actionpack (3.2.18) lib/action_controller/metal/responder.rb:146:in `call'
+  actionpack (3.2.18) lib/action_controller/metal/mime_responds.rb:239:in `respond_with'
+  devise (3.2.4) app/controllers/devise/sessions_controller.rb:10:in `new'
+  actionpack (3.2.18) lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+  actionpack (3.2.18) lib/abstract_controller/base.rb:167:in `process_action'
+  actionpack (3.2.18) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (3.2.18) lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:436:in `_run__1011871239698021632__process_action__4103072515361503427__callbacks'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.18) lib/abstract_controller/callbacks.rb:17:in `process_action'
+  actionpack (3.2.18) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (3.2.18) lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+  activesupport (3.2.18) lib/active_support/notifications.rb:123:in `block in instrument'
+  activesupport (3.2.18) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (3.2.18) lib/active_support/notifications.rb:123:in `instrument'
+  actionpack (3.2.18) lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+  actionpack (3.2.18) lib/action_controller/metal/params_wrapper.rb:207:in `process_action'
+  activerecord (3.2.18) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (3.2.18) lib/abstract_controller/base.rb:121:in `process'
+  actionpack (3.2.18) lib/abstract_controller/rendering.rb:45:in `process'
+  actionpack (3.2.18) lib/action_controller/metal.rb:203:in `dispatch'
+  actionpack (3.2.18) lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  actionpack (3.2.18) lib/action_controller/metal.rb:246:in `block in action'
+  actionpack (3.2.18) lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  actionpack (3.2.18) lib/action_dispatch/routing/route_set.rb:36:in `call'
+  actionpack (3.2.18) lib/action_dispatch/routing/mapper.rb:43:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.18) lib/action_dispatch/routing/route_set.rb:608:in `call'
+  warden (1.2.3) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.3) lib/warden/manager.rb:34:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.5) lib/rack/etag.rb:23:in `call'
+  rack (1.4.5) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:210:in `context'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:205:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/cookies.rb:341:in `call'
+  activerecord (3.2.18) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.18) lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:405:in `_run__766249031926400860__call__2525975673918507728__callbacks'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.18) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:56:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.18) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.18) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.18) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.18) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.18) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.18) lib/rails/engine.rb:484:in `call'
+  railties (3.2.18) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.18) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/Scotty/.rbenv/versions/2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/Scotty/.rbenv/versions/2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/Scotty/.rbenv/versions/2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+
+Started POST "/__better_errors/70248105003420/variables" for 127.0.0.1 at 2014-05-18 11:10:09 +0100
