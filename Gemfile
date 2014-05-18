@@ -13,7 +13,6 @@ gem 'date-input-rails', '~> 0.0.3'
 gem 'ransack'
 gem 'carrierwave', '~> 0.9.0'
 gem 'rmagick'
-gem 'acts-as-taggable-on'
 
 #  Gems for tagging and voting.
 
