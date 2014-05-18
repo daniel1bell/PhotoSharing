@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140518143414) do
+ActiveRecord::Schema.define(:version => 20140518195350) do
 
   create_table "albums", :force => true do |t|
     t.string   "name"
@@ -38,7 +38,6 @@ ActiveRecord::Schema.define(:version => 20140518143414) do
   add_index "comments", ["user_id"], :name => "index_comments_on_user_id"
 
   create_table "pictures", :force => true do |t|
-    t.integer  "user_id"
     t.string   "name"
     t.text     "image"
     t.datetime "datetime"
@@ -56,9 +55,10 @@ ActiveRecord::Schema.define(:version => 20140518143414) do
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
     t.string   "picture_image"
+    t.integer  "album_id"
   end
 
-  add_index "pictures", ["user_id"], :name => "index_pictures_on_user_id"
+  add_index "pictures", ["album_id"], :name => "index_pictures_on_album_id"
 
   create_table "taggings", :force => true do |t|
     t.integer  "tag_id"
