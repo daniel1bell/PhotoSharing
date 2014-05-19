@@ -1,7 +1,12 @@
+.search
+  = form_tag("/search_results", method: "get") do
+    = label_tag(:q, "Search for:")
+    = text_field_tag(:q)
+    = submit_tag("Search")
+
 = link_to('New Album', new_album_path)
 %ul
   - @albums.each do |album|
     %li
       .album
         = link_to(album.name, album_path(album), class: "album-name")
-        

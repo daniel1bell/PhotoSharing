@@ -6,10 +6,16 @@ class PicturesController < ApplicationController
   def index
     if params[:tag]
       @pictures = Picture.tagged_with(params[:tag])
+    elsif params[:q]
+      @pictures = Picture.tagged_with(params[:q])
     else
       @pictures = Picture.all
     end
   end
+
+  def search_results
+  @tattoos = Tattoo.tagged_with("%#{params[:search]}%")
+end
 
   def new
     @picture = @album.pictures.build

@@ -10,6 +10,9 @@ class Picture < ActiveRecord::Base
   acts_as_commentable
 
   PictureImageUploader
+
+
+
   
 end
 
