@@ -10,8 +10,8 @@
     %header
       = search_form_for @q, url: search_albums_path, html: { method: :post } do |f|
         %p
-          = f.label :name_cont
-          = f.text_field :name_cont
+          = f.label :name_or_description_or_pictures_name_cont
+          = f.text_field :name_or_description_or_pictures_name_cont
         %p
           = f.submit
 
