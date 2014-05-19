@@ -12,6 +12,7 @@ gem 'pg'
 gem 'date-input-rails', '~> 0.0.3'
 gem 'ransack'
 gem 'carrierwave', '~> 0.9.0'
+gem "fog", "~> 1.3.1"
 gem 'rmagick'
 
 #  Gems for tagging, commenting and voting.
