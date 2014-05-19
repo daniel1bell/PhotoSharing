@@ -53,5 +53,10 @@ class AlbumsController < ApplicationController
     end
   end
 
+  def search
+    index
+    render :index
+  end
+
 
 end
