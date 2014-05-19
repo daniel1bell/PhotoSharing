@@ -7,6 +7,10 @@ PhotoSharingApp::Application.routes.draw do
   
   resources :albums do
     resources :pictures
+
+    collection do
+      match 'search' => 'albums#search', via: [:get, :post], as: :search
+    end
   end
 
   root to: "albums#index"
