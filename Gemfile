@@ -25,8 +25,8 @@ gem 'acts_as_commentable', '~> 3.0.1'
 gem 'devise'
 gem 'cancan', '~> 1.6.10'
 gem 'omniauth' # still need to add facebook and twitter auth gems
+gem 'omniauth-twitter'
 gem 'omniauth-facebook'
-
 gem 'haml-rails'
 
 group :development, :test do
