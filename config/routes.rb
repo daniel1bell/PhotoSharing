@@ -5,11 +5,13 @@ PhotoSharingApp::Application.routes.draw do
 
   get 'tags/:tag', to: 'pictures#index', as: :tag
   
+  resources :home, only: [:index], as: '/'
+
   resources :albums do
     resources :pictures
   end
 
-  root to: "albums#index"
+  root to: "home#index"
 
 
   # The priority is based upon order of creation:

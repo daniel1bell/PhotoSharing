@@ -2,25 +2,27 @@
 %html
   %head
     %title PhotoSharing
-    = stylesheet_link_tag "application", :media => "all"
-    = javascript_include_tag "application"
+    %meta{charset: "utf-8"}/
+    %meta{name: "viewport", content: "width=device-width, initial-scale=1.0"}/
+    = stylesheet_link_tag "application"
+    = javascript_include_tag "vendor/modernizr"
     = csrf_meta_tags
   %body
 
-    .login
-      - if current_user
-        = current_user.email
-        = link_to "Log out", destroy_user_session_path, method: :delete
-      - else
-        = link_to "Sign In", new_user_session_path
-        = link_to "Register", new_user_registration_path
+    %header
+      .login
+        - if current_user
+          = current_user.email
+          = link_to "Log out", destroy_user_session_path, method: :delete
+        - else
+          = link_to "Sign In", new_user_session_path
+          = link_to "Register", new_user_registration_path
 
-    %p.notice= notice # Needed for Devise to alert User
-    %p.alert= alert
-
-    #homepage
+      %p.notice= notice # Needed for Devise to alert User
+      %p.alert= alert
 
       = link_to('Albums', albums_path)
 
-      %section#main      
-        = yield
+    %main      
+      = yield
+      = javascript_include_tag "application"
