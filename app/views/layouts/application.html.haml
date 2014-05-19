@@ -11,6 +11,7 @@
       - if current_user
         = current_user.email
         = link_to "Log out", destroy_user_session_path, method: :delete
+        %img#user_image{src: current_user.profile_pic}/
       - else
         = link_to "Sign In", new_user_session_path
         = link_to "Register", new_user_registration_path
