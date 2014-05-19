@@ -14,6 +14,7 @@ gem 'foundation-rails'
 gem 'date-input-rails', '~> 0.0.3'
 gem 'ransack'
 gem 'carrierwave', '~> 0.9.0'
+gem "fog", "~> 1.3.1"
 gem 'rmagick'
 
 #  Gems for tagging, commenting and voting.
@@ -27,8 +28,8 @@ gem 'acts_as_commentable', '~> 3.0.1'
 gem 'devise'
 gem 'cancan', '~> 1.6.10'
 gem 'omniauth' # still need to add facebook and twitter auth gems
+gem 'omniauth-twitter'
 gem 'omniauth-facebook'
-
 gem 'haml-rails'
 
 group :development, :test do
