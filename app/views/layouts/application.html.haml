@@ -7,6 +7,14 @@
     = csrf_meta_tags
   %body
 
+    %header
+      = search_form_for @q do |f|
+        %p
+          = f.label :name_cont
+          = f.text_field :name_cont
+        %p
+          = f.submit
+
     .login
       - if current_user
         = current_user.email

@@ -4,7 +4,11 @@ class AlbumsController < ApplicationController
   before_filter :authenticate_user!
 
   def index
-    @albums = Album.all
+    if (params[:q])
+      @albums = @q.result(distinct: true)
+    else
+      @albums = Album.all
+    end
   end
 
   def new
