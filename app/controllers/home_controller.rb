@@ -5,4 +5,6 @@ class HomeController < ApplicationController
     @pictures = Picture.all
   end
 
+
+
 end
