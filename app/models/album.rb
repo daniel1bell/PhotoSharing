@@ -37,4 +37,16 @@ class Album < ActiveRecord::Base
       return ""
     end
   end
+
+  def self.recent_albums
+    Album.where("created_at >= ?", 1.day.ago.utc).order("created_at DESC")
+  end
+
+  
+
+  
+
+
+
+
 end

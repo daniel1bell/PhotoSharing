@@ -13,7 +13,5 @@ class Picture < ActiveRecord::Base
   PictureImageUploader
 
 
-
-  
 end
 
