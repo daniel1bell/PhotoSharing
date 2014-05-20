@@ -12,8 +12,11 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.ui.all
 //= require foundation
 //= require_tree .
+
+
 
 function initialise() {
   var mapOptions = {
@@ -53,6 +56,9 @@ google.maps.event.addDomListener(window, 'load', initialise);
 $(function() {
   $(document).foundation();
 
+
+  $( "#tabs" ).tabs({
+    });
 
   $('#search').on('click', function() {
     $('#search_form').submit();

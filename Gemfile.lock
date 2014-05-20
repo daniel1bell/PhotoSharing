@@ -228,6 +228,7 @@ DEPENDENCIES
   haml-rails
   high_voltage
   jquery-rails
+  jquery-ui-rails
   omniauth
   omniauth-facebook
   omniauth-twitter
