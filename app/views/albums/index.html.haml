@@ -54,13 +54,6 @@
 
 %br
 
-#search
-  = form_tag("/search_results", method: :get, remote: true, id: :search_form) do
-    = label_tag(:q, "Search for:")
-    = text_field_tag(:q)
-    = submit_tag("Search")
-
-
 = link_to('New Album', new_album_path)
 %ul
   - @albums.each do |album|
