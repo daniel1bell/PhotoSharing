@@ -45,6 +45,7 @@ class PicturesController < ApplicationController
 
   def show
     @picture = @album.pictures.find(params[:id])
+    @comment = @picture.comments.new
 
     respond_to do |format|
       format.js
