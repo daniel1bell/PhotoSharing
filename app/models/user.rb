@@ -7,7 +7,8 @@ class User < ActiveRecord::Base
   
   attr_accessible :bio, :profile_pic, :role, :url, :user_name, :email, :password, :password_confirmation, :remember_me, :uid, :provider
   
-  has_many :albums , dependent: :destroy 
+  has_many :albums , dependent: :destroy
+  has_many :pictures, through: :albums
 
   acts_as_tagger
   acts_as_voter

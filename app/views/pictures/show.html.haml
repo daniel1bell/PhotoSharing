@@ -30,6 +30,8 @@
         = f.hidden_field :user_id, value: current_user.id
         = f.submit
 
+    = render @picture.comments[0...@picture.comments.count]
+
 
 /   = link_to image_tag(@picture.picture_image.thumb.url)
 
