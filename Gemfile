@@ -12,6 +12,10 @@ gem 'pg'
 gem 'foundation-rails'
 gem 'high_voltage'
 
+# Gems for JS use
+
+gem 'jquery-ui-rails'
+
 
 #  Gems for data visualisation and front-end management.
 
