@@ -1,0 +1,56 @@
+$primary: #2E2E2E;
+$secondary: #EDEDED;
+$highlight: #F8FE3B;
+$mint: #83EABF;
+$indigo: #161E3B;
+
+.square_viewport {
+  text-align: center;
+  h3 {
+    color: $mint;
+    margin-left: 10px;
+    font-size: 18px;
+  }
+}
+
+.tiny_square {
+  height: 73px;
+  width: 71px;
+  background-color: $primary;
+  display: inline-block;
+  margin: 1px;
+}
+
+.tiny_group {
+  height: 150px;
+  width: 150px;
+  display: inline-block;
+  margin: 3px;
+  overflow: hidden;
+}
+
+.standard_square {
+  height: 150px;
+  width: 150px;
+  background-color: $primary;
+  display: inline-block;
+  margin: 3px;
+  overflow: hidden;
+}
+
+.standard_group {
+  width: 316px;
+  vertical-align: top;
+  display: inline-block;
+  text-align: left;
+}
+
+.large_square {
+  height: 309px;
+  width: 310px;
+  background-color: $primary;
+  display: inline-block;
+  margin: 3px;
+  overflow: hidden;
+  text-align: left;
+}

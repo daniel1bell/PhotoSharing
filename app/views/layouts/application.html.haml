@@ -9,21 +9,33 @@
     = csrf_meta_tags
   %body
 
-    %header
-      .login
-        - if current_user
-          = current_user.email
-          = link_to "Log out", destroy_user_session_path, method: :delete
-          %img#user_image{src: current_user.profile_pic}/
-        - else
-          = link_to "Sign In", new_user_session_path
-          = link_to "Register", new_user_registration_path
+    .off-canvas-wrap.docs-wrap{"data-offcanvas" => ""}
+      .inner-wrap
+        %nav.tab-bar
+          %section.middle.tab-bar-section
+            %h1.title ViewFindr
+          %section.right-small
+            %a.right-off-canvas-toggle.menu-icon
+              %span
+        %aside.right-off-canvas-menu
+          %ul.off-canvas-list
+            - if current_user
+              %li
+                %label= current_user.email
+              %li= link_to "Log out", destroy_user_session_path, method: :delete
+              %li= link_to('My Albums', albums_path)
+            - else
+              %li= link_to "Sign In", new_user_session_path
+              %li= link_to "Register", new_user_registration_path
 
-      %p.notice= notice # Needed for Devise to alert User
-      %p.alert= alert
+        %section.main-section
+          .row
+            .large-12.columns
+              / %img#user_image{src: current_user.profile_pic}/
+              %p.notice= notice # Needed for Devise to alert User
+              %p.alert= alert
 
-      = link_to('Albums', albums_path)
+              = yield
 
-    %main      
-      = yield
+        %a.exit-off-canvas
       = javascript_include_tag "application"
