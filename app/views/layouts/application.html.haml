@@ -37,5 +37,11 @@
 
               = yield
 
+        %footer 
+          = link_to 'About us', page_path('about')
+          = link_to 'Contact', page_path('contact')
+          = link_to 'Terms and Conditions', page_path('legal/terms')
+          = link_to 'Privacy', page_path('legal/privacy')
+
         %a.exit-off-canvas
       = javascript_include_tag "application"

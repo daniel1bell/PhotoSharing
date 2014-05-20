@@ -19,7 +19,7 @@ $(function() {
   $(document).foundation();
 
 
-  $('#search').on('keyup', function() {
+  $('#search').on('click', function() {
     $('#search_form').submit();
   });
 });
