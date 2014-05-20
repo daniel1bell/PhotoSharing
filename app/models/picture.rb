@@ -12,8 +12,9 @@ class Picture < ActiveRecord::Base
 
   PictureImageUploader
 
-
-
+  def user
+    album.user
+  end
   
 end
 
