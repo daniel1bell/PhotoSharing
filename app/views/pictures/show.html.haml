@@ -7,7 +7,7 @@
         = @picture.name
         %br
         %small
-          / by #{@picture.user.user_name}
+          by #{@picture.user.user_name}
       .inner_text
         %span.badge= @picture.votes_for.up.count
         %p Likes:
@@ -15,8 +15,7 @@
         %p Comments:
     .tiny_group
       .tiny_square
-        / %img{src: @picture.user.profile_pic}
-        / %img{src: @picture.user.profile_pic} to be fixe
+        %img{src: @picture.user.profile_pic}
       .tiny_square
 
       .tiny_square
@@ -28,6 +27,7 @@
     .long_short
       = form_for([@album, @picture, @comment]) do |f|
         = f.text_area :comment, {placeholder: "Add a comment..."}
+        = f.hidden_field :user_id, value: current_user.id
         = f.submit
 
 
