@@ -16,18 +16,14 @@
     .tiny_group
       .tiny_square
         / %img{src: @picture.user.profile_pic}
+        / %img{src: @picture.user.profile_pic} to be fixe
       .tiny_square
 
       .tiny_square
       .tiny_square
-
-    .long_short.tag_list
-      = raw @picture.tag_list.map { |t| link_to t, tag_path(t), class: "tag" }.join(' ')
 
     .long_short
-      = form_for([@album, @picture, @comment]) do |f|
-        = f.text_area :comment, {placeholder: "Add a comment..."}
-        = f.submit
+      = raw @picture.tag_list.map { |t| link_to t, tag_path(t), class: "tag" }.join(' ')
 
 
 /   = link_to image_tag(@picture.picture_image.thumb.url)
