@@ -12,7 +12,11 @@ PhotoSharingApp::Application.routes.draw do
     resources :pictures
   end
 
+  get '/pages/*id' => 'pages#show', as: :page, format: false
+
   root to: "home#index"
+
+  
 
 
   # The priority is based upon order of creation:
