@@ -9,7 +9,9 @@ PhotoSharingApp::Application.routes.draw do
   resources :home, only: [:index], as: '/'
 
   resources :albums do
-    resources :pictures
+    resources :pictures do
+      resources :comments
+    end
   end
 
   get '/pages/*id' => 'pages#show', as: :page, format: false
