@@ -4,15 +4,12 @@ PhotoSharingApp::Application.routes.draw do
   # intial home root to album#index until User Model & Homepage is created
 
   get 'tags/:tag', to: 'pictures#index', as: :tag
+  match "/search_results/" => "pictures#index", :via => :get, :as =>"search_results"
   
   resources :home, only: [:index], as: '/'
 
   resources :albums do
     resources :pictures
-
-    collection do
-      match 'search' => 'albums#search', via: [:get, :post], as: :search
-    end
   end
 
   root to: "home#index"
