@@ -1,8 +1,10 @@
 #search
   = form_tag("/search_results", method: :get, remote: true, id: :search_form) do
-    = label_tag(:q, "Search for:")
-    = text_field_tag(:q)
+    = label_tag(:search, "Search for:")
+    = text_field_tag(:search)
     = submit_tag("Search")
+
+
 
 = link_to('New Album', new_album_path)
 %ul

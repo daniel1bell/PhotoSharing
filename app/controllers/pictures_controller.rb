@@ -1,7 +1,7 @@
 class PicturesController < ApplicationController
 
 # basic picture controller - still needs to be connected with User, Photo & Comment Controller
-  before_filter :authenticate_user!, :load_album
+  before_filter :authenticate_user! #, :load_album
 
 # both tagging and search functionality for tags is working if you comment out load_album 
 # we still have to fix the routes here (error message: no album id) and make the views awesome
@@ -9,16 +9,17 @@ class PicturesController < ApplicationController
   def index
     if params[:tag]
       @pictures = Picture.tagged_with(params[:tag])
-    elsif params[:q]
-      @pictures = Picture.tagged_with(params[:q])
+    elsif params[:search]
+      @pictures = Picture.tagged_with(params[:search])
     else
       @pictures = Picture.all
     end
-  end
 
-  def search_results
-  @tattoos = Tattoo.tagged_with("%#{params[:search]}%")
-end
+    respond_to do |format|
+      format.js
+      format.html 
+    end
+  end
 
   def new
     @picture = @album.pictures.build
@@ -38,6 +39,11 @@ end
 
   def show
     @picture = @album.pictures.find(params[:id])
+
+    respond_to do |format|
+      format.js
+      format.html 
+    end
   end
 
   def destroy

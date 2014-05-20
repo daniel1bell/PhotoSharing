@@ -13,3 +13,9 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+$(function() {
+    $('#search').on('keyup', function() {
+      $('#search_form').submit();
+    });
+  });
