@@ -1,10 +1,30 @@
-%h1 
-  = @picture.name
-  = raw @picture.tag_list.map { |t| link_to t, tag_path(t) }.join(', ')
-  = link_to image_tag(@picture.picture_image.thumb.url)
+.square_viewport
+  .large_square
+    %img{src: @picture.picture_image.detail}/
+  .standard_group
+    .standard_square.text_square
+      %h3= @picture.name
+      .inner_text
+        %span.badge= @picture.votes_for.up.count
+        %p Likes:
+        %span.badge= @picture.comments.count
+        %p Comments:
+    .tiny_group
+      .tiny_square
+        %img{src: @picture.album.user.profile_pic}
+      .tiny_square
 
-%ul
-  %li
-    = link_to('Edit Picture', edit_album_picture_path(@picture.album))
-    = link_to('Delete Picture', ([@picture.album, @picture]), :method => :delete, :confirm => 'Are you sure?')
-    = link_to('Back', album_pictures_path(@picture.album))
+      .tiny_square
+      .tiny_square
+
+
+/ %h1 
+/   = @picture.name
+/   = raw @picture.tag_list.map { |t| link_to t, tag_path(t) }.join(', ')
+/   = link_to image_tag(@picture.picture_image.thumb.url)
+
+/ %ul
+/   %li
+/     = link_to('Edit Picture', edit_album_picture_path(@picture.album))
+/     = link_to('Delete Picture', ([@picture.album, @picture]), :method => :delete, :confirm => 'Are you sure?')
+/     = link_to('Back', album_pictures_path(@picture.album))
