@@ -12,10 +12,14 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require foundation
 //= require_tree .
 
 $(function() {
-    $('#search').on('keyup', function() {
-      $('#search_form').submit();
-    });
+  $(document).foundation();
+
+
+  $('#search').on('keyup', function() {
+    $('#search_form').submit();
   });
+});

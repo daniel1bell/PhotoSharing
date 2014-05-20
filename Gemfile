@@ -7,6 +7,8 @@ gem 'rails', '3.2.18'
 
 gem 'pg'
 
+gem 'foundation-rails'
+
 #  Gems for data visualisation and front-end management.
 
 gem 'date-input-rails', '~> 0.0.3'

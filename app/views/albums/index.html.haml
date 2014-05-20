@@ -1,10 +1,62 @@
+.square_viewport
+  .standard_group
+    .standard_square.text_square
+      %h3 Holidays 2010
+      .inner_text
+        %span.badge 42
+        %p Pictures:
+        %span.badge 13
+        %p Comments:
+    .tiny_group
+      .tiny_square
+        %img{src: "http://lorempixel.com/output/people-q-c-150-150-1.jpg"}/
+      .tiny_square
+        %img{src: "http://lorempixel.com/output/nature-q-c-150-150-6.jpg"}/
+      .tiny_square
+        %img{src: "http://lorempixel.com/output/sports-q-c-150-150-4.jpg"}/
+      .tiny_square
+        %img{src: "http://lorempixel.com/output/animals-q-c-150-150-3.jpg"}/
+    .standard_square
+      %img{src: "http://lorempixel.com/output/people-q-c-150-150-2.jpg"}/
+    .standard_square
+      %img{src: "http://lorempixel.com/output/abstract-q-c-150-150-4.jpg"}/
+  .large_square
+    %img{src: "http://lorempixel.com/output/nature-q-g-750-750-1.jpg"}/
+  .standard_group
+    .standard_square.text_square
+      %h3 Africa Mamba We Love It So God Damn Much
+      .inner_text
+        %span.badge 101
+        %p Pictures:
+        %span.badge 7
+        %p Comments:
+    .tiny_group
+      .tiny_square
+        %img{src: "http://lorempixel.com/output/animals-q-c-150-150-8.jpg"}/
+      .tiny_square
+        %img{src: "http://lorempixel.com/output/nightlife-q-c-150-150-7.jpg"}/
+      .tiny_square
+        %img{src: "http://lorempixel.com/output/nightlife-q-c-150-150-8.jpg"}/
+      .tiny_square
+        %img{src: "http://lorempixel.com/output/nightlife-q-c-150-150-2.jpg"}/
+    .standard_square
+      %img{src: "http://lorempixel.com/output/animals-q-c-150-150-2.jpg"}/
+    .standard_square
+      %img{src: "http://lorempixel.com/output/food-q-c-150-150-9.jpg"}/
+  .standard_group
+    .standard_square
+      %img{src: "http://lorempixel.com/output/sports-q-c-150-150-8.jpg"}/
+    .standard_square
+      %img{src: "http://lorempixel.com/output/abstract-q-c-150-150-5.jpg"}/
+
+
+%br
+
 #search
   = form_tag("/search_results", method: :get, remote: true, id: :search_form) do
     = label_tag(:search, "Search for:")
     = text_field_tag(:search)
     = submit_tag("Search")
-
-
 
 = link_to('New Album', new_album_path)
 %ul
