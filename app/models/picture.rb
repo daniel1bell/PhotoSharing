@@ -12,13 +12,9 @@ class Picture < ActiveRecord::Base
 
   PictureImageUploader
 
-<<<<<<< HEAD
-
-=======
   def user
     album.user
   end
   
->>>>>>> 738507de53baadf2203fcb69629ba70b2db59698
 end
 
