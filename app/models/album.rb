@@ -11,6 +11,8 @@ class Album < ActiveRecord::Base
   scope :most_popular, select("albums.*, count(votes.id) as vote_count").joins("JOIN votes ON albums.id = votes.votable_id").group("albums.id").order("vote_count DESC")
   scope :most_recent, where("created_at >= ?", 1.day.ago.utc).order("created_at DESC")
 
+  
+
   def ids
     arry = []
     pictures.each do |picture|
