@@ -14,8 +14,9 @@
             %span
               %small Album: #{random_pic.album.name}
     
-    .standard_group
-      =render @albums[2..@albums.count]
+    - if current_user.albums.count > 2
+      .standard_group
+        =render @albums[2..@albums.count]
 
   .standard_group
     .standard_square

@@ -45,15 +45,23 @@ class User < ActiveRecord::Base
   end
 
   def album_likes
-    album_likes = []
-    albums.each {|album| album_likes << album.votes_for.up.count}
-    album_likes.inject{ |sum, x| sum + x}
+    if albums.any?
+      album_likes = []
+      albums.each {|album| album_likes << album.votes_for.up.count}
+      album_likes.inject{ |sum, x| sum + x}
+    else
+      0
+    end
   end
 
   def photo_likes
-    photo_likes = []
-    albums.each {|album| photo_likes << album.cumulative_likes}
-    photo_likes.inject{ |sum, x| sum + x}
+    if pictures.any?
+      photo_likes = []
+      albums.each {|album| photo_likes << album.cumulative_likes}
+      photo_likes.inject{ |sum, x| sum + x}
+    else
+      0
+    end
   end
 
   def total_likes
