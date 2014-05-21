@@ -5,14 +5,16 @@
     %li
       %a{href: "#tabs-1"} Recent
     %li
-      %a{href: "#tabs-2"} Most Popular
+      %a{href: "#tabs-2"} Most Trending
     %li
       %a{href: "#tabs-3"} All Time Favourites 
 
   #tabs-1
-    %p render recent pictures
+    - @recent_albums.shuffle.map do |album|
+      = render album
   #tabs-2
-    %p render most popular pictures
+    Trending
   #tabs-3
-    %p render all time favourites pictures
+    - @popular_albums.shuffle.map do |album|
+      = render album
  
