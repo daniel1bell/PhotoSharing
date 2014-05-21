@@ -92,14 +92,14 @@ class PicturesController < ApplicationController
   def flag_admin
     @current_user = User.first  
     @picture = Picture.find(params[:id])
-    @current_user.flag(@item, :report)
+    @current_user.flag(@picture, :report)
     redirect_to @picture, :notice => "You have reported this image."
   end
 
   def unflag_admin
     @current_user = User.first  
     @picture = Picture.find(params[:id])
-    @current_user.unflag(@item, :report)
+    @current_user.unflag(@picture, :report)
     redirect_to @picture, :notice => "This image is no longer reported."
   end
 
