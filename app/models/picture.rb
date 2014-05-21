@@ -10,11 +10,22 @@ class Picture < ActiveRecord::Base
   acts_as_votable
   acts_as_commentable
 
-  PictureImageUploader
-
   def user
     album.user
   end
+
+  def exif_data
+    exif_info = case File.extname(picture_image.path).upcase
+    when '.JPG'
+      EXIFR::JPEG.new(picture_image.path)
+    when '.TIFF'
+      EXIFR::TIFF.new(picture_image.path)
+    else
+      nil
+    end
+  end
+
+  # @image.exif_data.date_time for example (in not nil or error will happen)
   
 end
 
