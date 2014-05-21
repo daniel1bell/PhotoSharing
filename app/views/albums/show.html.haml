@@ -5,6 +5,8 @@
         = @album.name
       %p
         = @album.description
+      %p
+        = link_to 'Like', album_like_path(@album) 
     
     =render @album.user
 
@@ -27,6 +29,8 @@
 
     -if !@album.comments.empty?
       =render @album.comments[0...@album.comments.count]
+    
 
+  
 
 

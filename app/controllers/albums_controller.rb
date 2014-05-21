@@ -55,5 +55,11 @@ class AlbumsController < ApplicationController
     render :index
   end
 
+  def like
+    @album = Album.find(params[:id])
+    @like = @album.liked_by current_user 
+
+    redirect_to @album, notice: "Liked!"
+  end
 
 end
