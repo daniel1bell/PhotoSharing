@@ -1,5 +1,3 @@
-%p This is the main home page.
-
 #tabs
   %ul
     %li
@@ -10,11 +8,14 @@
       %a{href: "#tabs-3"} All Time Favourites 
 
   #tabs-1
-    - @recent_albums.shuffle.map do |album|
-      = render album
+    .square_viewport
+      - @recent_albums.shuffle.map do |album|
+        = render album
   #tabs-2
-    Trending
+    .square_viewport
+      Trending
   #tabs-3
-    - @popular_albums.shuffle.map do |album|
-      = render album
+    .square_viewport
+      - @popular_albums.shuffle.map do |album|
+        = render album
  
