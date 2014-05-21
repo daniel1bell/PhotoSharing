@@ -24,6 +24,7 @@ gem 'ransack'
 gem 'carrierwave', '~> 0.9.0'
 gem "fog", "~> 1.3.1"
 gem 'rmagick'
+gem 'exifr'
 
 #  Gems for tagging, commenting and voting.
 

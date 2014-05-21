@@ -1,0 +1,30 @@
+.square_viewport
+  .standard_group
+    .long_short.text_square
+      %h3 "Sign up, sign in, let us begin..."
+    
+    %a{href: user_omniauth_authorize_path('twitter')}
+      .standard_square.sprite-twitter
+    
+    %a{href: user_omniauth_authorize_path('facebook')}
+      .standard_square.sprite-facebook
+    
+    %button#show_email_signin
+      .standard_square.sprite-email
+    
+    %a{href: new_user_registration_path}
+      .standard_square.sprite-signup
+    
+    .long_short#email_signin_box
+      = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+        %div
+          = f.email_field :email, autofocus: true, placeholder: "E-Mail Address"
+        %div
+          = f.password_field :password, autocomplete: "off", placeholder: "Password"
+        - if devise_mapping.rememberable?
+          %div
+            = f.check_box :remember_me
+            = f.label :remember_me
+        %div
+          = f.submit "Sign in"
+          %a.password_forgot{href: new_user_password_path} Forgot your password?
