@@ -13,6 +13,13 @@ class User < ActiveRecord::Base
   acts_as_tagger
   acts_as_voter
 
+  scope :most_recent, where("users.created_at >= ?", 1.day.ago.utc).order("users.created_at DESC")
+
+  def self.most_liked
+    # might change this method to database query later on - as it does a lot of queries 
+    all.select{|u| u.total_likes > 0}.sort_by(&:total_likes).reverse
+  end
+
   def self.from_omniauth(auth)
     twitter_email = if auth.info.nickname then auth.info.nickname.downcase + "@twitter.com" end
      
