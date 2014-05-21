@@ -57,7 +57,12 @@ class User < ActiveRecord::Base
   def photo_likes
     if pictures.any?
       photo_likes = []
-      albums.each {|album| photo_likes << album.cumulative_likes}
+      albums.each do |album|
+        if album.pictures.any?
+          photo_likes << album.cumulative_likes
+        else 0
+        end
+      end
       photo_likes.inject{ |sum, x| sum + x}
     else
       0
