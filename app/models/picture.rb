@@ -12,6 +12,10 @@ class Picture < ActiveRecord::Base
 
   PictureImageUploader
 
+  scope :most_liked, select("pictures.*, count(votes.id) as vote_count").joins("JOIN votes ON pictures.id = votes.votable_id").group("pictures.id").order("vote_count DESC")
+  scope :most_commented, select("pictures.*, count(comments.id) as comment_count").joins("JOIN comments ON pictures.id = comments.commentable_id").group("pictures.id").order("comment_count DESC")
+  scope :most_recent, where("pictures.created_at >= ?", 1.day.ago.utc).order("pictures.created_at DESC")
+
   def user
     album.user
   end

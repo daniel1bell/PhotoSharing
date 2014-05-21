@@ -3,19 +3,25 @@
     %li
       %a{href: "#tabs-1"} Recent
     %li
-      %a{href: "#tabs-2"} Most Trending
+      %a{href: "#tabs-2"} Trending
     %li
-      %a{href: "#tabs-3"} All Time Favourites 
+      %a{href: "#tabs-3"} All Time
 
   #tabs-1
     .square_viewport
       - @recent_albums.shuffle.map do |album|
         = render album
+      - @recent_pictures.shuffle.map do |picture|
+        = render picture
+      - @recent_users.shuffle.map do |user|
+        = render user
+
   #tabs-2
     .square_viewport
-      Trending
+      - @trending_albums.map do |album|
+        = render album
   #tabs-3
     .square_viewport
-      - @popular_albums.shuffle.map do |album|
+      - @popular_albums.map do |album|
         = render album
  
