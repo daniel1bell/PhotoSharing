@@ -1,19 +1,20 @@
 .square_viewport
   .standard_group
-    .long_short.text_square
-      %h3 "Sign up, sign in, let us begin..."
-    
-    %a{href: user_omniauth_authorize_path('twitter')}
-      .standard_square.sprite-twitter
-    
-    %a{href: user_omniauth_authorize_path('facebook')}
-      .standard_square.sprite-facebook
-    
-    %button#show_email_signin
-      .standard_square.sprite-email
-    
-    %a{href: new_user_registration_path}
-      .standard_square.sprite-signup
+    #signin_options
+      .long_short.text_square
+        %h3 "Sign up, sign in, let us begin..."
+      
+      %a{href: user_omniauth_authorize_path('twitter')}
+        .standard_square.sprite-twitter
+      
+      %a{href: user_omniauth_authorize_path('facebook')}
+        .standard_square.sprite-facebook
+      
+      %button#show_email_signin
+        .standard_square.sprite-email
+      
+      %a{href: new_user_registration_path}
+        .standard_square.sprite-signup
     
     .long_short#email_signin_box
       = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
