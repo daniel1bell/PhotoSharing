@@ -1,18 +1,22 @@
-%p This is the main home page.
-
 #tabs
   %ul
     %li
       %a{href: "#tabs-1"} Recent
     %li
-      %a{href: "#tabs-2"} Most Popular
+      %a{href: "#tabs-2"} Trending
     %li
-      %a{href: "#tabs-3"} All Time Favourites 
+      %a{href: "#tabs-3"} All Time
 
   #tabs-1
-    %p render recent pictures
+    .square_viewport
+      - @recent_albums.shuffle.map do |album|
+        = render album
   #tabs-2
-    %p render most popular pictures
+    .square_viewport
+      - @trending_albums.map do |album|
+        = render album
   #tabs-3
-    %p render all time favourites pictures
+    .square_viewport
+      - @popular_albums.map do |album|
+        = render album
  
