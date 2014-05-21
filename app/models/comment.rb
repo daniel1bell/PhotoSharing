@@ -11,6 +11,7 @@ class Comment < ActiveRecord::Base
   # want user to vote on the quality of comments.
   
   acts_as_votable
+  make_flaggable
 
   # NOTE: Comments belong to a user
   belongs_to :user
