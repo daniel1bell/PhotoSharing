@@ -62,4 +62,11 @@ class AlbumsController < ApplicationController
     redirect_to @album, notice: "Liked!"
   end
 
+  def dislike
+    @album = Album.find(params[:id])
+    @dislike = @album.downvote_from current_user
+
+    redirect_to @album, notice: "Unliked!"
+  end
+
 end
