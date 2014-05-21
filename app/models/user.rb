@@ -28,7 +28,7 @@ class User < ActiveRecord::Base
               :provider => auth.provider,
               :uid => auth.uid,
               :email => auth.info.nickname.downcase + "@twitter.com",
-              :profile_pic => auth.info.image,
+              :profile_pic => auth.info.image, # comes in small
               :password => Devise.friendly_token[0,20]
           })
           
@@ -37,7 +37,7 @@ class User < ActiveRecord::Base
             user.provider = auth.provider
             user.uid = auth.uid
             user.email = auth.info.email
-            user.profile_pic = auth.info.image
+            user.profile_pic = auth.info.image # comes in small
             user.password = Devise.friendly_token[0,20]
         end
       end 
@@ -57,7 +57,12 @@ class User < ActiveRecord::Base
   def photo_likes
     if pictures.any?
       photo_likes = []
-      albums.each {|album| photo_likes << album.cumulative_likes}
+      albums.each do |album|
+        if album.pictures.any?
+          photo_likes << album.cumulative_likes
+        else 0
+        end
+      end
       photo_likes.inject{ |sum, x| sum + x}
     else
       0
