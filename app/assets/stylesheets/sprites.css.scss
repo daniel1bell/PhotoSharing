@@ -1,79 +1,143 @@
-.sprite-share {
-  background-image: url('/sprites/share_sprite.png');
-  background-size: cover;
-}
-.sprite-share:hover {
-  background-position: 0 -100%;
-}
-
 .sprite-add-album {
   background-image: url('/sprites/add_album_sprite.png');
   background-size: cover;
-}
-.sprite-add-album:hover {
-  background-position: 0 -100%;
+  &:hover {
+    background-position: 0 -100%;
+  }
+  &:active {
+    background-position: 0 -100%;
+  }
 }
 
 .sprite-add-photo {
   background-image: url('/sprites/add_photo_sprite.png');
   background-size: cover;
-}
-.sprite-add-photo:hover {
-  background-position: 0 -100%;
+  &:hover {
+    background-position: 0 -100%;
+  }
+  &:active {
+    background-position: 0 -100%;
+  }
 }
 
 .sprite-albums {
   background-image: url('/sprites/albums_sprite.png');
   background-size: cover;
-}
-.sprite-albums:hover {
-  background-position: 0 -100%;
+  &:hover {
+    background-position: 0 -100%;
+  }
+  &:active {
+    background-position: 0 -100%;
+  }
 }
 
 .sprite-edit {
   background-image: url('/sprites/edit_sprite.png');
   background-size: cover;
-}
-.sprite-edit:hover {
-  background-position: 0 -100%;
+  &:hover {
+    background-position: 0 -100%;
+  }
+  &:active {
+    background-position: 0 -100%;
+  }
 }
 
 .sprite-email {
   background-image: url('/sprites/email_sprite.png');
   background-size: cover;
+  &:hover {
+    background-position: 0 -100%;
+  }
+  &:active {
+    background-position: 0 -100%;
+  }
 }
-.sprite-email:hover {
-  background-position: 0 -100%;
+
+.sprite-share {
+  background-image: url('/sprites/share_sprite.png');
+  background-size: cover;
+  &:hover {
+    background-position: 0 -100%;
+  }
+  &:active {
+    background-position: 0 -100%;
+  }
 }
 
 .sprite-facebook {
   background-image: url('/sprites/facebook_sprite.png');
   background-size: cover;
-}
-.sprite-facebook:hover {
-  background-position: 0 -100%;
-}
-
-.sprite-flag {
-  background-image: url('/sprites/flag_sprite.png');
-  background-size: cover;
-}
-.sprite-flag:hover {
-  background-position: 0 -100%;
-}
-
-.sprite-login {
-  background-image: url('/sprites/login_sprite.png');
-  background-size: cover;
-}
-.sprite-login:hover {
-  background-position: 0 -100%;
+  &:hover {
+    background-position: 0 -100%;
+  }
+  &:active {
+    background-position: 0 -100%;
+  }
 }
 
 .sprite-twitter {
   background-image: url('/sprites/twitter_sprite.png');
   background-size: cover;
+  &:hover {
+    background-position: 0 -100%;
+  }
+  &:active {
+    background-position: 0 -100%;
+  }
 }
-.sprite-twitter:hover {
-  background-position: 0 -100%;
+
+.sprite-flag {
+  background-image: url('/sprites/flag_sprite.png');
+  background-size: cover;
+  &:hover {
+    background-position: 0 -100%;
+  }
+  &:active {
+    background-position: 0 -100%;
+  }
+}
+
+.sprite-login {
+  background-image: url('/sprites/login_sprite.png');
+  background-size: cover;
+  &:hover {
+    background-position: 0 -100%;
+  }
+  &:active {
+    background-position: 0 -100%;
+  }
+}
+
+.sprite-logout {
+  background-image: url('/sprites/logout_sprite.png');
+  background-size: cover;
+  &:hover {
+    background-position: 0 -100%;
+  }
+  &:active {
+    background-position: 0 -100%;
+  }
+}
+
+.sprite-signup {
+  background-image: url('/sprites/signup_sprite.png');
+  background-size: cover;
+  &:hover {
+    background-position: 0 -100%;
+  }
+  &:active {
+    background-position: 0 -100%;
+  }
+}
+
+
+.sprite-delete-acct {
+  background-image: url('/sprites/delete_account_sprite.png');
+  background-size: cover;
+  &:hover {
+    background-position: 0 -100%;
+  }
+  &:active {
+    background-position: 0 -100%;
+  }
 }

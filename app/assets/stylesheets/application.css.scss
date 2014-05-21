@@ -14,5 +14,13 @@
 
  */
 
-@import "custom.css.scss";
+$primary: #2E2E2E;
+$secondary: #EDEDED;
+$highlight: #F8FE3B;
+$mint: #83EABF;
+$dark: #161E3B;
+
+@import "grid.css.scss";
 @import "sprites.css.scss";
+@import "custom.css.scss";
+

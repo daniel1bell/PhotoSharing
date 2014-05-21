@@ -1,6 +1,7 @@
 .square_viewport
-  .large_square
-    %img{src: @picture.picture_image.detail}/
+  %a{href: @picture.picture_image.file.file}
+    .large_square
+      %img{src: @picture.picture_image.detail}/
   .standard_group
     .standard_square.text_square
       %h3
