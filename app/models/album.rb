@@ -8,8 +8,9 @@ class Album < ActiveRecord::Base
   acts_as_votable
   acts_as_commentable
 
-  scope :most_popular, select("albums.*, count(votes.id) as vote_count").joins("JOIN votes ON albums.id = votes.votable_id").group("albums.id").order("vote_count DESC")
-  scope :most_recent, where("created_at >= ?", 1.day.ago.utc).order("created_at DESC")
+  scope :most_liked, select("albums.*, count(votes.id) as vote_count").joins("JOIN votes ON albums.id = votes.votable_id").group("albums.id").order("vote_count DESC")
+  scope :most_commented, select("albums.*, count(comments.id) as comment_count").joins("JOIN comments ON albums.id = comments.commentable_id").group("albums.id").order("comment_count DESC")
+  scope :most_recent, where("albums.created_at >= ?", 1.day.ago.utc).order("albums.created_at DESC")
 
   
 
