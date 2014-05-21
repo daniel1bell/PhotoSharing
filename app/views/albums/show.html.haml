@@ -5,6 +5,12 @@
         = @album.name
       %p
         = @album.description
+      %p
+        - if !current_user.liked? @album
+          = link_to 'Like', album_like_path(@album) 
+        - if !current_user.disliked? @album
+          = link_to 'Dislike', album_dislike_path(@album)
+           
     
     =render @album.user
 
@@ -27,6 +33,8 @@
 
     -if !@album.comments.empty?
       =render @album.comments[0...@album.comments.count]
+    
 
+  
 
 

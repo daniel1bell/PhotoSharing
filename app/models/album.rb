@@ -12,7 +12,6 @@ class Album < ActiveRecord::Base
   scope :most_commented, select("albums.*, count(comments.id) as comment_count").joins("JOIN comments ON albums.id = comments.commentable_id").group("albums.id").order("comment_count DESC")
   scope :most_recent, where("albums.created_at >= ?", 1.day.ago.utc).order("albums.created_at DESC")
 
-  
 
   def ids
     arry = []

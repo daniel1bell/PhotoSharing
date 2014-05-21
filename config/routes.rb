@@ -5,7 +5,11 @@ PhotoSharingApp::Application.routes.draw do
 
   get 'tags/:tag', to: 'pictures#search', as: :tag
   get '/search_results/', to: "pictures#search", as: :search_results
-  
+  get '/album/:id/like', to: "albums#like", as: :album_like
+  get '/album/:id/dislike', to: "albums#dislike", as: :album_dislike
+  get '/picture/:id/like', to: "pictures#like", as: :picture_like
+  get '/picture/:id/dislike', to: "pictures#dislike", as: :picture_dislike
+
   resources :home, only: [:index], as: '/'
 
   resources :albums do
