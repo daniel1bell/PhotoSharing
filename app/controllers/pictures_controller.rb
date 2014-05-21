@@ -75,6 +75,34 @@ class PicturesController < ApplicationController
     end
   end
 
+  def like
+    @picture = Picture.find(params[:id])
+    @like = @picture.liked_by current_user 
+
+    redirect_to album_picture_path(@picture.album, @picture), notice: "Liked!"
+  end
+
+  def dislike
+    @picture = Picture.find(params[:id])
+    @dislike = @picture.downvote_from current_user
+
+    redirect_to album_picture_path(@picture.album, @picture), notice: "Unliked!"
+  end
+
+  def flag_admin
+    @current_user = User.first  
+    @picture = Picture.find(params[:id])
+    @current_user.flag(@item, :report)
+    redirect_to @picture, :notice => "You have reported this image."
+  end
+
+  def unflag_admin
+    @current_user = User.first  
+    @picture = Picture.find(params[:id])
+    @current_user.unflag(@item, :report)
+    redirect_to @picture, :notice => "This image is no longer reported."
+  end
+
   private
   def load_album
     @album = Album.find(params[:album_id])
