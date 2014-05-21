@@ -10,11 +10,11 @@
       %a{href: "#tabs-3"} All Time Favourites 
 
   #tabs-1
-    - @recent_albums.limit(4).map do |album|
+    - @recent_albums.shuffle.map do |album|
       = render album
   #tabs-2
     Trending
   #tabs-3
-    - @popular_albums.map do |album|
+    - @popular_albums.shuffle.map do |album|
       = render album
  
