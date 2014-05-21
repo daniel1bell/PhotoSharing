@@ -80,14 +80,20 @@ class PicturesController < ApplicationController
     @picture = Picture.find(params[:id])
     @like = @picture.liked_by current_user 
 
-    redirect_to album_picture_path(@picture.album, @picture), notice: "Liked!"
+    respond_to do |format|
+      format.js { render :show }
+      format.html { redirect_to album_picture_path(@picture.album, @picture), notice: "Liked!" }
+    end
   end
 
   def dislike
     @picture = Picture.find(params[:id])
     @dislike = @picture.downvote_from current_user
 
-    redirect_to album_picture_path(@picture.album, @picture), notice: "Unliked!"
+    respond_to do |format|
+      format.js { render :show }
+      format.html {redirect_to album_picture_path(@picture.album, @picture), notice: "Unliked!"}
+    end
   end
 
   private
