@@ -5,16 +5,16 @@
         %h3 "Sign up, sign in, let us begin..."
       
       %a{href: user_omniauth_authorize_path('twitter')}
-        .standard_square.sprite-twitter
+        .standard_square.sprite-twitter.has-tip{"data-tooltip" => "", "data-options" => "disable_for_touch:true", title: "Sign in using Twitter"}
       
       %a{href: user_omniauth_authorize_path('facebook')}
-        .standard_square.sprite-facebook
+        .standard_square.sprite-facebook.has-tip{"data-tooltip" => "", "data-options" => "disable_for_touch:true", title: "Sign in using Facebook"}
       
       %button#show_email_signin
-        .standard_square.sprite-email
+        .standard_square.sprite-email.has-tip{"data-tooltip" => "", "data-options" => "disable_for_touch:true", title: "Sign in using your email"}
       
       %a{href: new_user_registration_path}
-        .standard_square.sprite-signup
+        .standard_square.sprite-signup.has-tip{"data-tooltip" => "", "data-options" => "disable_for_touch:true", title: "Sign up for a new account"}
     
     .long_short#email_signin_box
       = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
@@ -27,5 +27,5 @@
             = f.check_box :remember_me
             = f.label :remember_me
         %div
-          = f.submit "Sign in"
+          = f.submit "Sign in", class: "button tiny expand"
           %a.password_forgot{href: new_user_password_path} Forgot your password?

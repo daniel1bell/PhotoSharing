@@ -1,5 +1,6 @@
 .square_viewport
-  %a{href: @picture.picture_image.file.file}
+  / %a{href: @picture.picture_image.file.file}
+  .standard_group
     .large_square
       %img{src: @picture.picture_image.detail}/
       .like_button
@@ -7,16 +8,17 @@
           = link_to 'Like', picture_like_path(@picture) 
         - if !current_user.disliked? @picture
           = link_to 'Dislike', picture_dislike_path(@picture)
-  .large_square
-    %p Camera Model: #{@picture.camera_model}
-    %p Date and Time: #{@picture.datetime}
-    %p Height: #{@picture.image_height} px
-    %p Width: #{@picture.image_length} px
-    %p Exposure Time: #{@picture.exposure}
-    %p Latitude: #{@picture.latitude}
-    %p Longitude: #{@picture.longitude}
-  
-  #map_canvas
+    .large_square
+      %p Camera Model: #{@picture.camera_model}
+      %p Date and Time: #{@picture.datetime}
+      %p Height: #{@picture.image_height} px
+      %p Width: #{@picture.image_length} px
+      %p Exposure Time: #{@picture.exposure}
+      %p Latitude: #{@picture.latitude}
+      %p Longitude: #{@picture.longitude}
+    
+    .large_square
+      #map_canvas
 
   .standard_group
     .standard_square.text_square
@@ -52,8 +54,6 @@
 
     = render @picture.comments[0...@picture.comments.count]
 
-
-/   = link_to image_tag(@picture.picture_image.thumb.url)
 
 / %ul
 /   %li

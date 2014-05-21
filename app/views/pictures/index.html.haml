@@ -8,6 +8,6 @@
   %ul#pictures
     = render @pictures
 
-  #tag_cloud
+  .tag_list
     - tag_cloud Picture.tag_counts, %w[s m l] do |tag, css_class| 
-      = link_to tag.name, tag_path(tag.name), class: css_class
+      = link_to tag.name, tag_path(tag.name), class: "tag"
