@@ -4,15 +4,25 @@ class CommentsController < ApplicationController
   before_filter :load_picture
 
   def create 
-    @comment = @picture.comments.build(params[:comment])
+    if params[:commentable_type] = "Album"
+      @comment = @album.comments.build(params[:comment])
 
-    if @comment.save
-      redirect_to album_picture_path(@album, @picture)
+      if @comment.save
+        redirect_to album_path(@album)
+      end
+    else
+      @comment = @picture.comments.build(params[:comment])
+
+      if @comment.save
+        redirect_to album_picture_path(@album, @picture)
+      end
     end
   end
 
   def load_picture
-    @picture = Picture.find(params[:picture_id])
+    if params[:picture_id]
+      @picture = Picture.find(params[:picture_id])
+    end
   end
 
   def load_album

@@ -8,8 +8,18 @@ $dark: #161E3B;
   background-color: $secondary;
 }
 
+.profile_pic {
+  opacity: 0.75;
+}
+.profile_pic:hover {
+  opacity: 1;
+}
+
 .square_viewport {
   text-align: center;
+  h2 {
+    color: $mint;
+  }
   h3 {
     color: $mint;
     font-size: 18px;
@@ -116,6 +126,11 @@ $dark: #161E3B;
       color: white;
     }
   }
+  p {
+    line-height: 1.2;
+    width: 200px;
+    font-size: 14px;
+  }
 }
 
 .long_short {
@@ -142,6 +157,9 @@ $dark: #161E3B;
     border-radius: 50%;
     background-color: $primary;
     float: left;
+    img {
+      border-radius: 50%;
+    }
   }
   .cmnt_text {
     width: 240px;

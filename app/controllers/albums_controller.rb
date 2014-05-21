@@ -25,6 +25,7 @@ class AlbumsController < ApplicationController
 
   def show
     @album = Album.find(params[:id])
+    @comment = @album.comments.new
   end
 
   def destroy

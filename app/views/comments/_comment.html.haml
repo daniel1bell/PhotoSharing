@@ -1,7 +1,6 @@
 .long_short.cmnt_box
   .profile_pic
-    - if comment.user.profile_pic
-      %img{src: comment.user.profile_pic.thumb}
+    %img{src: comment.user.profile_pic}
   .cmnt_text
     %p
       @
