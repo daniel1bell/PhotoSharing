@@ -15,11 +15,6 @@ class User < ActiveRecord::Base
 
   scope :most_recent, where("users.created_at >= ?", 1.day.ago.utc).order("users.created_at DESC")
 
-  def self.most_liked
-    # might change this method to database query later on - as it does a lot of queries 
-    all.select{|u| u.total_likes > 0}.sort_by(&:total_likes).reverse
-  end
-
   def self.from_omniauth(auth)
     twitter_email = if auth.info.nickname then auth.info.nickname.downcase + "@twitter.com" end
      
@@ -51,7 +46,41 @@ class User < ActiveRecord::Base
     end
   end
 
+  def self.most_liked
+    # might change this method to database query later on - as it does a lot of queries 
+    all.select{|u| u.total_likes > 0}.sort_by(&:total_likes).reverse
+  end
+
+  def self.most_commented
+    all.select{|u| u.total_comments > 0}.sort_by(&:total_comments).reverse
+  end
+
+  def album_comments
+    # make like table in the long-run to avoid this immense database queries
+    if albums.any?
+      album_comments = albums.select { |album| album.comments.count > 0}
+      album_comments.count    
+    else
+      0
+    end
+  end
+
+  def picture_comments
+    # make like table in the long-run to avoid this immense database queries
+    if pictures.any?
+      pictures_comments = pictures.select { |picture| picture.comments.count > 0}
+      pictures_comments.count    
+    else
+      0
+    end
+  end
+
+  def total_comments
+    picture_comments + album_comments
+  end
+
   def album_likes
+    # make like table in the long-run to avoid this immense database queries
     if albums.any?
       album_likes = []
       albums.each {|album| album_likes << album.votes_for.up.count}
@@ -62,6 +91,7 @@ class User < ActiveRecord::Base
   end
 
   def photo_likes
+    # make like table in the long-run to avoid this immense database queries
     if pictures.any?
       photo_likes = []
       albums.each do |album|

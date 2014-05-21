@@ -11,6 +11,11 @@
     .square_viewport
       - @recent_albums.shuffle.map do |album|
         = render album
+      - @recent_pictures.shuffle.map do |picture|
+        = render picture
+      - @recent_users.shuffle.map do |user|
+        = render user
+
   #tabs-2
     .square_viewport
       - @trending_albums.map do |album|

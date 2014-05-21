@@ -1,27 +1,18 @@
 class HomeController < ApplicationController
 
   def index
-    @recent_albums = []
-      @recent_albums << Album.most_recent.limit(2)
+    @recent_albums = [] << Album.most_recent.limit(6)
+    @popular_albums = [] << Album.most_liked << Album.most_commented
+    @trending_albums = [] << Album.most_liked << Album.most_commented << Album.most_recent
 
-    @popular_albums = []
-      @popular_albums << Album.most_liked
-      @popular_albums << Album.most_commented
-    @trending_albums = []
-      @trending_albums << Album.most_liked
-      @trending_albums << Album.most_commented
-      @trending_albums << Album.most_recent
+    @recent_pictures = [] << Picture.most_recent.limit(6)
+    @popular_pictures = [] << Picture.most_liked << Picture.most_commented
+    @trending_pictures = [] << Picture.most_liked << Picture.most_commented << Picture.most_recent
 
-    @recent_pictures = []
-      @recent_pictures << Picture.most_recent.limit(2)
+    @recent_users = [] << User.most_recent.limit(4)
+    @popular_users = [] << User.most_liked << User.most_commented
+    @trending_users = [] << User.most_liked << User.most_commented << User.most_recent
 
-    @popular_pictures = []
-      @popular_pictures << Picture.most_liked
-      @popular_pictures << Picture.most_commented
-    @trending_pictures = []
-      @trending_pictures << Picture.most_liked
-      @trending_pictures << Picture.most_commented
-      @trending_pictures << Picture.most_recent
   end
 
 
