@@ -64,11 +64,12 @@ class PicturesController < ApplicationController
   end
 
   def update
+    # breaking because of EXIF initializer in the model
     @picture = @album.pictures.find(params[:id])
 
     respond_to do |format|
       if @picture.update_attributes(params[:picture])
-      format.html { redirect_to @picture, notice: 'Picture was successfully updated.' }
+      format.html { redirect_to album_picture_path(@picture.album, @picture), notice: 'Picture was successfully updated.' }
       else
       format.html { render action: "edit" }
       end
@@ -79,18 +80,20 @@ class PicturesController < ApplicationController
     @picture = Picture.find(params[:id])
     @like = @picture.liked_by current_user 
 
-    redirect_to @picture, notice: "Liked!"
+    redirect_to album_picture_path(@picture.album, @picture), notice: "Liked!"
   end
 
   def dislike
     @picture = Picture.find(params[:id])
     @dislike = @picture.downvote_from current_user
 
-    redirect_to @picture, notice: "Unliked!"
+    redirect_to album_picture_path(@picture.album, @picture), notice: "Unliked!"
   end
 
   private
   def load_album
-    @album = Album.find(params[:album_id])
+    if params[:album_id]
+      @album = Album.find(params[:album_id])
+    end
   end
 end

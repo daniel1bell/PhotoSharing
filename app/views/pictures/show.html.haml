@@ -6,7 +6,7 @@
         - if !current_user.liked? @picture
           = link_to 'Like', picture_like_path(@picture) 
         - if !current_user.disliked? @picture
-          = link_to 'Dislike', picture_dislike_path(@picture)
+          = link_to 'Unlike', picture_dislike_path(@picture)
   .large_square
     %p Camera Model: #{@picture.camera_model}
     %p Date and Time: #{@picture.datetime}
