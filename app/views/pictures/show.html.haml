@@ -26,7 +26,8 @@
         %small
           by #{@picture.user.user_name}
       .inner_text
-        %span.badge= @picture.votes_for.up.count
+        .like_count
+          %span.badge= render :partial => 'likecount'
         %p Likes:
         %span.badge= @picture.comments.count
         %p Comments:

@@ -1,6 +1,9 @@
 - if !current_user.liked? @picture
   var likesHTML = ("#{escape_javascript(render :partial => 'picture_like')}");
+
 - if !current_user.disliked? @picture
   var likesHTML = ("#{escape_javascript(render :partial => 'picture_dislike')}");
-  
+
+$(".like_count").html("#{escape_javascript(render :partial => 'likecount')}");
 $(".like_button").html(likesHTML);
+
