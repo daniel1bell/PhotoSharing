@@ -1,3 +1,3 @@
-%li.picture
-  = link_to(picture.name, album_picture_path(picture.album, picture), class: "picture-name")
-  = raw picture.tag_list.map { |t| link_to t, tag_path(t) }.join(', ')
+%a{href: album_picture_path(picture.album, picture)}
+  .standard_square
+    %img{src: picture.picture_image.thumb}

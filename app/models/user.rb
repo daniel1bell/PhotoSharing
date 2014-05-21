@@ -7,12 +7,13 @@ class User < ActiveRecord::Base
   
   attr_accessible :bio, :profile_pic, :role, :url, :user_name, :email, :password, :password_confirmation, :remember_me, :uid, :provider
   
-  has_many :albums , dependent: :destroy 
+  has_many :albums , dependent: :destroy
+  has_many :pictures, through: :albums
 
   acts_as_tagger
   acts_as_voter
 
-def self.from_omniauth(auth)
+  def self.from_omniauth(auth)
     twitter_email = if auth.info.nickname then auth.info.nickname.downcase + "@twitter.com" end
      
     if user = User.find_by_email(auth.info.email) || user = User.find_by_email(twitter_email) 
@@ -43,6 +44,19 @@ def self.from_omniauth(auth)
     end
   end
 
+  def album_likes
+    album_likes = []
+    albums.each {|album| album_likes << album.votes_for.up.count}
+    album_likes.inject{ |sum, x| sum + x}
+  end
 
+  def photo_likes
+    photo_likes = []
+    albums.each {|album| photo_likes << album.cumulative_likes}
+    photo_likes.inject{ |sum, x| sum + x}
+  end
 
+  def total_likes
+    photo_likes + album_likes
+  end
 end

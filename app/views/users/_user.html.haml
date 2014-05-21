@@ -1,0 +1,14 @@
+.standard_group
+  .standard_square
+    %img{src: user.profile_pic}
+  .standard_square.text_square
+    %h3
+      = user.user_name
+
+    .inner_text
+      %span.badge= user.total_likes
+      %p Total Likes:
+      %span.badge= user.albums.count
+      %p Albums:
+      %span.badge= user.pictures.count
+      %p Pictures:

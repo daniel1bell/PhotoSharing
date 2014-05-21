@@ -12,6 +12,7 @@ PhotoSharingApp::Application.routes.draw do
     resources :pictures do
       resources :comments
     end
+    resources :comments
   end
 
   get '/pages/*id' => 'pages#show', as: :page, format: false

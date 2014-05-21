@@ -16,10 +16,12 @@
     .tiny_group
       .tiny_square
         %img{src: @picture.user.profile_pic}
-      .tiny_square
-
-      .tiny_square
-      .tiny_square
+      .tiny_square.sprite-share
+      .tiny_square.sprite-albums
+      - if @picture.album.user == current_user
+        .tiny_square.sprite-edit
+      - else
+        .tiny_square.sprite-flag
 
     .long_short.tag_list
       = raw @picture.tag_list.map { |t| link_to t, tag_path(t), class: "tag" }.join(' ')
@@ -28,7 +30,10 @@
       = form_for([@album, @picture, @comment]) do |f|
         = f.text_area :comment, {placeholder: "Add a comment..."}
         = f.hidden_field :user_id, value: current_user.id
+        = f.hidden_field :commentable_type, value: "Picture"
         = f.submit
+
+    = render @picture.comments[0...@picture.comments.count]
 
 
 /   = link_to image_tag(@picture.picture_image.thumb.url)

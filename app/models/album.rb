@@ -41,4 +41,10 @@ class Album < ActiveRecord::Base
     end
   end
 
+  def cumulative_likes
+    picture_likes = []
+    pictures.each {|picture| picture_likes << picture.votes_for.up.count}
+    picture_likes.inject{ |sum, x| sum + x}
+  end
+
 end

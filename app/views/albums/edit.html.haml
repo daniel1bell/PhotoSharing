@@ -1,2 +1,3 @@
 %h1 Edit Album
 = render :partial => 'form'
+= link_to('Delete Album', @album, :method => :delete, :confirm => 'Are you sure?')
