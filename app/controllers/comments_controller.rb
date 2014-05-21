@@ -4,7 +4,7 @@ class CommentsController < ApplicationController
   before_filter :load_picture
 
   def create 
-    if params[:commentable_type] = "Album"
+    if params[:comment][:commentable_type] == "Album"
       @comment = @album.comments.build(params[:comment])
 
       if @comment.save
