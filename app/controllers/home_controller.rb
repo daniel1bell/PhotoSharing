@@ -1,8 +1,10 @@
 class HomeController < ApplicationController
 
   def index
-    @users = User.all
-    @pictures = Picture.all
+    @recent_albums = Album.most_recent.limit(4)
+
+    @popular_albums = Album.most_popular.limit(4)
+
   end
 
 
