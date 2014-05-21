@@ -1,6 +1,11 @@
 .square_viewport
   .large_square
     %img{src: @picture.picture_image.detail}/
+    .like_button
+      - if !current_user.liked? @picture
+        = link_to 'Like', picture_like_path(@picture) 
+      - if !current_user.disliked? @picture
+        = link_to 'Dislike', picture_dislike_path(@picture)
   .standard_group
     .standard_square.text_square
       %h3

@@ -75,6 +75,20 @@ class PicturesController < ApplicationController
     end
   end
 
+  def like
+    @picture = Picture.find(params[:id])
+    @like = @picture.liked_by current_user 
+
+    redirect_to @picture, notice: "Liked!"
+  end
+
+  def dislike
+    @picture = Picture.find(params[:id])
+    @dislike = @picture.downvote_from current_user
+
+    redirect_to @picture, notice: "Unliked!"
+  end
+
   private
   def load_album
     @album = Album.find(params[:album_id])
