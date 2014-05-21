@@ -44,7 +44,6 @@ class PicturesController < ApplicationController
   end
 
   def show
-    raise
     @picture = @album.pictures.find(params[:id])
     @comment = @picture.comments.new
 

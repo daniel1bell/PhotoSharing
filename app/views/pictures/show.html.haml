@@ -1,6 +1,8 @@
 .square_viewport
   .large_square
     %img{src: @picture.picture_image.detail}/
+  .large_square
+    %p #{@picture.picture_image.detail}.exif_data.model
   .standard_group
     .standard_square.text_square
       %h3
