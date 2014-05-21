@@ -1,13 +1,32 @@
-%h1 
-  = @album.name
-%p
-  = @album.description
-%ul
-  %li
-    = link_to('New Picture', new_album_picture_path(@album))
-    = link_to('Edit Album', edit_album_path)
-    = link_to('Delete Album', @album, :method => :delete, :confirm => 'Are you sure?')
-    = link_to('Back', albums_path)
+.square_viewport
+  .standard_group
+    .large_square.text_square
+      %h2 
+        = @album.name
+      %p
+        = @album.description
+    
+    =render @album.user
+
+  .standard_group
+    %a{href: new_album_picture_path(@album)}
+      .standard_square.sprite-add-photo
+    
+    = render @album.pictures
+    
+    %a{href: edit_album_path}
+      .standard_square.sprite-edit
+
+  .standard_group
+    .long_short
+      = form_for([@album, @comment]) do |f|
+        = f.text_area :comment, {placeholder: "Add a comment..."}
+        = f.hidden_field :user_id, value: current_user.id
+        = f.hidden_field :commentable_type, value: "Album"
+        = f.submit
+
+    -if !@album.comments.empty?
+      =render @album.comments[0...@album.comments.count]
 
 
 

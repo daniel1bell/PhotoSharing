@@ -1,0 +1,7 @@
+- if @pictures.any?
+  var picturesHtml = ("#{escape_javascript(render @pictures)}");
+- else
+  picturesHtml = 'Unfortunately no pictures match your search';
+
+$("#pictures").html(picturesHtml);
+

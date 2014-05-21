@@ -7,7 +7,15 @@ gem 'rails', '3.2.18'
 
 gem 'pg'
 
+# Gems for markup, style and layout
+
 gem 'foundation-rails'
+gem 'high_voltage'
+
+# Gems for JS use
+
+gem 'jquery-ui-rails'
+
 
 #  Gems for data visualisation and front-end management.
 

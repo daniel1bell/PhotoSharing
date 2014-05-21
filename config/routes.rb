@@ -3,16 +3,23 @@ PhotoSharingApp::Application.routes.draw do
 
   # intial home root to album#index until User Model & Homepage is created
 
-  get 'tags/:tag', to: 'pictures#index', as: :tag
-  match "/search_results/" => "pictures#index", :via => :get, :as =>"search_results"
+  get 'tags/:tag', to: 'pictures#search', as: :tag
+  get '/search_results/', to: "pictures#search", as: :search_results
   
   resources :home, only: [:index], as: '/'
 
   resources :albums do
-    resources :pictures
+    resources :pictures do
+      resources :comments
+    end
+    resources :comments
   end
 
+  get '/pages/*id' => 'pages#show', as: :page, format: false
+
   root to: "home#index"
+
+  
 
 
   # The priority is based upon order of creation:
