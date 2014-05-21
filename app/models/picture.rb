@@ -4,7 +4,7 @@ class Picture < ActiveRecord::Base
   attr_accessible :altitude, :camera_make, :camera_model, :datetime, :exposure, :flash, :focal_length, :image, :image_height, :image_length, :latitude, :longitude, :name, :orientation, :picture_image, :tag_list
   mount_uploader :picture_image, PictureImageUploader
   #after validation, save these items into the database. this would allow us to see pictures nearby by pulling them from the database.
-  before_save :save_exif
+  before_save :update_exif
 
   attr_accessible :altitude, :camera_make, :camera_model, :datetime, :exposure, :flash, :focal_length, :image, :image_height, :image_length, :latitude, :longitude, :name, :orientation
 
@@ -27,11 +27,11 @@ class Picture < ActiveRecord::Base
     end
   end
 
-  # def save_exif
-  #     if picture_image.present?
-  #     :camera_model => self.exif_data.model
-  #     end
-  # end
+  private
+  def update_exif
+      self.camera_model = self.exif_data.model
+      self.datetime = self.exif_data.date_time
+  end
 
   # @image.exif_data.date_time for example (in not nil or error will happen)
   
