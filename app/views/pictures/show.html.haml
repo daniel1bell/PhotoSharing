@@ -2,7 +2,13 @@
   .large_square
     %img{src: @picture.picture_image.detail}/
   .large_square
-    %p #{@picture.exif_data.model}
+    %p Camera Model: #{@picture.exif_data.model}
+    %p Date and Time: #{@picture.exif_data.date_time}
+    %p Height: #{@picture.exif_data.height} px
+    %p Width: #{@picture.exif_data.width} px
+    %p Exposure Time: #{@picture.exif_data.exposure_time}
+    %p Latitude: #{@picture.exif_data.gps.latitude}
+    %p Longitude: #{@picture.exif_data.gps.longitude}
   .standard_group
     .standard_square.text_square
       %h3
