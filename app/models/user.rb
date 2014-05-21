@@ -12,7 +12,7 @@ class User < ActiveRecord::Base
 
   acts_as_tagger
   acts_as_voter
-  make_flagger :flag_once => true
+  make_flagger
 
   scope :most_recent, where("users.created_at >= ?", 1.day.ago.utc).order("users.created_at DESC")
 
