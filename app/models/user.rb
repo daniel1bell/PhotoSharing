@@ -10,6 +10,8 @@ class User < ActiveRecord::Base
   has_many :albums , dependent: :destroy
   has_many :pictures, through: :albums
 
+  validates :user_name, presence: true, uniqueness: true
+
   acts_as_tagger
   acts_as_voter
 

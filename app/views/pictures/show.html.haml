@@ -1,5 +1,6 @@
 .square_viewport
-  %a{href: @picture.picture_image.file.file}
+  / %a{href: @picture.picture_image.file.file}
+  .standard_group
     .large_square
       %img{src: @picture.picture_image.detail}/
       .like_button
@@ -53,8 +54,6 @@
 
     = render @picture.comments[0...@picture.comments.count]
 
-
-/   = link_to image_tag(@picture.picture_image.thumb.url)
 
 / %ul
 /   %li
