@@ -3,15 +3,16 @@
     .standard_group
       = render @albums[0..1]
 
-    - random_pic = current_user.pictures.sample
-    %a{href: album_picture_path(random_pic.album, random_pic)}
-      .large_square
-        %img{src: random_pic.picture_image.detail}
-        %h3
-          %span= random_pic.name
-          %br
-          %span
-            %small Album: #{random_pic.album.name}
+    - if current_user.pictures.any?
+      - random_pic = current_user.pictures.sample
+      %a{href: album_picture_path(random_pic.album, random_pic)}
+        .large_square
+          %img{src: random_pic.picture_image.detail}
+          %h3
+            %span= random_pic.name
+            %br
+            %span
+              %small Album: #{random_pic.album.name}
     
     .standard_group
       =render @albums[2..@albums.count]
