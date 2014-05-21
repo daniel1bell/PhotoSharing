@@ -2,13 +2,13 @@
   .large_square
     %img{src: @picture.picture_image.detail}/
   .large_square
-    %p Camera Model: #{@picture.exif_data.model}
-    %p Date and Time: #{@picture.exif_data.date_time}
-    %p Height: #{@picture.exif_data.height} px
-    %p Width: #{@picture.exif_data.width} px
-    %p Exposure Time: #{@picture.exif_data.try(:exposure_time)}
-    %p Latitude: #{@picture.exif_data.try(:gps).try(:latitude)}
-    %p Longitude: #{@picture.exif_data.try(:gps).try(:longitude)}
+    %p Camera Model: #{@picture.camera_model}
+    %p Date and Time: #{@picture.datetime}
+    %p Height: #{@picture.image_height} px
+    %p Width: #{@picture.image_length} px
+    %p Exposure Time: #{@picture.exposure}
+    %p Latitude: #{@picture.latitude}
+    %p Longitude: #{@picture.longitude}
   #map_canvas
   .standard_group
     .standard_square.text_square
