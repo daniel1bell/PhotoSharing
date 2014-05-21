@@ -15,6 +15,8 @@ class User < ActiveRecord::Base
   acts_as_tagger
   acts_as_voter
 
+  mount_uploader :profile_pic, PictureImageUploader
+
   scope :most_recent, where("users.created_at >= ?", 1.day.ago.utc).order("users.created_at DESC")
 
   def self.from_omniauth(auth)
