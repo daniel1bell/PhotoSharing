@@ -12,8 +12,8 @@
     - if comment.flagged?
       .inline-icon.sprite-flagged-small.has-tip{"data-tooltip" => "", "data-options" => "disable_for_touch:true", title: "This comment has been flagged as innapropriate and is awaiting moderation."}
     -else
-      - if params[:controller] == "pictures"
-        = link_to inappropriate_album_comment_path(Album.find(params[:album_id]), comment) do
+      - if params[:controller] == "albums"
+        = link_to inappropriate_album_comment_path(Album.find(params[:id]), comment) do
           .inline-icon.sprite-flag-small.has-tip{"data-tooltip" => "", "data-options" => "disable_for_touch:true", title: "Flag this comment for moderation."}
       - else
         = link_to inappropriate_album_picture_comment_path(Album.find(params[:album_id]), Picture.find(params[:id]), comment) do
