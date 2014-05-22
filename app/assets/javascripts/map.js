@@ -32,7 +32,6 @@ function addMarker(map) {
 
 
 
-
 $(function() {
   $(document).foundation();
 

@@ -2,11 +2,12 @@ class Album < ActiveRecord::Base
   belongs_to :user
   has_many :pictures, dependent: :destroy
 
-  attr_accessible :description, :name, :user_id
+  attr_accessible :description, :name, :user_id, :flaggable, :flagger, :flag
 
   acts_as_taggable
   acts_as_votable
   acts_as_commentable
+  make_flaggable :inappropriate
 
   scope :most_liked, select("albums.*, count(votes.id) as vote_count").joins("JOIN votes ON albums.id = votes.votable_id").group("albums.id").order("vote_count DESC")
   scope :most_commented, select("albums.*, count(comments.id) as comment_count").joins("JOIN comments ON albums.id = comments.commentable_id").group("albums.id").order("comment_count DESC")

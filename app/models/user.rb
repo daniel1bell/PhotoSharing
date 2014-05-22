@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable, :omniauthable, omniauth_providers: [:twitter, :facebook]
   # Setup accessible (or protected) attributes for your model
   
-  attr_accessible :bio, :profile_pic, :role, :url, :user_name, :email, :password, :password_confirmation, :remember_me, :uid, :provider
+  attr_accessible :bio, :profile_pic, :role, :url, :user_name, :email, :password, :password_confirmation, :remember_me, :uid, :provider, :flaggable, :flagger, :flag
   
   has_many :albums , dependent: :destroy
   has_many :pictures, through: :albums
@@ -14,6 +14,7 @@ class User < ActiveRecord::Base
 
   acts_as_tagger
   acts_as_voter
+  make_flagger
 
   mount_uploader :profile_pic, PictureImageUploader
 

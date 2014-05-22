@@ -34,6 +34,18 @@
   padding: 5px !important;
 }
 
+.has-tip {
+  cursor: auto !important;
+  font-weight: normal !important;
+  color: white !important;
+}
+
 .button {
   margin-bottom: 10px !important;
+}
+
+@media (min-width: 666px) {
+  #account_settings {
+    min-height: 343px;
+  }
 }

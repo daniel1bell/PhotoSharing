@@ -1,15 +1,10 @@
-= form_for([@album, @picture]) do |f|
-  .field
-    = f.label :name
-    %br/
-    = f.text_field :name, :autofocus => true, placeholder: 'Name'
-  .field
-    = f.label :picture_image
-    %br/
-    = f.file_field :picture_image, :multiple => true
-  .field
-    = f.label :tag_list, "Tags (separated by commas)"
-    %br/
-    = f.text_field :tag_list   
-  .actions
-    = f.submit
+.long_short
+  = form_for([@album, @picture]) do |f|
+    .field
+      = f.text_field :name, :autofocus => true, placeholder: 'Name'
+    .field
+      = f.file_field :picture_image, :multiple => true
+    .field
+      = f.text_field :tag_list, placeholder: 'Tag List'
+    .actions
+      = f.submit 'Save Photo', class: 'button tiny expand'

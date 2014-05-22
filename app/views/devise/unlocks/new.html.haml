@@ -1,0 +1,16 @@
+.square_viewport
+  .standard_group
+    .long_short.text_square
+      %h2 Resend unlock instructions
+
+    .long_short
+      = form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f|
+        = devise_error_messages!
+
+        .field
+          = f.email_field :email, autofocus: true, placeholder: 'E-mail address'
+
+        .field
+          = f.submit "Resend unlock instructions", class: 'button tiny expand'
+
+        = render "devise/shared/links"

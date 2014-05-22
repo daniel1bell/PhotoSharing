@@ -221,3 +221,17 @@
 .badge:empty {
   display: none;
 }
+
+.aside {
+  text-align: center;
+  opacity: 0.25;
+  transition: opacity .5s;
+  h3 {
+    color: $primary;
+    height: initial;
+    font-size: 14px;
+  }
+  &:hover {
+    opacity: 1;
+  }
+}
