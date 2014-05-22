@@ -1,0 +1,7 @@
+- if current_user.liked? @album
+  var likesHTML = ("#{escape_javascript(render :partial => 'album_dislike')}");
+- else current_user.disliked? @album
+  var likesHTML = ("#{escape_javascript(render :partial => 'album_like')}");
+
+$(".like_count").html("#{escape_javascript(render @album.user)}");
+$(".like_button").html(likesHTML);
