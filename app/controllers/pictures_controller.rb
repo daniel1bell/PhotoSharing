@@ -31,16 +31,23 @@ class PicturesController < ApplicationController
     @picture = @album.pictures.build
   end
 
-  def create 
-    @picture = @album.pictures.new(params[:picture])
+  def create
 
-    respond_to do |format|
-      if @picture.save
-        format.html { redirect_to album_picture_path(@album, @picture), notice: 'Picture was successfully created.' }
-      else
-        format.html { render action: 'new'}
-      end
+    params[:picture][:picture_image].each do |picture|
+      @picture = @album.pictures.create(name: params[:picture][:name], picture_image: picture, tag_list: params[:picture][:tag_list])
+
     end
+
+    redirect_to album_picture_path(@album, @picture) 
+
+    # respond_to do |format|
+    #   if @picture.save
+    #     format.html { redirect_to album_picture_path(@album, @picture), notice: 'Picture was successfully created.' }
+    #   else
+    #     format.html { render action: 'new'}
+    #   end
+    #end
+
   end
 
   def show

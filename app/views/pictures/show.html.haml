@@ -20,7 +20,7 @@
   .tiny_group 
     Nearby Pictures
     .tiny_square
-      - if @nearby_pictures.any?
+      - if @picture.geocoded?
         - @nearby_pictures.map do |p| 
           = image_tag p.picture_image.icon
 
