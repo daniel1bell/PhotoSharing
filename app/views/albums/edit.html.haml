@@ -3,5 +3,5 @@
     .long_short.text_square
       %h2 Edit Album
     = render :partial => 'form'
-    .long_short
+    .long_short.aside
       = link_to('Delete Album', @album, :method => :delete, :confirm => 'Are you sure?', class: "button tiny expand alert")

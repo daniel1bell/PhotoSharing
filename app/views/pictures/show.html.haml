@@ -17,12 +17,9 @@
     %p Latitude: #{@picture.latitude}
     %p Longitude: #{@picture.longitude}
   
-  .tiny_group 
-    Nearby Pictures
-    .tiny_square
-      - if @nearby_pictures.any?
-        - @nearby_pictures.map do |p| 
-          = image_tag p.picture_image.icon
+  .standard_group 
+    - if @nearby_pictures && @nearby_pictures.any?
+      = render @nearby_pictures
 
   .standard_group
     .standard_square.text_square
@@ -62,10 +59,3 @@
         = f.submit
 
     = render @picture.comments[0...@picture.comments.count]
-
-
-/ %ul
-/   %li
-/     = link_to('Edit Picture', edit_album_picture_path(@picture.album))
-/     = link_to('Delete Picture', ([@picture.album, @picture]), :method => :delete, :confirm => 'Are you sure?')
-/     = link_to('Back', album_pictures_path(@picture.album))
