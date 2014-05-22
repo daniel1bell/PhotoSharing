@@ -1,12 +1,14 @@
 class Picture < ActiveRecord::Base
   belongs_to :album
 
-  attr_accessible :altitude, :camera_make, :camera_model, :datetime, :exposure, :flash, :focal_length, :image, :image_height, :image_length, :latitude, :longitude, :name, :orientation, :picture_image, :tag_list
+  attr_accessible :altitude, :camera_make, :camera_model, :datetime, :exposure, :flash, :focal_length, :image, :image_height, :image_length, :latitude, :longitude, :name, :orientation, :picture_image, :tag_list, :location
   mount_uploader :picture_image, PictureImageUploader
   #after validation, save these items into the database. this would allow us to see pictures nearby by pulling them from the database.
   before_save :update_exif
 
-  attr_accessible :altitude, :camera_make, :camera_model, :datetime, :exposure, :flash, :focal_length, :image, :image_height, :image_length, :latitude, :longitude, :name, :orientation
+  # reverse_geocoded_by :latitude, :longitude
+  # after_validation :reverse_geocode
+  geocoded_by :location
 
   acts_as_taggable
   acts_as_votable
@@ -17,6 +19,9 @@ class Picture < ActiveRecord::Base
   scope :most_liked, select("pictures.*, count(votes.id) as vote_count").joins("JOIN votes ON pictures.id = votes.votable_id").group("pictures.id").order("vote_count DESC")
   scope :most_commented, select("pictures.*, count(comments.id) as comment_count").joins("JOIN comments ON pictures.id = comments.commentable_id").group("pictures.id").order("comment_count DESC")
   scope :most_recent, where("pictures.created_at >= ?", 1.day.ago.utc).order("pictures.created_at DESC")
+
+  
+
 
   def user
     album.user

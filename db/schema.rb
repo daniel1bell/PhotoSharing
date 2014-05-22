@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140519100349) do
+ActiveRecord::Schema.define(:version => 20140522093400) do
 
   create_table "albums", :force => true do |t|
     t.string   "name"
@@ -41,8 +41,8 @@ ActiveRecord::Schema.define(:version => 20140519100349) do
     t.string   "name"
     t.text     "image"
     t.datetime "datetime"
-    t.string   "latitude"
-    t.string   "longitude"
+    t.float    "latitude"
+    t.float    "longitude"
     t.decimal  "altitude"
     t.integer  "image_length"
     t.integer  "image_height"

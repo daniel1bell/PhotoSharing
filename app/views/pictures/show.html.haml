@@ -17,7 +17,12 @@
     %p Latitude: #{@picture.latitude}
     %p Longitude: #{@picture.longitude}
   
-  #map_canvas
+  .tiny_group 
+    Nearby Pictures
+    .tiny_square
+      - if @nearby_pictures.any?
+        - @nearby_pictures.map do |p| 
+          = image_tag p.picture_image.icon
 
   .standard_group
     .standard_square.text_square
