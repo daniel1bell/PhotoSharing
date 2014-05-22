@@ -1,0 +1,38 @@
+- if @popular_pictures.any?
+  - most_pop_picture = @popular_pictures.first
+  %a{href: album_picture_path(most_pop_picture.album, most_pop_picture)}
+    .large_square
+      %img{src: most_pop_picture.picture_image.detail}
+      %h3
+        %span= most_pop_picture.name
+        %br
+        %span
+          %small Album: #{most_pop_picture.album.name}
+
+- if @popular_pictures.count >= 2
+  - second_pop_picture = @popular_pictures[1]
+  %a{href: album_picture_path(second_pop_picture.album, second_pop_picture)}
+    .large_square
+      %img{src: second_pop_picture.picture_image.detail}
+      %h3
+        %span= second_pop_picture.name
+        %br
+        %span
+          %small Album: #{second_pop_picture.album.name}
+
+- if @popular_pictures.count >= 3
+  .standard_group
+    = render @popular_pictures[2..4]
+
+- if @popular_users.count >= 1
+  = render @popular_users[0..2]
+- if @popular_albums.count >= 1
+  = render @popular_albums[0..2]
+- if @popular_users.count >= 3
+  = render @popular_users[3..4]
+- if @popular_albums.count >= 3
+  = render @popular_albums[3..4]
+- if @popular_users.count >= 5
+  = render @popular_users[5..6]
+- if @popular_albums.count >= 5
+  = render @popular_albums[5..6]

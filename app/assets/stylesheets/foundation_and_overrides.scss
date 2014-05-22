@@ -373,7 +373,7 @@
 // $include-html-clearing-classes: $include-html-classes;
 
 // We use these to set the background colors for parts of Clearing.
-// $clearing-bg: #333;
+$clearing-bg: rgba(0,0,0,0.6);
 // $clearing-caption-bg: $clearing-bg;
 // $clearing-carousel-bg: rgba(51,51,51,0.8);
 // $clearing-img-bg: $clearing-bg;
@@ -383,7 +383,7 @@
 // $clearing-close-size: 30px;
 
 // We use these to style the arrows
-// $clearing-arrow-size: 12px;
+$clearing-arrow-size: 0px;
 // $clearing-arrow-color: $clearing-close-color;
 
 // We use these to style captions
@@ -392,10 +392,10 @@
 // $clearing-caption-padding: 10px 30px 20px;
 
 // We use these to make the image and carousel height and style
-// $clearing-active-img-height: 85%;
-// $clearing-carousel-height: 120px;
-// $clearing-carousel-thumb-width: 120px;
-// $clearing-carousel-thumb-active-border: 1px solid rgb(255,255,255);
+$clearing-active-img-height: 100%;
+$clearing-carousel-height: 0px;
+$clearing-carousel-thumb-width: 0px;
+$clearing-carousel-thumb-active-border: none;
 
 // Dropdown
 
@@ -1104,15 +1104,15 @@
 
 // $include-html-tabs-classes: $include-html-classes;
 
-// $tabs-navigation-padding: rem-calc(16);
-// $tabs-navigation-bg-color: #efefef  ;
-// $tabs-navigation-active-bg-color: #fff;
-// $tabs-navigation-hover-bg-color: scale-color($tabs-navigation-bg-color, $lightness: -6%);
-// $tabs-navigation-font-color: #222;
-// $tabs-navigation-font-size: rem-calc(16);
+$tabs-navigation-padding: rem-calc(10);
+$tabs-navigation-bg-color: #2E2E2E;
+$tabs-navigation-active-bg-color: #2E2E2E;
+$tabs-navigation-hover-bg-color: scale-color($tabs-navigation-bg-color, $lightness: 10%);
+$tabs-navigation-font-color: #EDEDED;
+$tabs-navigation-font-size: rem-calc(10);
 // $tabs-navigation-font-family: $body-font-family;
 
-// $tabs-content-margin-bottom: rem-calc(24);
+$tabs-content-margin-bottom: rem-calc(50);
 // $tabs-content-padding: $column-gutter/2;
 
 // $tabs-vertical-navigation-margin-bottom: 1.25rem;

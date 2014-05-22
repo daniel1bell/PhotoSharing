@@ -9,16 +9,20 @@
 /   }(document, 'script', 'facebook-jssdk'));
 .square_viewport
   .standard_group
-    %a{href: @picture.picture_image}
-      .large_square
-        %img{src: @picture.picture_image.detail}/
-        .like_button
-          - if current_user.liked? @picture
-            = render :partial => 'picture_dislike'
-          - else
-            = render :partial => 'picture_like'
+    %ul{"data-clearing" => ""}
+      %li
+        %a{href: @picture.picture_image}
+          .large_square
+            %img{src: @picture.picture_image.detail}/
+            .like_button
+              - if current_user.liked? @picture
+                = render :partial => 'picture_dislike'
+              - else
+                = render :partial => 'picture_like'
 
     - if @picture.any_exif?
+      .more_info
+
       .long_short.text_square
         %p Camera Model: #{@picture.camera_model}
         %p Date and Time: #{@picture.datetime}

@@ -1,0 +1,38 @@
+- if @trending_pictures.any?
+  - most_trend_picture = @trending_pictures.first
+  %a{href: album_picture_path(most_trend_picture.album, most_trend_picture)}
+    .large_square
+      %img{src: most_trend_picture.picture_image.detail}
+      %h3
+        %span= most_trend_picture.name
+        %br
+        %span
+          %small Album: #{most_trend_picture.album.name}
+
+- if @trending_pictures.count >= 2
+  - second_trend_picture = @trending_pictures[1]
+  %a{href: album_picture_path(second_trend_picture.album, second_trend_picture)}
+    .large_square
+      %img{src: second_trend_picture.picture_image.detail}
+      %h3
+        %span= second_trend_picture.name
+        %br
+        %span
+          %small Album: #{second_trend_picture.album.name}
+
+- if @trending_pictures.count >= 3
+  .standard_group
+    = render @trending_pictures[2..4]
+
+- if @trending_users.count >= 1
+  = render @trending_users[0..2]
+- if @trending_albums.count >= 1
+  = render @trending_albums[0..2]
+- if @trending_users.count >= 3
+  = render @trending_users[3..4]
+- if @trending_albums.count >= 3
+  = render @trending_albums[3..4]
+- if @trending_users.count >= 5
+  = render @trending_users[5..6]
+- if @trending_albums.count >= 5
+  = render @trending_albums[5..6]

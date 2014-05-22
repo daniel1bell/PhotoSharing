@@ -16,6 +16,10 @@
         %nav.tab-bar
           %section.middle.tab-bar-section
             = link_to image_tag( '/immige_name2.png'), "/"
+            - if current_user
+              %a{href: user_path(current_user)}
+                .profile_pic.tab_profile_pic
+                  %img{src: current_user.profile_pic.thumb}
           %section.right-small
             %a.right-off-canvas-toggle.menu-icon
               %span
@@ -25,8 +29,14 @@
               %li
                 %label= current_user.email
               %li= link_to "Log out", destroy_user_session_path, method: :delete
-              %li= link_to('My Albums', albums_path)
               %li= link_to('Edit Settings', edit_user_registration_path)
+              - if can? :manage, User
+                %li= link_to('Admin Panel', 'admin#index')
+              %li
+                %a.no-padding{href: albums_path}
+                  %label My Albums
+              - current_user.albums.each do |album|
+                %li= link_to(album.name, album_path(album))
             - else
               %li= link_to "Sign In", new_user_session_path
               %li= link_to "Register", new_user_registration_path
@@ -34,7 +44,6 @@
         %section.main-section
           .row
             .large-12.columns
-              / %img#user_image{src: current_user.profile_pic}/
               %p.notice= notice # Needed for Devise to alert User
               %p.alert= alert
 

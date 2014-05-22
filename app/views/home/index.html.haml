@@ -1,27 +1,40 @@
-#tabs
-  %ul
-    %li
-      %a{href: "#tabs-1"} Recent
-    %li
-      %a{href: "#tabs-2"} Trending
-    %li
-      %a{href: "#tabs-3"} All Time
+.square_viewport
+  
+  %dl.tabs{ "data-tab" => ""}
+    %dd.active
+      %a{href: "#panel1-1"} All-Time Popular
+    %dd
+      %a{href: "#panel1-2"} Trending
+    %dd
+      %a{href: "#panel1-3"} Recent Additions
 
-  #tabs-1
-    .square_viewport
-      - @recent_albums.shuffle.map do |album|
-        = render album
-      - @recent_pictures.shuffle.map do |picture|
-        = render picture
-      - @recent_users.shuffle.map do |user|
-        = render user
+  .tabs-content
+    .content.active#panel1-1
+      = render 'popular'
 
-  #tabs-2
-    .square_viewport
-      - @trending_albums.map do |album|
-        = render album
-  #tabs-3
-    .square_viewport
-      - @popular_albums.map do |album|
-        = render album
+    .content#panel1-2
+      = render 'trending'
+
+    .content#panel1-3
+      = render 'recent'
+
+/ #tabs
+/   %ul
+/     %li
+/       %a{href: "#tabs-1"} Recent
+/     %li
+/       %a{href: "#tabs-2"} Trending
+/     %li
+/       %a{href: "#tabs-3"} All Time
+
+/   #tabs-1
+/     .square_viewport
+
+
+/   #tabs-2
+/     .square_viewport
+
+/   #tabs-3
+/     .square_viewport
+/       
  

@@ -4,10 +4,18 @@
 }
 
 .profile_pic {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background-color: $mint;
+  float: left;
   opacity: 0.75;
-}
-.profile_pic:hover {
-  opacity: 1;
+  img {
+    border-radius: 50%;
+  }
+  &:hover {
+    opacity: 1;
+  }
 }
 
 .float-left {
@@ -163,16 +171,6 @@
 }
 
 .cmnt_box {
-  .profile_pic {
-    height: 40px;
-    width: 40px;
-    border-radius: 50%;
-    background-color: $primary;
-    float: left;
-    img {
-      border-radius: 50%;
-    }
-  }
   .inline-icon {
     float: left;
     clear: left;

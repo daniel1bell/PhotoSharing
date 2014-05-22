@@ -1,0 +1,43 @@
+- recent_pictures = @recent_pictures.shuffle
+- recent_albums = @recent_albums.shuffle
+- recent_users = @recent_users.shuffle
+
+
+- if recent_pictures.any?
+  - most_recent_picture = recent_pictures.first
+  %a{href: album_picture_path(most_recent_picture.album, most_recent_picture)}
+    .large_square
+      %img{src: most_recent_picture.picture_image.detail}
+      %h3
+        %span= most_recent_picture.name
+        %br
+        %span
+          %small Album: #{most_recent_picture.album.name}
+
+- if recent_pictures.count >= 2
+  - second_recent_picture = recent_pictures[1]
+  %a{href: album_picture_path(second_recent_picture.album, second_recent_picture)}
+    .large_square
+      %img{src: second_recent_picture.picture_image.detail}
+      %h3
+        %span= second_recent_picture.name
+        %br
+        %span
+          %small Album: #{second_recent_picture.album.name}
+
+- if recent_pictures.count >= 3
+  .standard_group
+    = render recent_pictures[2..4]
+
+- if recent_users.count >= 1
+  = render recent_users[0..2]
+- if recent_albums.count >= 1
+  = render recent_albums[0..2]
+- if recent_users.count >= 3
+  = render recent_users[3..4]
+- if recent_albums.count >= 3
+  = render recent_albums[3..4]
+- if recent_users.count >= 5
+  = render recent_users[5..6]
+- if recent_albums.count >= 5
+  = render recent_albums[5..6]
