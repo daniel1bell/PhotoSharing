@@ -37,15 +37,18 @@
     .tiny_group
       .tiny_square
         %img{src: @picture.user.profile_pic.thumb}
-      .tiny_square.sprite-share
+      .tiny_square.sprite-share.has-tip{"data-tooltip" => "", "data-options" => "disable_for_touch:true", title: "Share on Facebook or Twitter"}
       %a{href: album_path(@picture.album)}
-        .tiny_square.sprite-albums
+        .tiny_square.sprite-albums.has-tip{"data-tooltip" => "", "data-options" => "disable_for_touch:true", title: "Back to Album: #{@picture.album.name}"}
       - if @picture.album.user == current_user
         %a{href: edit_album_picture_path(@picture.album, @picture)}
-          .tiny_square.sprite-edit
+          .tiny_square.sprite-edit.has-tip{"data-tooltip" => "", "data-options" => "disable_for_touch:true", title: "Edit"}
       - else
-        = link_to inappropriate_album_picture_path(@album, @picture) do
-          .tiny_square.sprite-flag
+        - if @picture.flagged?
+          .tiny_square.sprite-flagged.has-tip{"data-tooltip" => "", "data-options" => "disable_for_touch:true", title: "This picture has been flagged as innapropriate and is awaiting moderation."}
+        -else
+          = link_to inappropriate_album_picture_path(@album, @picture) do
+            .tiny_square.sprite-flag.has-tip{"data-tooltip" => "", "data-options" => "disable_for_touch:true", title: "Flag this photo for moderation."}
 
 
     .long_short.tag_list

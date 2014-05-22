@@ -37,6 +37,9 @@
 .has-tip {
   cursor: auto !important;
   font-weight: normal !important;
+}
+
+.actions .has-tip {
   color: white !important;
 }
 
@@ -46,6 +49,9 @@
 
 @media (min-width: 666px) {
   #account_settings {
-    min-height: 343px;
+    min-height: 350px;
+  }
+  #user_profile_settings {
+    min-height: 350px;
   }
 }

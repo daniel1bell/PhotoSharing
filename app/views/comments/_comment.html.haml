@@ -1,8 +1,10 @@
 .long_short.cmnt_box
-  .profile_pic
-    %img{src: comment.user.profile_pic.thumb}
+  %a{href: user_path(comment.user)}
+    .profile_pic
+      %img{src: comment.user.profile_pic.thumb}
   .cmnt_text
-    %p
-      @
-      = comment.user.user_name
+    %a{href: user_path(comment.user)}
+      %p
+        @
+        = comment.user.user_name
     %p= comment.comment

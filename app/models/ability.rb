@@ -5,8 +5,12 @@ class Ability
     user ||= User.new
     if user.role? != nil #so they are NOT just a visitor
       can :read, :all
-      can :manage, Album
-      can :manage, Picture
+      can :manage, Album do |album|
+        album.user == user
+      end
+      can :manage, Picture do |picture|
+        picture.album.user == user
+      end
       can :destroy, Comment, album: {user_id: user.id}
       can :destroy, Comment, picture: {user_id: user.id} 
       can :manage, User do |thing|

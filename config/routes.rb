@@ -24,6 +24,8 @@ PhotoSharingApp::Application.routes.draw do
     resources :comments
   end
 
+  resources :users, only: [:index, :show]
+
   get '/pages/*id' => 'pages#show', as: :page, format: false
 
   root to: "home#index"
