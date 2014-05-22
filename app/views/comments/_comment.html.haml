@@ -12,4 +12,5 @@
     - if comment.flagged?
       .inline-icon.sprite-flagged.small
     -else
-      .inline-icon.sprite-flag-small
+      = link_to inappropriate_comment_path(comment) do
+        .inline-icon.sprite-flag-small
