@@ -31,12 +31,13 @@
               %li= link_to "Log out", destroy_user_session_path, method: :delete
               %li= link_to('Edit Settings', edit_user_registration_path)
               - if can? :manage, User
-                %li= link_to('Admin Panel', 'admin#index')
+                %li= link_to('Admin Panel', '/admin')
               %li
                 %a.no-padding{href: albums_path}
                   %label My Albums
               - current_user.albums.each do |album|
                 %li= link_to(album.name, album_path(album))
+              %li= link_to "Add a New Album", new_album_path
             - else
               %li= link_to "Sign In", new_user_session_path
               %li= link_to "Register", new_user_registration_path
