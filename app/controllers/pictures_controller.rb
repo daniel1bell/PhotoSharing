@@ -89,18 +89,10 @@ class PicturesController < ApplicationController
     redirect_to album_picture_path(@picture.album, @picture), notice: "Unliked!"
   end
 
-  def flag_admin
-    @current_user = User.first  
+  def inappropriate
     @picture = Picture.find(params[:id])
-    @current_user.flag(@picture, :report)
-    redirect_to @picture, :notice => "You have reported this image."
-  end
-
-  def unflag_admin
-    @current_user = User.first  
-    @picture = Picture.find(params[:id])
-    @current_user.unflag(@picture, :report)
-    redirect_to @picture, :notice => "This image is no longer reported."
+    current_user.flag(@picture, :inappropriate)
+    redirect_to album_picture_path(@picture.album, @picture), notice: "You have reported this image."
   end
 
   private

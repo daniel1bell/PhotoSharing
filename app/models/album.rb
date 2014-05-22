@@ -2,7 +2,7 @@ class Album < ActiveRecord::Base
   belongs_to :user
   has_many :pictures, dependent: :destroy
 
-  attr_accessible :description, :name, :user_id
+  attr_accessible :description, :name, :user_id, :flaggable, :flagger, :flag
 
   acts_as_taggable
   acts_as_votable
