@@ -3,7 +3,7 @@
     .field
       = f.text_field :name, :autofocus => true, placeholder: 'Name'
     .field
-      = f.file_field :picture_image
+      = f.file_field :picture_image, :multiple => true
     .field
       = f.text_field :tag_list, placeholder: 'Tag List'
     .actions

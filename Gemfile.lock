@@ -1,8 +1,8 @@
 GIT
-  remote: git://github.com/Pavling/make_flaggable.git
-  revision: 155538f7868b3fc601f7c3b35ae51e0f2ab2b0de
+  remote: git://github.com/ScottyGams/make_flaggable.git
+  revision: 7d7dbf89da11de98f17a23e3d3173bebdb35a4ad
   specs:
-    make_flaggable (0.1.1)
+    make_flaggable (0.1.2)
       activerecord (>= 3.0.0)
 
 GEM

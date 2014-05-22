@@ -36,8 +36,8 @@ class Picture < ActiveRecord::Base
 
   private
   def update_exif
-      self.camera_model = self.exif_data.model
-      self.datetime = self.exif_data.date_time
+      self.camera_model = self.exif_data.try(:model)
+      self.datetime = self.exif_data.try(:date_time)
       self.exposure = self.exif_data.try(:exposure_time)
       self.latitude = self.exif_data.try(:gps).try(:latitude)
       self.longitude = self.exif_data.try(:gps).try(:longitude)

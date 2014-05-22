@@ -18,7 +18,7 @@
     %p Longitude: #{@picture.longitude}
   
   .standard_group 
-    - if @nearby_pictures && @nearby_pictures.any?
+    - if @picture.geocoded?
       = render @nearby_pictures
 
   .standard_group
