@@ -29,7 +29,7 @@
       .tiny_square.sprite-share
       .tiny_square.sprite-albums
       - if @picture.album.user == current_user
-        %a{href: "1"}
+        %a{= link_to 'inappropriate', inappropriate_picture_path(picture)}
           .tiny_square.sprite-edit
       - else
         .tiny_square.sprite-flag
