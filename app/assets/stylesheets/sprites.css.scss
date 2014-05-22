@@ -97,6 +97,27 @@
   }
 }
 
+.sprite-flagged {
+  background-image: url('/sprites/flagged_sprite.png');
+  background-size: cover;
+}
+
+.sprite-flag-small {
+  background-image: url('/sprites/flag_small_sprite.png');
+  background-size: cover;
+  &:hover {
+    background-position: 0 -100%;
+  }
+  &:active {
+    background-position: 0 -100%;
+  }
+}
+
+.sprite-flagged-small {
+  background-image: url('/sprites/flagged_small_sprite.png');
+  background-size: cover;
+}
+
 .sprite-login {
   background-image: url('/sprites/login_sprite.png');
   background-size: cover;

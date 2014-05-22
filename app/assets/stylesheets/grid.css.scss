@@ -10,6 +10,10 @@
   opacity: 1;
 }
 
+.float-left {
+  float: left;
+}
+
 .square_viewport {
   text-align: center;
   h2 {
@@ -169,6 +173,11 @@
       border-radius: 50%;
     }
   }
+  .inline-icon {
+    float: left;
+    clear: left;
+    margin: 5px 0 0 5px;
+  }
   .cmnt_text {
     width: 240px;
     float: right;
@@ -201,6 +210,11 @@
       background-color: rgba($primary, 0.5);
     }
   }
+}
+
+.inline-icon {
+  height: 30px;
+  width: 30px;
 }
 
 .badge {

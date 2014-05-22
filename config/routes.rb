@@ -12,15 +12,27 @@ PhotoSharingApp::Application.routes.draw do
 
   resources :home, only: [:index], as: '/'
 
+  resources :admin, only: [:index], as: '/'
+
   resources :albums do
     resources :pictures do
       member do
         get 'inappropriate'
       end
-      resources :comments
+      resources :comments do
+        member do
+        get 'inappropriate'
+        end
+      end
     end
-    resources :comments
+    resources :comments do
+      member do
+      get 'inappropriate'
+      end
+    end
   end
+
+  resources :users, only: [:index, :show]
 
   get '/pages/*id' => 'pages#show', as: :page, format: false
 

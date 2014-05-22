@@ -1,14 +1,15 @@
-.standard_group
-  .standard_square
-    %img{src: user.profile_pic.thumb}
-  .standard_square.text_square
-    %h3
-      = user.user_name
+%a{href: user_path(user)}
+  .standard_group
+    .standard_square
+      %img{src: user.profile_pic.thumb}
+    .standard_square.text_square
+      %h3
+        = user.user_name
 
-    .inner_text
-      %span.badge= user.albums.count
-      %p Albums:
-      %span.badge= user.pictures.count
-      %p Pictures:
-      %span.badge= user.total_likes
-      %p Total Likes:
+      .inner_text
+        %span.badge= user.albums.count
+        %p Albums:
+        %span.badge= user.pictures.count
+        %p Pictures:
+        %span.badge= user.total_likes
+        %p Total Likes:

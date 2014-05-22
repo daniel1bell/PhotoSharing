@@ -1,0 +1,24 @@
+.square_viewport
+  .long_short.text_square
+    %h3 Users!
+
+  %table
+    %thead
+      %tr
+        %th User Name
+        %th E-Mail
+        %th Albums
+        %th Pictures
+        %th Comments
+        %th Total Likes
+    %tbody
+      - @users.each do |user|
+        %tr
+          %td= user.user_name
+          %td
+            %a{href: user_path(user)}
+              = user.email
+          %td= user.albums.count
+          %td= user.pictures.count
+          %td= user.comments.count
+          %td= user.total_likes

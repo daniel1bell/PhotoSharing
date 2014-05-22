@@ -29,4 +29,10 @@ class CommentsController < ApplicationController
     @album = Album.find(params[:album_id])
   end
 
+  def inappropriate
+    @comment = Comment.find(params[:id])
+    current_user.flag(@comment, :inappropriate)
+    redirect_to :back, notice: "You have reported this comment."
+  end
+
 end

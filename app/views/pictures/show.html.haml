@@ -1,3 +1,12 @@
+#fb-root
+:javascript
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=1448378892074705&version=v2.0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
 .square_viewport
   / %a{href: @picture.picture_image.file.file}
   .standard_group
@@ -17,12 +26,9 @@
     %p Latitude: #{@picture.latitude}
     %p Longitude: #{@picture.longitude}
   
-  .tiny_group 
-    Nearby Pictures
-    .tiny_square
-      - if @picture.geocoded?
-        - @nearby_pictures.map do |p| 
-          = image_tag p.picture_image.icon
+  .standard_group 
+    - if @picture.geocoded?
+      = render @nearby_pictures
 
   .standard_group
     .standard_square.text_square
@@ -37,18 +43,29 @@
         %p Likes:
         %span.badge= @picture.comments.count
         %p Comments:
+   
     .tiny_group
       .tiny_square
         %img{src: @picture.user.profile_pic.thumb}
+
       .tiny_square.sprite-share
+        %a.twitter-share-button{"data-count" => "none", "data-text" => "Check out my new Immige", :href => "https://twitter.com/share"} Tweet
+        :javascript
+          !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+        .fb-share-button{"data-href" => "http://localhost:3000/", "data-type" => "button"}
+
       %a{href: album_path(@picture.album)}
-        .tiny_square.sprite-albums
+        .tiny_square.sprite-albums.has-tip{"data-tooltip" => "", "data-options" => "disable_for_touch:true", title: "Back to Album: #{@picture.album.name}"}
+
       - if @picture.album.user == current_user
         %a{href: edit_album_picture_path(@picture.album, @picture)}
-          .tiny_square.sprite-edit
+          .tiny_square.sprite-edit.has-tip{"data-tooltip" => "", "data-options" => "disable_for_touch:true", title: "Edit"}
       - else
-        = link_to inappropriate_album_picture_path(@album, @picture) do
-          .tiny_square.sprite-flag
+        - if @picture.flagged?
+          .tiny_square.sprite-flagged.has-tip{"data-tooltip" => "", "data-options" => "disable_for_touch:true", title: "This picture has been flagged as innapropriate and is awaiting moderation."}
+        -else
+          = link_to inappropriate_album_picture_path(@album, @picture) do
+            .tiny_square.sprite-flag.has-tip{"data-tooltip" => "", "data-options" => "disable_for_touch:true", title: "Flag this photo for moderation."}
 
 
     .long_short.tag_list
@@ -62,10 +79,3 @@
         = f.submit
 
     = render @picture.comments[0...@picture.comments.count]
-
-
-/ %ul
-/   %li
-/     = link_to('Edit Picture', edit_album_picture_path(@picture.album))
-/     = link_to('Delete Picture', ([@picture.album, @picture]), :method => :delete, :confirm => 'Are you sure?')
-/     = link_to('Back', album_pictures_path(@picture.album))

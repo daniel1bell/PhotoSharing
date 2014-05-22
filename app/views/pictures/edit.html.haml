@@ -3,3 +3,5 @@
     .long_short.text_square
       %h2 Edit Picture
     = render :partial => 'form'
+    .long_short.aside
+      = link_to('Delete Picture', album_picture_path(@picture.album, @picture), :method => :delete, :confirm => 'Are you sure?', class: "button tiny expand alert")
