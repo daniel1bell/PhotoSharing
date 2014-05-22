@@ -8,3 +8,8 @@
         @
         = comment.user.user_name
     %p= comment.comment
+  - if comment.user != current_user
+    - if comment.flagged?
+      .inline-icon.sprite-flagged.small
+    -else
+      .inline-icon.sprite-flag-small
