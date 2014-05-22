@@ -29,7 +29,8 @@
       .tiny_square.sprite-share
       .tiny_square.sprite-albums
       - if @picture.album.user == current_user
-        .tiny_square.sprite-edit
+        %a{href: "1"}
+          .tiny_square.sprite-edit
       - else
         .tiny_square.sprite-flag
 
