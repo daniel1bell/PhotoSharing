@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140521151443) do
+ActiveRecord::Schema.define(:version => 20140522092916) do
 
   create_table "albums", :force => true do |t|
     t.string   "name"
@@ -42,11 +42,13 @@ ActiveRecord::Schema.define(:version => 20140521151443) do
     t.integer  "flaggable_id"
     t.string   "flagger_type"
     t.integer  "flagger_id"
-    t.text     "reason"
+    t.string   "flag"
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
   end
 
+  add_index "flaggings", ["flag", "flaggable_type", "flaggable_id"], :name => "index_flaggings_on_flag_and_flaggable_type_and_flaggable_id"
+  add_index "flaggings", ["flag", "flagger_type", "flagger_id", "flaggable_type", "flaggable_id"], :name => "access_flag_flaggings"
   add_index "flaggings", ["flaggable_type", "flaggable_id"], :name => "index_flaggings_on_flaggable_type_and_flaggable_id"
   add_index "flaggings", ["flagger_type", "flagger_id", "flaggable_type", "flaggable_id"], :name => "access_flaggings"
 
