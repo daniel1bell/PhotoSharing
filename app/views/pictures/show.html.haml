@@ -4,10 +4,10 @@
     .large_square
       %img{src: @picture.picture_image.detail}/
       .like_button
-        - if !current_user.liked? @picture
-          = render :partial => 'picture_like'
-        - if !current_user.disliked? @picture
+        - if current_user.liked? @picture
           = render :partial => 'picture_dislike'
+        - else
+          = render :partial => 'picture_like'
   .large_square
     %p Camera Model: #{@picture.camera_model}
     %p Date and Time: #{@picture.datetime}
@@ -17,7 +17,12 @@
     %p Latitude: #{@picture.latitude}
     %p Longitude: #{@picture.longitude}
   
-  #map_canvas
+  .tiny_group 
+    Nearby Pictures
+    .tiny_square
+      - if @nearby_pictures.any?
+        - @nearby_pictures.map do |p| 
+          = image_tag p.picture_image.icon
 
   .standard_group
     .standard_square.text_square
@@ -42,7 +47,9 @@
         %a{href: edit_album_picture_path(@picture.album, @picture)}
           .tiny_square.sprite-edit
       - else
-        .tiny_square.sprite-flag
+        = link_to inappropriate_album_picture_path(@album, @picture) do
+          .tiny_square.sprite-flag
+
 
     .long_short.tag_list
       = raw @picture.tag_list.map { |t| link_to t, tag_path(t), class: "tag" }.join(' ')

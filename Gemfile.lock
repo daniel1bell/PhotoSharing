@@ -1,3 +1,10 @@
+GIT
+  remote: git://github.com/Pavling/make_flaggable.git
+  revision: 155538f7868b3fc601f7c3b35ae51e0f2ab2b0de
+  specs:
+    make_flaggable (0.1.1)
+      activerecord (>= 3.0.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -84,6 +91,7 @@ GEM
     foundation-rails (5.2.2.0)
       railties (>= 3.1.0)
       sass (>= 3.2.0)
+    geocoder (1.2.1)
     haml (4.0.5)
       tilt
     haml-rails (0.4)
@@ -227,10 +235,12 @@ DEPENDENCIES
   exifr
   fog (~> 1.3.1)
   foundation-rails
+  geocoder
   haml-rails
   high_voltage
   jquery-rails
   jquery-ui-rails
+  make_flaggable!
   omniauth
   omniauth-facebook
   omniauth-twitter
