@@ -27,6 +27,8 @@ class Picture < ActiveRecord::Base
     exif_info = case File.extname(picture_image.path).upcase
     when '.JPG'
       EXIFR::JPEG.new(picture_image.path)
+    when '.JPEG'
+      EXIFR::JPEG.new(picture_image.path)
     when '.TIFF'
       EXIFR::TIFF.new(picture_image.path)
     else
@@ -41,8 +43,8 @@ class Picture < ActiveRecord::Base
       self.exposure = self.exif_data.try(:exposure_time)
       self.latitude = self.exif_data.try(:gps).try(:latitude)
       self.longitude = self.exif_data.try(:gps).try(:longitude)
-      self.image_height = self.exif_data.height
-      self.image_length = self.exif_data.width
+      self.image_height = self.exif_data.try(:height)
+      self.image_length = self.exif_data.try(:width)
   end
 
   # @image.exif_data.date_time for example (in not nil or error will happen)
