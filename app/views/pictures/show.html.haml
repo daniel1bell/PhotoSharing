@@ -4,10 +4,10 @@
     .large_square
       %img{src: @picture.picture_image.detail}/
       .like_button
-        - if !current_user.liked? @picture
-          = render :partial => 'picture_like'
-        - if !current_user.disliked? @picture
+        - if current_user.liked? @picture
           = render :partial => 'picture_dislike'
+        - else
+          = render :partial => 'picture_like'
   .large_square
     %p Camera Model: #{@picture.camera_model}
     %p Date and Time: #{@picture.datetime}

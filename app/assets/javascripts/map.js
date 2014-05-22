@@ -30,7 +30,7 @@ function addMarker(map) {
   });
 }
 
-google.maps.event.addDomListener(window, 'load', initialise);
+
 
 
 $(function() {
