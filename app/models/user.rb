@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
   
   has_many :albums , dependent: :destroy
   has_many :pictures, through: :albums
+  has_many :comments, dependent: :destroy
 
   validates :user_name, presence: true, uniqueness: true
 
