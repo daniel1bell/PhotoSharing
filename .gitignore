@@ -16,3 +16,6 @@
 
 # Ignore the uploaded user files.
 /public/uploads
+/public/.DS_Store
+
+/.DS_Store
