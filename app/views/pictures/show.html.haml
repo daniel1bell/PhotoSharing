@@ -1,3 +1,12 @@
+#fb-root
+:javascript
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=1448378892074705&version=v2.0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
 .square_viewport
   / %a{href: @picture.picture_image.file.file}
   .standard_group
@@ -34,12 +43,20 @@
         %p Likes:
         %span.badge= @picture.comments.count
         %p Comments:
+   
     .tiny_group
       .tiny_square
         %img{src: @picture.user.profile_pic.thumb}
-      .tiny_square.sprite-share.has-tip{"data-tooltip" => "", "data-options" => "disable_for_touch:true", title: "Share on Facebook or Twitter"}
+
+      .tiny_square.sprite-share
+        %a.twitter-share-button{"data-count" => "none", "data-text" => "Check out my new Immige", :href => "https://twitter.com/share"} Tweet
+        :javascript
+          !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+        .fb-share-button{"data-href" => "http://localhost:3000/", "data-type" => "button"}
+
       %a{href: album_path(@picture.album)}
         .tiny_square.sprite-albums.has-tip{"data-tooltip" => "", "data-options" => "disable_for_touch:true", title: "Back to Album: #{@picture.album.name}"}
+
       - if @picture.album.user == current_user
         %a{href: edit_album_picture_path(@picture.album, @picture)}
           .tiny_square.sprite-edit.has-tip{"data-tooltip" => "", "data-options" => "disable_for_touch:true", title: "Edit"}
