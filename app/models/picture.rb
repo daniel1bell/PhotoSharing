@@ -36,6 +36,14 @@ class Picture < ActiveRecord::Base
     end
   end
 
+  def any_exif?
+    camera_model || datetime || exposure || latitude || longitude || image_height || image_length
+  end
+
+  def full_location?
+    latitude && longitude
+  end
+
   private
   def update_exif
       self.camera_model = self.exif_data.try(:model)

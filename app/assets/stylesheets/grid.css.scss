@@ -249,3 +249,15 @@
     opacity: 1;
   }
 }
+
+.side_scroll_pics {
+  display: inline-flex;
+  overflow-x: scroll;
+  a {
+    flex-shrink: 0;
+  }
+  .standard_square {
+    height: 100px;
+    width: 100px;
+  }
+}
