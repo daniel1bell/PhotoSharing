@@ -9,14 +9,16 @@
 
       .long_short#account_settings
         .field
+          = f.label :user_name, "User Name"
+          = f.text_field :user_name, placeholder: "Your Immige user name"
+
+        .field
+          = f.label :email, "E-Mail Address"
           = f.email_field :email, autofocus: true, placeholder: 'E-mail address'
 
         - if devise_mapping.confirmable? && resource.pending_reconfirmation?
           .field
             Currently waiting confirmation for: #{ resource.unconfirmed_email }
-
-        .field
-          = f.password_field :current_password, autocomplete: "off", placeholder: 'Current Password'
 
         .field
           = f.password_field :password, autocomplete: "off", placeholder: 'New Password'
@@ -35,11 +37,7 @@
       .long_short.text_square
         %h3 User Profile
 
-      .long_short
-        .field
-          = f.label :user_name, "User Name"
-          = f.text_field :user_name, placeholder: "Your Immige user name"
-
+      .long_short#user_profile_settings
         .field
           = f.label :bio, "Biography"
           = f.text_area :bio, placeholder: 'Enter a short bio here...'
@@ -52,6 +50,9 @@
           = f.label :url, "Your Website"
           %div
           = f.text_field :url, placeholder: "URL", class: 'has-tip', "data-tooltip" => "", "data-options" => "disable_for_touch:true", title: "Make sure to add the http:// with the URL."
+
+        .field
+          = f.password_field :current_password, autocomplete: "off", placeholder: 'Current Password'
 
         = f.submit "Update Profile", class: 'button tiny expand'
 
