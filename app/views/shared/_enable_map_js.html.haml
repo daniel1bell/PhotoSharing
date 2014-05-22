@@ -1,0 +1,5 @@
+- content_for :footer_javascripts do
+  :javascript
+    $(document).ready(function() {
+      google.maps.event.addDomListener(window, 'load', initialise);
+    });

@@ -2,11 +2,14 @@ class Picture < ActiveRecord::Base
   belongs_to :album
 
   make_flaggable :inappropriate
+  attr_accessible :altitude, :camera_make, :camera_model, :datetime, :exposure, :flash, :focal_length, :image, :image_height, :image_length, :latitude, :longitude, :name, :orientation, :picture_image, :tag_list, :location
   mount_uploader :picture_image, PictureImageUploader
   #after validation, save these items into the database. this would allow us to see pictures nearby by pulling them from the database.
   before_save :update_exif
 
-  attr_accessible :altitude, :camera_make, :camera_model, :datetime, :exposure, :flash, :focal_length, :image, :image_height, :image_length, :latitude, :longitude, :name, :orientation, :picture_image, :tag_list, :flaggable, :flagger, :flag
+  # reverse_geocoded_by :latitude, :longitude
+  # after_validation :reverse_geocode
+  geocoded_by :location
 
   acts_as_taggable
   acts_as_votable

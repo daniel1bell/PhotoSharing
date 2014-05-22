@@ -30,17 +30,6 @@ function addMarker(map) {
   });
 }
 
-// function trackPhoto(map){
-//   var position = new google.maps.LatLng(@picture.latitude, @picture.longitude);
-//   var marker = new google.maps.Marker({
-//       position: position,
-//       map: map,
-//       title: "Image Capture Point"
-//   });
-//   map.setCenter(position);
-// }
-
-google.maps.event.addDomListener(window, 'load', initialise);
 
 
 $(function() {

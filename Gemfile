@@ -16,7 +16,6 @@ gem 'high_voltage'
 
 gem 'jquery-ui-rails'
 
-
 #  Gems for data visualisation and front-end management.
 
 gem 'date-input-rails', '~> 0.0.3'
@@ -41,6 +40,10 @@ gem 'omniauth' # still need to add facebook and twitter auth gems
 gem 'omniauth-twitter'
 gem 'omniauth-facebook'
 gem 'haml-rails'
+
+# Gems for geocoding & location
+
+gem 'geocoder'
 
 group :development, :test do
   gem 'pry-rails'

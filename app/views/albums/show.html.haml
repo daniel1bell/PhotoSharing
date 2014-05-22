@@ -6,13 +6,14 @@
       %p
         = @album.description
       %p
-        - if !current_user.liked? @album
-          = link_to 'Like', album_like_path(@album) 
-        - if !current_user.disliked? @album
-          = link_to 'Dislike', album_dislike_path(@album)
+        .like_button
+          - if current_user.liked? @album
+            = render :partial => 'album_dislike'
+          - else
+            = render :partial => 'album_like'
            
-    
-    =render @album.user
+    .like_count
+      =render @album.user
 
   .standard_group
     %a{href: new_album_picture_path(@album)}
