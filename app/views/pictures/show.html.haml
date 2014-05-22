@@ -82,6 +82,6 @@
         = f.text_area :comment, {placeholder: "Add a comment..."}
         = f.hidden_field :user_id, value: current_user.id
         = f.hidden_field :commentable_type, value: "Picture"
-        = f.submit
+        = f.submit 'Add Comment', class: 'button tiny expand'
 
     = render @picture.comments[0...@picture.comments.count]
