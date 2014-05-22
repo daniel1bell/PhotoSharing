@@ -1,3 +1,7 @@
-%h1 Edit Album
-= render :partial => 'form'
-= link_to('Delete Album', @album, :method => :delete, :confirm => 'Are you sure?')
+.square_viewport
+  .standard_group
+    .long_short.text_square
+      %h2 Edit Album
+    = render :partial => 'form'
+    .long_short
+      = link_to('Delete Album', @album, :method => :delete, :confirm => 'Are you sure?', class: "button tiny expand alert")

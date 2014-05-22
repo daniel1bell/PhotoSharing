@@ -34,11 +34,13 @@
         %p Comments:
     .tiny_group
       .tiny_square
-        %img{src: @picture.user.profile_pic}
+        %img{src: @picture.user.profile_pic.thumb}
       .tiny_square.sprite-share
-      .tiny_square.sprite-albums
+      %a{href: album_path(@picture.album)}
+        .tiny_square.sprite-albums
       - if @picture.album.user == current_user
-        .tiny_square.sprite-edit
+        %a{href: edit_album_picture_path(@picture.album, @picture)}
+          .tiny_square.sprite-edit
       - else
         .tiny_square.sprite-flag
 

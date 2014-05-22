@@ -36,7 +36,7 @@ class PicturesController < ApplicationController
 
     respond_to do |format|
       if @picture.save
-        format.html { redirect_to album_picture_path(@album, @picture), notice: 'Picture was successfully created.' }
+        format.html { redirect_to album_path(@album), notice: 'Picture was successfully created.' }
       else
         format.html { render action: 'new'}
       end

@@ -1,0 +1,16 @@
+.square_viewport
+  .standard_group
+    .long_short.text_square
+      %h3 Forgot your password?
+
+    .long_short
+      = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
+        = devise_error_messages!
+
+        .field
+          = f.email_field :email, autofocus: true, placeholder: 'E-mail address'
+
+        .field
+          = f.submit "Send me reset password instructions", class: 'button tiny expand'
+
+      %a{href: new_user_session_path, class: 'button tiny expand secondary'} Back to Sign In
