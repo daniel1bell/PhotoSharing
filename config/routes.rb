@@ -10,6 +10,9 @@ PhotoSharingApp::Application.routes.draw do
 
   resources :albums do
     resources :pictures do
+      member do
+        get 'inappropriate'
+      end
       resources :comments
     end
     resources :comments
