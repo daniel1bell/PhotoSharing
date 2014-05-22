@@ -61,9 +61,3 @@ module PhotoSharingApp
     config.assets.version = '1.0'
   end
 end
-
-module MakeFlaggable
-  class Flagging < ActiveRecord::Base
-    attr_accessible :flaggable, :flagger, :flag
-  end
-end
