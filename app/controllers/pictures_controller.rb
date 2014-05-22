@@ -84,6 +84,7 @@ class PicturesController < ApplicationController
       format.js { render :show }
       format.html { redirect_to album_picture_path(@picture.album, @picture), notice: "Liked!" }
     end
+
   end
 
   def dislike
@@ -94,6 +95,13 @@ class PicturesController < ApplicationController
       format.js { render :show }
       format.html {redirect_to album_picture_path(@picture.album, @picture), notice: "Unliked!"}
     end
+
+  end
+
+  def inappropriate
+    @picture = Picture.find(params[:id])
+    current_user.flag(@picture, :inappropriate)
+    redirect_to album_picture_path(@picture.album, @picture), notice: "You have reported this image."
   end
 
   private

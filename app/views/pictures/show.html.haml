@@ -40,7 +40,9 @@
       - if @picture.album.user == current_user
         .tiny_square.sprite-edit
       - else
-        .tiny_square.sprite-flag
+        = link_to inappropriate_album_picture_path(@album, @picture) do
+          .tiny_square.sprite-flag
+
 
     .long_short.tag_list
       = raw @picture.tag_list.map { |t| link_to t, tag_path(t), class: "tag" }.join(' ')

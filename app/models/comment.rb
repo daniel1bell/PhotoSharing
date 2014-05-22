@@ -3,7 +3,7 @@ class Comment < ActiveRecord::Base
   include ActsAsCommentable::Comment
   belongs_to :commentable, :polymorphic => true
 
-  attr_accessible :title, :comment, :user_id, :commentable_type
+  attr_accessible :title, :comment, :user_id, :commentable_type, :flaggable, :flagger, :flag
 
   default_scope :order => 'created_at ASC'
 
@@ -11,6 +11,7 @@ class Comment < ActiveRecord::Base
   # want user to vote on the quality of comments.
   
   acts_as_votable
+  make_flaggable :inappropriate
 
   # NOTE: Comments belong to a user
   belongs_to :user

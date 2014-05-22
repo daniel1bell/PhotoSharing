@@ -31,6 +31,7 @@ gem 'exifr'
 gem 'acts-as-taggable-on'
 gem 'acts_as_votable', '~> 0.9.0'
 gem 'acts_as_commentable', '~> 3.0.1'
+gem 'make_flaggable', :git => 'git://github.com/Pavling/make_flaggable.git'
 
 #  Gems for authorisation and authentication
 
