@@ -36,9 +36,8 @@
 
 .has-tip {
   cursor: auto !important;
-  .button {
-    font-weight: normal;
-  }
+  font-weight: normal !important;
+  color: white !important;
 }
 
 .button {

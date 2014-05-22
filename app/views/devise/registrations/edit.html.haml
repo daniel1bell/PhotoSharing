@@ -54,7 +54,7 @@
         .field
           = f.password_field :current_password, autocomplete: "off", placeholder: 'Current Password'
 
-        = f.submit "Update Profile", class: 'button tiny expand'
+        = f.submit "Update Profile", class: 'button tiny expand has-tip', "data-tooltip" => "", "data-options" => "disable_for_touch:true", title: "Make sure to enter your password before trying to save changes."
 
 .square_viewport
   .standard_group
