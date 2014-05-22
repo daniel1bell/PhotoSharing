@@ -41,6 +41,19 @@
   margin-right: 5px;
 }
 
+#updatemessage {
+  display: none;
+  width: 100%;
+  height: 2rem;
+  background: url('/assets/ajax-loader.gif') 5px 5px no-repeat;
+}
+
+#updatetext {
+  display: none;
+  text-align: center;
+  font-weight: bold;
+}
+
 .password_forgot {
   font-size: 11px;
 }
