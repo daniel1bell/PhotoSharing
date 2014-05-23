@@ -13,12 +13,14 @@
       %li
         %a{href: @picture.picture_image}
           .large_square
-            %img{src: @picture.picture_image.detail}/
-            .like_button
-              - if current_user.liked? @picture
-                = render :partial => 'picture_dislike'
-              - else
-                = render :partial => 'picture_like'
+            #picture_square_show
+              %img{src: @picture.picture_image.detail}/
+              .like_button
+                .like_button_picture
+                  - if current_user.liked? @picture
+                    = render :partial => 'picture_dislike'
+                  - else
+                    = render :partial => 'picture_like'
 
     - if @picture.any_exif?
       .more_info
