@@ -22,6 +22,7 @@
         %div
           = f.password_field :password_confirmation, autocomplete: "off", placeholder: "Password confirmation"
         %div
+          = f.label :profile_pic, "Profile Picture"
           = f.file_field :profile_pic
         %div
           = f.submit "Sign up", class: "button tiny expand"
