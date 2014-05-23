@@ -27,6 +27,7 @@ class User < ActiveRecord::Base
     if user = User.find_by_email(auth.info.email) || user = User.find_by_email(twitter_email) 
       user.provider = auth.provider
       user.uid = auth.uid
+      user.user_name = auth.info.nickname
       user.profile_pic = auth.info.image
       user
     else
@@ -45,7 +46,7 @@ class User < ActiveRecord::Base
         where(auth.slice(:provider, :uid)).first_or_create do |user|
             user.provider = auth.provider
             user.uid = auth.uid
-            user_name = auth.info.nickname
+            user.user_name = auth.info.nickname
             user.email = auth.info.email
             user.profile_pic = auth.info.image # comes in small
             user.password = Devise.friendly_token[0,20]
