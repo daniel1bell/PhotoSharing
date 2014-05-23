@@ -6,7 +6,9 @@ myApp.toggleEmailSignup = function() {
 
 }
 
-
+myApp.toggleMoreInfo = function() {
+  $('#more_info_slider').slideToggle("slow")
+}
 
 myApp.showUpdating = function() {
   $('.long_short').hide();
@@ -18,6 +20,7 @@ myApp.showUpdating = function() {
 myApp.setup = function() {
   $('#show_email_signin').on('click', myApp.toggleEmailSignup);
   $('#picture_upload_button').on('click', myApp.showUpdating);
+  $('#more_info_button').on('click', myApp.toggleMoreInfo);
 }
 
 

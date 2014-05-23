@@ -23,20 +23,23 @@
                     = render :partial => 'picture_like'
 
     - if @picture.any_exif?
-      .more_info
+      .more_info.long_short
+        %button.button.tiny.expand#more_info_button View More Info
 
-      .long_short.text_square
-        %p Camera Model: #{@picture.camera_model}
-        %p Date and Time: #{@picture.datetime}
-        %p Height: #{@picture.image_height} px
-        %p Width: #{@picture.image_length} px
-        %p Exposure Time: #{@picture.exposure}
-        %p Latitude: #{@picture.latitude}
-        %p Longitude: #{@picture.longitude}
-      
-      - if @picture.geocoded?
-        .long_short.side_scroll_pics 
-          = render @nearby_pictures
+      #more_info_slider
+        .long_short.text_square
+          %p Camera Model: #{@picture.camera_model}
+          %p Date and Time: #{@picture.datetime}
+          %p Height: #{@picture.image_height} px
+          %p Width: #{@picture.image_length} px
+          %p Exposure Time: #{@picture.exposure}
+          %p Latitude: #{@picture.latitude}
+          %p Longitude: #{@picture.longitude}
+        
+        - if @picture.geocoded?
+          %p Nearby Pictures 
+          .long_short.side_scroll_pics
+            = render @nearby_pictures
 
   .standard_group
     .standard_square.text_square

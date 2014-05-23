@@ -128,3 +128,12 @@ table {
     display: inline-block;
   }
 }
+
+#more_info_slider {
+  display: none;
+  p {
+    color: $primary;
+    text-align: center;
+    margin: 10px 0 5px 0;
+  }
+}
