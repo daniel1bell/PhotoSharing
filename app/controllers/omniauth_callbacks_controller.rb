@@ -7,7 +7,7 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
       sign_in_and_redirect user
     else
       session["devise.user_attributes"] = user.attributes
-      flash.notice = "Problem creating account"
+      flash.notice = "Problem creating account because: #{user.errors.full_messages.to_sentence}"
       redirect_to new_user_registration_url
     end
   end
@@ -19,7 +19,7 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
       sign_in_and_redirect user
     else
       session["devise.user_attributes"] = user.attributes
-      flash.notice = "Problem creating account"
+      flash.notice = "Problem creating account because: #{user.errors.full_messages.to_sentence}"
       redirect_to new_user_registration_url
     end
   end
