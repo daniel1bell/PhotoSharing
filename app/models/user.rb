@@ -11,7 +11,6 @@ class User < ActiveRecord::Base
   has_many :pictures, through: :albums
   has_many :comments, dependent: :destroy
 
-  validates :user_name, presence: true, uniqueness: true
 
   acts_as_tagger
   acts_as_voter
@@ -27,6 +26,7 @@ class User < ActiveRecord::Base
     if user = User.find_by_email(auth.info.email) || user = User.find_by_email(twitter_email) 
       user.provider = auth.provider
       user.uid = auth.uid
+      user.user_name = auth.info.nickname
       user.profile_pic = auth.info.image
       user
     else
@@ -35,6 +35,7 @@ class User < ActiveRecord::Base
           test = User.create({
               :provider => auth.provider,
               :uid => auth.uid,
+              :user_name => auth.info.nickname,
               :email => auth.info.nickname.downcase + "@twitter.com",
               :profile_pic => auth.info.image, # comes in small
               :password => Devise.friendly_token[0,20]
@@ -44,6 +45,7 @@ class User < ActiveRecord::Base
         where(auth.slice(:provider, :uid)).first_or_create do |user|
             user.provider = auth.provider
             user.uid = auth.uid
+            user.user_name = auth.info.nickname
             user.email = auth.info.email
             user.profile_pic = auth.info.image # comes in small
             user.password = Devise.friendly_token[0,20]
