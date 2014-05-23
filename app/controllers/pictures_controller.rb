@@ -1,8 +1,9 @@
 class PicturesController < ApplicationController
-
+  
 # basic picture controller - still needs to be connected with User, Photo & Comment Controller
   before_filter :authenticate_user!
   before_filter :load_album, except: :search
+
 
 # both tagging and search functionality for tags is working if you comment out load_album 
 # we still have to fix the routes here (error message: no album id) and make the views awesome
