@@ -2,13 +2,13 @@
   = form_for([@album, @picture]) do |f|
     .field
       = f.text_field :name, :autofocus => true, placeholder: 'Name'
-    - if params[:action] == "edit"
-      #edit_picture_display
-        = render @picture
-    - else
-      .field
-        = f.label :picture_image, "Upload Picture"
-        = f.file_field :picture_image, :multiple => true
+    / - if params[:action] == "edit"
+    /   #edit_picture_display
+    /     = render @picture
+    / - else
+    .field
+      = f.label :picture_image, "Upload Picture"
+      = f.file_field :picture_image, :multiple => true
     .field
       = f.text_field :tag_list, placeholder: 'Tag List'
     .actions
