@@ -1,5 +1,6 @@
 PhotoSharingApp::Application.routes.draw do
-  devise_for :users, controllers: {omniauth_callbacks: 'omniauth_callbacks'}, :controllers => { :registrations => "registrations" }
+  devise_for :users, controllers: {omniauth_callbacks: 'omniauth_callbacks'}
+  devise_for :controllers => { :registrations => "registrations" }
 
   # intial home root to album#index until User Model & Homepage is created
 
