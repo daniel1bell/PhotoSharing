@@ -16,13 +16,13 @@
       =render @album.user
 
   .standard_group
-    - if current_user = @album.user
+    - if current_user == @album.user
       %a{href: new_album_picture_path(@album)}
         .standard_square.sprite-add-photo
     
     = render @album.pictures
     
-    - if current_user = @album.user
+    - if current_user == @album.user
       %a{href: edit_album_path}
         .standard_square.sprite-edit
 
