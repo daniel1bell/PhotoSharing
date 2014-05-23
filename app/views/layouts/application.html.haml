@@ -30,7 +30,7 @@
                 %label= current_user.email
               %li= link_to "Log out", destroy_user_session_path, method: :delete
               %li= link_to('Edit Settings', edit_user_registration_path)
-              - if can? :manage, User
+              - if current_user.role == "admin"
                 %li= link_to('Admin Panel', '/admin')
               %li
                 %a.no-padding{href: albums_path}

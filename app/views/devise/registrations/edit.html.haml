@@ -26,7 +26,7 @@
         .field
           = f.password_field :password_confirmation, autocomplete: "off", placeholder: 'New Password Confirmation'
 
-        - if can? :manage, User
+        - if current_user.role == "admin"
           .field
             %label{for: :user_role} User Role
             %select{id: :user_role, name: 'user[role]'}

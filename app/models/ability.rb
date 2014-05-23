@@ -5,6 +5,7 @@ class Ability
     user ||= User.new
     if user.role? != nil #so they are NOT just a visitor
       can :read, :all
+      cannot :read, Admin
       can :manage, Album do |album|
         album.user == user
       end
