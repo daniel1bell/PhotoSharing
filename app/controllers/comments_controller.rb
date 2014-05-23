@@ -35,4 +35,17 @@ class CommentsController < ApplicationController
     redirect_to :back, notice: "You have reported this comment."
   end
 
+  def delete_inappropriate
+    @comment = Comment.find(params[:id])
+    @comment.flaggings.destroy_all
+    redirect_to admin_index_path, notice: "You have removed the flag."
+  end
+
+  def destroy
+    @comment = Comment.find(params[:id])
+    @comment.destroy
+    redirect_to(:back)
+  end
+
+
 end

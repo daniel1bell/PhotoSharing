@@ -1,0 +1,15 @@
+.long_short.text_square.full_width
+  %h3 Flagged Items
+
+%table.full_width
+  %thead
+    %tr
+      %th Flag Type
+      %th Flagged As
+      %th Flag Link
+      %th Flagged Item Owner
+      %th Flagger
+      %th Moderation
+  %tbody
+    = render 'flagged_pictures'
+    = render 'flagged_comments'

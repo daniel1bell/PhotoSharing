@@ -1,0 +1,12 @@
+- @flagged_pictures.each do |flag|
+  - flagged_item = Picture.find(flag.flaggable_id)
+  - flagged_by = User.find(flag.flagger_id)
+  %tr
+    %td= flag.flaggable_type
+    %td= flag.flag.capitalize
+    %td= link_to flagged_item.name, album_picture_path(flagged_item.album, flagged_item)
+    %td= link_to flagged_item.album.user.user_name, user_path(flagged_item.album.user)
+    %td= link_to flagged_by.user_name, user_path(flagged_by)
+    %td
+      = button_to "Delete Flag", delete_inappropriate_album_picture_path(flagged_item.album, flagged_item), method: :delete, data: { confirm: "Are you sure?" }, method: :delete, class: 'button tiny alert'
+      = button_to "Delete #{flag.flaggable_type}", album_picture_path(flagged_item.album, flagged_item), method: :delete, data: { confirm: "Are you sure?" }, method: :delete, class: 'button tiny alert'

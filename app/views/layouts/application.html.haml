@@ -37,10 +37,16 @@
                   %label My Albums
               - current_user.albums.each do |album|
                 %li= link_to(album.name, album_path(album))
-              %li= link_to "Add a New Album", new_album_path
+              %li= link_to "+ Add a New Album", new_album_path
             - else
               %li= link_to "Sign In", new_user_session_path
               %li= link_to "Register", new_user_registration_path
+            %li
+              %label The Legal Bumph
+            %li= link_to 'About us', page_path('about')
+            %li= link_to 'Contact', page_path('contact')
+            %li= link_to 'Terms and Conditions', page_path('legal/terms')
+            %li= link_to 'Privacy', page_path('legal/privacy')
 
         %section.main-section
           .row
@@ -49,12 +55,6 @@
               %p.alert= alert
 
               = yield
-
-        %footer 
-          = link_to 'About us', page_path('about')
-          = link_to 'Contact', page_path('contact')
-          = link_to 'Terms and Conditions', page_path('legal/terms')
-          = link_to 'Privacy', page_path('legal/privacy')
 
         %a.exit-off-canvas
       = javascript_include_tag "application"

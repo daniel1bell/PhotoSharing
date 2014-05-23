@@ -1,3 +1,8 @@
+.notice {
+  text-align: center;
+  font-size: 11px;
+}
+
 .off-canvas-list {
   li {
     line-height: 1;
@@ -43,9 +48,10 @@
 
 #updatemessage {
   display: none;
-  width: 100%;
+  width: 230px;
   height: 2rem;
   background: url('/assets/ajax-loader.gif') 5px 5px no-repeat;
+  margin: 0 auto;
 }
 
 #updatetext {
@@ -95,7 +101,16 @@
 
 .square_viewport {
   table {
-    margin: 35px auto 0 auto;
+    margin: 35px auto 35px auto;
+    .button {
+      padding: 3px 7px;
+      font-size: 10px;
+      margin-bottom: 0 !important;
+      background-color: rgba(240,65,36,0.5);
+    }
+    th {
+      text-align: center;
+    }
   }
 }
 
@@ -105,5 +120,11 @@
   }
   #user_profile_settings {
     min-height: 350px;
+  }
+}
+
+table {
+  form {
+    display: inline-block;
   }
 }

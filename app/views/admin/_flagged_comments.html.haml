@@ -1,0 +1,27 @@
+- @flagged_comments.each do |flag|
+  - flagged_item = Comment.find(flag.flaggable_id)
+  - flagged_by = User.find(flag.flagger_id)
+  - commented_type = flagged_item.commentable_type
+  - commented_id = flagged_item.commentable_id
+  - if commented_type == "Picture"
+    -comment_owner = Picture.find(commented_id)
+    %tr
+      %td #{flag.flaggable_type} (#{commented_type})
+      %td= flag.flag.capitalize
+      %td= link_to comment_owner.name, album_picture_path(comment_owner.album, comment_owner)
+      %td= link_to comment_owner.album.user.user_name, user_path(comment_owner.album.user)
+      %td= link_to flagged_by.user_name, user_path(flagged_by)
+      %td
+        = button_to "Delete Flag", delete_inappropriate_album_picture_comment_path(comment_owner.album, comment_owner, flagged_item), method: :delete, data: { confirm: "Are you sure?" }, method: :delete, class: 'button tiny alert'
+        = button_to "Delete #{flag.flaggable_type}", album_picture_comment_path(comment_owner.album, comment_owner, flagged_item), method: :delete, data: { confirm: "Are you sure?" }, method: :delete, class: 'button tiny alert'
+  - elsif commented_type == "Album"
+    -comment_owner = Album.find(commented_id)
+    %tr
+      %td #{flag.flaggable_type} (#{commented_type})
+      %td= flag.flag.capitalize
+      %td= link_to comment_owner.name, album_path(comment_owner)
+      %td= link_to comment_owner.user.user_name, user_path(comment_owner.user)
+      %td= link_to flagged_by.user_name, user_path(flagged_by)
+      %td
+        = button_to "Delete Flag", delete_inappropriate_album_comment_path(comment_owner, flagged_item), method: :delete, data: { confirm: "Are you sure?" }, method: :delete, class: 'button tiny alert'
+        = button_to "Delete #{flag.flaggable_type}", album_comment_path(comment_owner, flagged_item), method: :delete, data: { confirm: "Are you sure?" }, method: :delete, class: 'button tiny alert'
