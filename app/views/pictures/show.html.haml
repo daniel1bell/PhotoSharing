@@ -28,13 +28,27 @@
 
       #more_info_slider
         .long_short.text_square
-          %p Camera Model: #{@picture.camera_model}
-          %p Date and Time: #{@picture.datetime}
-          %p Height: #{@picture.image_height} px
-          %p Width: #{@picture.image_length} px
-          %p Exposure Time: #{@picture.exposure}
-          %p Latitude: #{@picture.latitude}
-          %p Longitude: #{@picture.longitude}
+          %p
+            Camera Model: 
+            %strong=@picture.camera_model
+          %p
+            Date and Time: 
+            %strong= @picture.datetime
+          %p
+            Height: 
+            %strong #{@picture.image_height} px
+          %p
+            Width: 
+            %strong #{@picture.image_length} px
+          %p
+            Exposure Time: 
+            %strong #{@picture.exposure}
+          %p
+            Latitude: 
+            %strong #{@picture.latitude}
+          %p
+            Longitude: 
+            %strong #{@picture.longitude}
         
         - if @picture.geocoded?
           %p Nearby Pictures 
