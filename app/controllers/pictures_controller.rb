@@ -1,5 +1,4 @@
 class PicturesController < ApplicationController
-  load_and_authorize_resource
   
 # basic picture controller - still needs to be connected with User, Photo & Comment Controller
   before_filter :authenticate_user!

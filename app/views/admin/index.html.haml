@@ -1,4 +1,9 @@
-.square_viewport
-  = render 'users'
+- if current_user.role == "admin"
+  .square_viewport
+    = render 'users'
 
-  = render 'flaggings'
+    = render 'flaggings'
+
+- else
+  .notice
+    %p Sorry, you are not authorised to view the Admin Panel!
