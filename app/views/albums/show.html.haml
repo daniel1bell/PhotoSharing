@@ -16,13 +16,15 @@
       =render @album.user
 
   .standard_group
-    %a{href: new_album_picture_path(@album)}
-      .standard_square.sprite-add-photo
+    - if current_user = @album.user
+      %a{href: new_album_picture_path(@album)}
+        .standard_square.sprite-add-photo
     
     = render @album.pictures
     
-    %a{href: edit_album_path}
-      .standard_square.sprite-edit
+    - if current_user = @album.user
+      %a{href: edit_album_path}
+        .standard_square.sprite-edit
 
   .standard_group
     .long_short
