@@ -1,6 +1,7 @@
 class AlbumsController < ApplicationController
   before_filter :authenticate_user!
-
+  load_and_authorize_resource
+  
   def index
     @albums = Album.where(user_id: current_user.id)
   end
