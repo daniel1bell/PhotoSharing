@@ -51,8 +51,8 @@
           %div
           = f.text_field :url, placeholder: "URL", class: 'has-tip', "data-tooltip" => "", "data-options" => "disable_for_touch:true", title: "Make sure to add the http:// with the URL."
 
-        / .field
-        /   = f.password_field :current_password, autocomplete: "off", placeholder: 'Current Password'
+        .field
+          = f.password_field :current_password, autocomplete: "off", placeholder: 'Current Password'
 
         .actions
           = f.submit "Update Profile", class: 'button tiny expand has-tip', "data-tooltip" => "", "data-options" => "disable_for_touch:true", title: "Make sure to enter your password before trying to save changes."
