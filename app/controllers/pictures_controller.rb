@@ -111,6 +111,12 @@ class PicturesController < ApplicationController
     redirect_to album_picture_path(@picture.album, @picture), notice: "You have reported this image."
   end
 
+  def delete_inappropriate
+    @picture = Picture.find(params[:id])
+    @picture.flaggings.destroy_all
+    redirect_to admin_index_path, notice: "You have removed the flag."
+  end
+
   private
   def load_album
     if params[:album_id]

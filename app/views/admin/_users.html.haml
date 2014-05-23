@@ -1,0 +1,23 @@
+.long_short.text_square.full_width
+  %h3 Users
+
+%table.full_width
+  %thead
+    %tr
+      %th User Name
+      %th E-Mail
+      %th Albums
+      %th Pictures
+      %th Comments
+      %th Total Likes
+      %th Moderation
+  %tbody
+    - @users.each do |user|
+      %tr
+        %td= link_to user.user_name, user_path(user)
+        %td= user.email
+        %td= user.albums.count
+        %td= user.pictures.count
+        %td= user.comments.count
+        %td= user.total_likes
+        %td= button_to "Delete User", user, method: :delete, data: { confirm: "Are you sure?" }, method: :delete, class: 'button tiny alert'

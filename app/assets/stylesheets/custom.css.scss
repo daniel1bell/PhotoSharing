@@ -95,7 +95,16 @@
 
 .square_viewport {
   table {
-    margin: 35px auto 0 auto;
+    margin: 35px auto 35px auto;
+    .button {
+      padding: 3px 7px;
+      font-size: 10px;
+      margin-bottom: 0 !important;
+      background-color: rgba(240,65,36,0.5);
+    }
+    th {
+      text-align: center;
+    }
   }
 }
 
@@ -105,5 +114,11 @@
   }
   #user_profile_settings {
     min-height: 350px;
+  }
+}
+
+table {
+  form {
+    display: inline-block;
   }
 }

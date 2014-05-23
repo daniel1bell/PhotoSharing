@@ -12,27 +12,30 @@ PhotoSharingApp::Application.routes.draw do
 
   resources :home, only: [:index], as: '/'
 
-  resources :admin, only: [:index], as: '/'
+  resources :admin, only: [:index], as: 'admin'
 
   resources :albums do
     resources :pictures do
       member do
         get 'inappropriate'
+        delete 'delete_inappropriate', as: :delete_inappropriate
       end
       resources :comments do
         member do
-        get 'inappropriate'
+          get 'inappropriate'
+          delete 'delete_inappropriate', as: :delete_inappropriate
         end
       end
     end
     resources :comments do
       member do
-      get 'inappropriate'
+        get 'inappropriate'
+        delete 'delete_inappropriate', as: :delete_inappropriate
       end
     end
   end
 
-  resources :users, only: [:index, :show]
+  resources :users
 
   get '/pages/*id' => 'pages#show', as: :page, format: false
 
