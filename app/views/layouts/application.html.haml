@@ -17,7 +17,7 @@
           %section.middle.tab-bar-section
             = link_to image_tag( '/immige_name2.png'), "/"
             - if current_user
-              %a{href: user_path(current_user)}
+              %a#nav_profile_pic{href: user_path(current_user)}
                 .profile_pic.tab_profile_pic
                   %img{src: current_user.profile_pic.thumb}
           %section.right-small
