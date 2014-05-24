@@ -35,6 +35,9 @@
   .active a {
     color: $mint;
   }
+  dd > a {
+    padding: 0.625rem 1rem !important;
+  }
 }
 
 .tabs-content {
