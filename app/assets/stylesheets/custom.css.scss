@@ -48,7 +48,7 @@
   height: 310px;
   background-color: rgba($primary, 0.05);
   float: left;
-  margin-right: 5px;
+  margin: 3px;
 }
 
 #updatemessage {
@@ -149,4 +149,12 @@ table {
 #edit_picture_display {
   text-align: center;
   margin-bottom: 15px;
+}
+
+#contact_details {
+  text-align: center;
+  address {
+    margin-top: 10px;
+    font-size: 90%;
+  }
 }

@@ -24,7 +24,7 @@
 
 .square_viewport {
   text-align: center;
-  h2 {
+  h1, h2, h3 {
     color: $mint;
   }
   h3 {
@@ -39,7 +39,7 @@
     margin: 0;
   }
   p {
-    color: $secondary;
+    color: $primary;
     font-size: 12px;
     line-height: 1;
     margin-bottom: 10px;
@@ -50,6 +50,9 @@
   padding: 10px;
   border-bottom: 8px solid $mint;
   position: relative;
+  p {
+    color: $secondary;
+  }
   .inner_text {
     position: absolute;
     bottom: 0;
@@ -162,6 +165,7 @@
   margin: 3px;
   text-align: left;
   padding: 10px;
+  color: $primary;
   textarea {
     border: none;
     font-size: 11px;
@@ -271,4 +275,8 @@
 
 .full_width {
   width: 100%;
+}
+
+.large_body p {
+  font-size: 100%;
 }

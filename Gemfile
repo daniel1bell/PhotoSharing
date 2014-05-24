@@ -37,7 +37,7 @@ gem 'make_flaggable', :git => 'git://github.com/ScottyGams/make_flaggable.git'
 
 gem 'devise'
 gem 'cancan', '~> 1.6.10'
-gem 'omniauth' # still need to add facebook and twitter auth gems
+gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'omniauth-facebook'
 gem 'haml-rails'

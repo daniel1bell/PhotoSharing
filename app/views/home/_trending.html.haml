@@ -22,17 +22,23 @@
 
 - if @trending_pictures.count >= 3
   .standard_group
-    = render @trending_pictures[2..4]
+    = render @trending_pictures[2..5]
 
 - if @trending_users.count >= 1
-  = render @trending_users[0..2]
+  .standard_group
+    = render @trending_users[0..2]
 - if @trending_albums.count >= 1
-  = render @trending_albums[0..2]
+  .standard_group
+    = render @trending_albums[0..2]
 - if @trending_users.count >= 3
-  = render @trending_users[3..4]
+  .standard_group
+    = render @trending_users[3..4]
 - if @trending_albums.count >= 3
-  = render @trending_albums[3..4]
+  .standard_group
+    = render @trending_albums[3..4]
 - if @trending_users.count >= 5
-  = render @trending_users[5..6]
+  .standard_group
+    = render @trending_users[5..6]
 - if @trending_albums.count >= 5
-  = render @trending_albums[5..6]
+  .standard_group
+    = render @trending_albums[5..6]

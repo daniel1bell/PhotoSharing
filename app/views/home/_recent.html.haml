@@ -27,17 +27,23 @@
 
 - if recent_pictures.count >= 3
   .standard_group
-    = render recent_pictures[2..4]
+    = render recent_pictures[2..5]
 
 - if recent_users.count >= 1
-  = render recent_users[0..2]
+  .standard_group
+    = render recent_users[0..2]
 - if recent_albums.count >= 1
-  = render recent_albums[0..2]
+  .standard_group
+    = render recent_albums[0..2]
 - if recent_users.count >= 3
-  = render recent_users[3..4]
+  .standard_group
+    = render recent_users[3..4]
 - if recent_albums.count >= 3
-  = render recent_albums[3..4]
+  .standard_group
+    = render recent_albums[3..4]
 - if recent_users.count >= 5
-  = render recent_users[5..6]
+  .standard_group
+    = render recent_users[5..6]
 - if recent_albums.count >= 5
-  = render recent_albums[5..6]
+  .standard_group
+    = render recent_albums[5..6]
